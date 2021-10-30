@@ -1,0 +1,40 @@
+\documentclass{standalone} 
+\usepackage{pgfplots}
+
+\pgfplotsset{
+	tick label style={font=\tiny},
+	label style={font=\footnotesize},
+	legend style={font=\footnotesize},
+	title style={font=\footnotesize},
+	/pgf/number format/.cd, use comma, 1000 sep={}
+}
+
+\newcommand{\szer}{8cm}
+\newcommand{\wys}{7cm}
+
+\definecolor{niebieski}{rgb}{0,0.447,0.741}
+\definecolor{czerwony}{rgb}{0.85,0.325,0.098}	
+
+\begin{document}
+
+\begin{tikzpicture}
+\begin{axis}[
+	width=\szer,
+	height=\wys,
+	xmin=-10,xmax=10,ymin=-1000,ymax=1000,
+	xlabel={$x$},
+	ylabel={$f(x), \ g(x)$},
+	xtick={-10,-5,0,5,10},
+	ytick={-1000,-500,0,500,1000},
+	legend pos=south east,
+]
+
+\addplot[niebieski,thick]
+	file {../dane_stat/dane_fx.txt};
+\addplot[czerwony,thick,densely dashed]
+	file {../dane_stat/dane_gx.txt};
+\legend{$f(x)$,$g(x)$}
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

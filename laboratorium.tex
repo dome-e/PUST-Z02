@@ -1,0 +1,39 @@
+% !TEX encoding = cp1250
+\chapter{Æwiczenie laboratoryjne}
+Mo¿na napisaæ o tym, ¿e realizowane w MATLABie i jakie oznaczenia maj¹ jakie rzeczy (W1 ma index 1,  G1 jaki index i T1 jaki index)
+
+\section{Przygotowanie do wykonania æwiczenia}
+Przed rozpoczêciem pomiarów sprawdzono mo¿liwoœæ sterowania i~pomiaru w~komunikacji ze stanowiskiem. Punkt pracy grza³ki $G1$ dla zespo³u obliczony zosta³ wg. wzoru \ref{w_G1}:
+\begin{equation}
+	G1 = 25 + Z\%5\
+\label{w_G1}
+\end{equation}
+gdzie Z~to numer zespo³u, zatem dla naszego zespo³u Z02 punkt pracy wynosi:
+\begin{equation}
+	G1 = 25 + 2\%5 = 27
+\end{equation}
+Nastêpnie okreœlono wartoœæ pomiaru temperatury T1 dla obliczonego punktu pracy. W~tym celu moc wentylatora W1 ustawiono na 50\%, a moc grza³ki G1 na 27\%,  za pomoc¹ funkcji
+\texttt{sendControls([1,5], [50,27])}.
+Wartoœæ pomiaru temperatury odczytano korzystaj¹c z~funkcji 
+\texttt{readMeasurements(1)}.
+Temperatura T1 ustabilizowa³a siê na wartoœci \textbf{32.25\degree C}
+
+ 
+\section{Wyznaczenie odpowiedzi skokowych procesu}
+Zarejestrowano przebieg temperatury T1 dla trzech ró¿nych zmian sygna³u steruj¹cego G1 rozpoczynaj¹c z~punktu pracy (27\%) do 10\%, 35\% i~50\%.
+Otrzymane przebiegi zmian przedstawiono na Rys. \ref{rys_przebiegi_T1}. 
+
+\textcolor{red}{
+	Czy w³aœciwoœci statyczne obiektu mo¿na okreœliæ jako (w przybli¿eniu) liniowe? Jeœli tak wyznaczyæ wzmocnienie statyczne procesu?
+}
+
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{png/lab1_zad2.png}
+	\caption{Odpowiedzi skokowe procesu}
+	\label{rys_przebiegi_T1}
+\end{figure}
+
+\section{Algorytm DMC}
+
