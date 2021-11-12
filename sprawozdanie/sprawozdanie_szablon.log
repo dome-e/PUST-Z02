@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.2)  12 NOV 2021 10:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.30)  12 NOV 2021 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -831,29 +831,7 @@ Package: gensymb 2003/07/02 v1.0 (WaS)
 LaTeX Warning: Unused global option(s):
     [twosides].
 
-(./sprawozdanie_szablon.aux
-
-LaTeX Warning: Label `rys_przebiegi_T1' multiply defined.
-
-
-LaTeX Warning: Label `rys_przebiegi_T1' multiply defined.
-
-
-LaTeX Warning: Label `rys_przebiegi_T1' multiply defined.
-
-
-LaTeX Warning: Label `rys_przebiegi_T1' multiply defined.
-
-
-LaTeX Warning: Label `rys_przebiegi_T1' multiply defined.
-
-
-LaTeX Warning: Label `rys_przebiegi_T1' multiply defined.
-
-
-LaTeX Warning: Label `rys_przebiegi_T1' multiply defined.
-
-)
+(./sprawozdanie_szablon.aux)
 \openout1 = `sprawozdanie_szablon.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
@@ -1054,17 +1032,19 @@ Package pdftex.def Info: png/pro_zad22.png  used on input line 33.
 File: png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png  used on
- input line 82.
+ input line 72.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
-
-Underfull \vbox (badness 3049) has occurred while \output is active []
-
  [4 <./png/pro_zad21.png (PNG copy)> <./png/pro_zad22.png (PNG copy)>]
+Overfull \hbox (7.56721pt too wide) in paragraph at lines 80--82
+[]\OT4/cmr/m/n/10.95 Nast¦pnie ob-li-czo-ne zo-sta-ªy na-sta-wy dla re-gu-la-to
+-ra PI - zgod-nie z ta-be-l¡ 2.1[]. Za-tem $[]$,
+ []
+
 <png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png, id=33, 1124.2pt x 843.15pt>
 File: png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png  used on inp
-ut line 102.
+ut line 85.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1074,7 +1054,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: png/pro_zad4_5_PID/pro1_PID_PI_skoki.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_PI_skoki.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PI_skoki.png  used on inpu
-t line 114.
+t line 95.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
  [6 <./png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png (PNG copy)> <./png/pro_zad4_5_
 PID/pro1_PID_PI_skoki.png (PNG copy)>]
@@ -1084,7 +1064,7 @@ File: png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png Graphic file (type pn
 g)
 <use png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png  u
-sed on input line 134.
+sed on input line 107.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
 <png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png, id=43, 1124.2pt x 843.15pt
 >
@@ -1092,7 +1072,7 @@ File: png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png Graphic file (type png
 )
 <use png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png  us
-ed on input line 143.
+ed on input line 114.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1102,20 +1082,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: png/pro_zad4_5_PID/pro1_PID_PID_dostr.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_PID_dostr.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PID_dostr.png  used on inp
-ut line 152.
+ut line 127.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
-<png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png, id=48, 1124.2pt x 843.15pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png (PNG copy)>]
+<png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png, id=51, 1124.2pt x 843.15pt>
 File: png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png  used 
-on input line 161.
+on input line 134.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
-
-Underfull \vbox (badness 7326) has occurred while \output is active []
-
- [8 <./png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png (PNG copy)> <./png/pr
-o_zad4_5_PID/pro1_PID_PID_dostr.png (PNG copy)>]) (./laboratorium.tex [9 <./png
-/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png (PNG copy)>]
+)
+(./laboratorium.tex [9 <./png/pro_zad4_5_PID/pro1_PID_PID_dostr.png (PNG copy)>
+ <./png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png (PNG copy)>]
 Rozdzia\PlPrIeC {\l } 3.
 [10
 
@@ -1125,34 +1106,31 @@ File: png/lab1_zad2.png Graphic file (type png)
 <use png/lab1_zad2.png>
 Package pdftex.def Info: png/lab1_zad2.png  used on input line 33.
 (pdftex.def)             Requested size: 346.3993pt x 285.97266pt.
-) [11 <./png/lab1_zad2.png>] (./sprawozdanie_szablon.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+) [11 <./png/lab1_zad2.png>] (./sprawozdanie_szablon.aux) ) 
 Here is how much of TeX's memory you used:
- 29905 strings out of 478994
- 748343 string characters out of 5858184
- 1089336 words of memory out of 5000000
- 46840 multiletter control sequences out of 15000+600000
+ 29912 strings out of 478994
+ 748419 string characters out of 5858183
+ 1089368 words of memory out of 5000000
+ 46847 multiletter control sequences out of 15000+600000
  424274 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,12n,89p,752b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/local/te
-xlive/2021/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/local/texlive/2021/texm
-f-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/local/texlive/2021/texmf-dist/fonts/en
-c/dvips/pl/plit.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plrm
-.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr
-/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/local/tex
-live/2021/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/local/texlive/2021/
-texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/local/texlive/2021/texmf-dist/
-fonts/type1/public/pl/plmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
-/public/pl/plr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/
-plsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plti10.pfb
-></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/pltt10.pfb></usr/loc
-al/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb>
-Output written on sprawozdanie_szablon.pdf (12 pages, 362091 bytes).
+{/usr/local/texlive/
+2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2
+021/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/local/texlive/2021/texmf-dist/
+fonts/enc/dvips/pl/plms.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips
+/pl/plmi.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/
+usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/local/texlive/2021/te
+xmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/local/texlive/2021/texmf-dist/f
+onts/type1/public/pl/plmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
+/public/pl/plmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/
+plmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr10.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/local
+/texlive/2021/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/public/pl/pltt10.pfb></usr/local/texlive/2021/texmf-
+dist/fonts/type1/public/cm-super/sfbx1095.pfb>
+Output written on sprawozdanie_szablon.pdf (12 pages, 364739 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream

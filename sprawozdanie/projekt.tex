@@ -44,12 +44,11 @@ K_{stat}=1.6966
 \section{OdpowiedŸ skokowa w algorytmie DMC}
 \section{Algorytm PID}
 
-TO DO
-Metoda Zieglera-Nicholsa - tabelka z obliczaniem nastaw.
+Do wyznaczenia nastaw regulatora PID wykorzystano metodê Zieglera-Nicholsa. Rozpoczêto od doboru cz³onu proporcjonalnego - cz³ony ca³kuj¹cy ustawiono na Ti = inf, a ró¿niczkuj¹cy Td = 0. Stopniowo zwiêkszano wzmocnienie K, aby znaleŸæ tak¹ jego wartoœæ, która wywo³a niegasn¹ce oscylacje. 
 
 \begin{table}
 	[b] \caption{Regu³y Zieglera-Nicholsa (Z-N) wg cech przebiegu krytycznego (1942 r.)}
-	\label{t_wyrownanie_do_znaku_przecinek3}
+	\label{t_ZN}
 	\centering
 	\sisetup{table-auto-round=true}
 	\begin{small}
@@ -68,99 +67,73 @@ Metoda Zieglera-Nicholsa - tabelka z obliczaniem nastaw.
 \end{table}
 
 
-Ti = inf, Td = 0 (regulator P) i stopniowo zwiêkszamy K ¿eby wywo³aæ niegasn¹ce oscylacje. 
-
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_K_kryt.png}
-%	\caption{Wyznaczenie K krytycznego}
-%	\label{rys_przebiegi_T1}
-%\end{figure}
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png}
-	\caption{Wyznaczenie K krytycznego - przybli¿ony}
-	\label{rys_przebiegi_T1}
+	\caption{Wyznaczenie K krytycznego}
+	\label{rys_K_kr}
 \end{figure}
 
-TO DO
-Niegasn¹ce oscylacje wyst¹pi³y dla wartoœci wzmocnienia ${K_{kr} = 2,02}$. Dla takiego wzmocnienia odczytano z przebiegu sygna³u steruj¹cego okres krytyczny ${T_{kr} = 138 - 86 = 52}$
+Niegasn¹ce oscylacje wyst¹pi³y dla wartoœci wzmocnienia ${K_{kr} = 2,02}$  (Rys. \ref{rys_K_kr}). Dla takiego wzmocnienia odczytano z przebiegu sygna³u steruj¹cego okres krytyczny ${T_{kr} = 138 - 86 = 52}$.
 
-TO DO
-Nastêpnie obliczone zosta³y nastawy dla regulatora PI
 
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PI.png}
-%	\caption{Regulator PI}
-%	\label{rys_przebiegi_T1}
-%\end{figure}
+Nastêpnie obliczone zosta³y nastawy dla regulatora PI - zgodnie z tabel¹ \ref{t_ZN}.
+Zatem ${K=0,909}$, ${T_i=43,(3)}$ i ${T_d=0}$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png}
-	\caption{Regulator PI - przybli¿ony}
-	\label{rys_przebiegi_T1}
+	\caption{Regulator PI}
+	\label{rys_PI}
 \end{figure}
 
-PID ju¿ lepiej, ale nadal jest za wolny- stabilizuje siê dopiero dla k = 600
-
-TO DO
-Skoki dla regulatora PI
+Regulator PI jest stabilny, ale dzia³a zdecydowanie za wolno (Rys. {\ref{rys_PI}}) - osi¹ga zadan¹ wartoœæ dopiero dla ${k = 600
+}$. WskaŸnik jakoœci regulacji przyj¹³ wartoœæ ${E = 16.1925}$ .
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PI_skoki.png}
 	\caption{Regulator PI - skoki}
-	\label{rys_przebiegi_T1}
+	\label{rys_PI_skoki}
 \end{figure}
 
-Przy szybszych zmianach Y zad widaæ ¿e PI jest zdecydowanie za wolny i nie nad¹¿a za zmianami
+Przy szybszych zmianach ${Y_{zad}}$ widaæ, ¿e regulator PI jest za wolny, aby za nimi nad¹¿yæ (Rys. \ref{rys_PI_skoki}).
 
 
-TO DO
-Nastêpnie wyznaczono nastawy dla regulatora PID
-
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_niedostr.png}
-%	\caption{Niedostrojony regulator PID}
-%	\label{rys_przebiegi_T1}
-%\end{figure}
+Nastêpnie wyznaczono nastawy dla regulatora PID, ponownie wg. tabeli \ref{t_ZN}. Ich wartoœci to ${K=1,212}$, ${T_i=26}$ i ${T_d=6,5}$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png}
-	\caption{Niedostrojony regulator PID - przybli¿ony}
-	\label{rys_przebiegi_T1}
+	\caption{Niedostrojony regulator PID}
+	\label{rys_PID}
 \end{figure}
-
-Skoki dla regulatora PID:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png}
 	\caption{Niedostrojony regulator PID - skoki}
-	\label{rys_przebiegi_T1}
+	\label{rys_PID_skoki}
 \end{figure}
 
-Nastawy regulatora PID dostrojono metod¹ eksperymentaln¹.
+Dla nastaw obliczonych na podstawie tabeli {\ref{t_ZN}} podczas regulacji wystêpowa³y oscylacje (Rys. \ref{rys_PID}). Mimo to dzia³a³ on szybciej ni¿ regulator PI (Rys. \ref{rys_PID_skoki}). WskaŸnik jakoœci regulacji zmala³ - dla niedostrojonego regulatora PID jego wartoœæ to ${E = 15.0852}$.
+Regulator dostrojono metod¹ eksperymentaln¹.
+
+
+Ostateczne nastawy regulatora mia³y wartoœci ${K=1,1}$, ${T_i=12}$ i ${T_d=4}$. WskaŸnik jakoœci regulacji potwierdza, ¿e s¹ to najbardziej optymalne nastawy-  przyj¹³ najmniejsz¹ dotychczas wartoœæ ${E = 12.6853}$. Przebiegi sygna³u steruj¹cego i wartoœci wyjœciowej przedstawiono na wykresach  {\ref{rys_dostrojonoy_PID}} i  {\ref{rys_dostrojonoy_PID_skoki}}. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_dostr.png}
 	\caption{Dostrojony regulator PID}
-	\label{rys_przebiegi_T1}
+	\label{rys_dostrojonoy_PID}
 \end{figure}
-
-Skoki dla dostrojonego regulatora PID:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png}
 	\caption{Dostrojony regulator PID - skoki}
-	\label{rys_przebiegi_T1}
+	\label{rys_dostrojonoy_PID_skoki}
 \end{figure}
 
 

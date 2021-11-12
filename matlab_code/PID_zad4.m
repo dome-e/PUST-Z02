@@ -32,29 +32,18 @@ yzad = Yzad - Ypp;
 y(1:imax) = 0;
 e(1:imax) = 0;
 
-% nastawy do PID 
+% Nastawy 
 
-%     DOBIERAMY NASTAWY ZACZYNAJĄC OD P, POTEM PI I NA KOŃCU PID !!!!!
+% K = 2.02; Ti = inf; Td = 0; % Wzmocnienie krytyczne
 
-
-K = 2.02; Ti = inf; Td = 0; % Wzmocnienie krytyczne
 Tkr = 138 - 86;
 Kkr = 2.02;
-
-% K = 0.5 * 2.02; Ti = inf; Td = 0; %  Regulator P
 
 % K = 0.45 * Kkr;  Ti = Tkr/1.2; Td = 0; % Regulator PI
 
 % K = 0.6 * Kkr; Ti = 0.5 * Tkr; Td = 0.125 * Tkr; % Regulator PID
 
-% w sprawku trzeba napisać jakie powychodziły nastawy dla danego
-% regulatora, i jakie były na końcu w PID i jak zostały dostrojone do tych
-% ostatnich
-
-% K = 1.1; Ti = 12; Td = 4; % Dostrojony PID metodą eksperymentalną
-
-% TO-DO % dorobić jeszcze WSKAŹNIK JAKOŚCI REGULACJI, tak jak napisane w
-% treści zadania projektowego
+K = 1.1; Ti = 12; Td = 4; % Dostrojony PID metodą eksperymentalną
 
 
 r0 = K*(1 + Tp/(2*Ti) + Td/Tp);
@@ -89,6 +78,8 @@ for k=12:imax
     U(k) = u(k) + Upp; % u=U-Upp
 
 end
+
+E = (norm(e))^2 %Wskaznik jakosci regulacji
 
 subplot(2,1,1);
 stairs(U);
