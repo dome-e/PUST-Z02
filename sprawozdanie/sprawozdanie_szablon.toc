@@ -3,8 +3,9 @@
 \contentsline {section}{\numberline {2.1\relax .\enspace }Sprawdzenie poprawno\'sci warto\'sci punktu pracy}{3}{}%
 \contentsline {section}{\numberline {2.2\relax .\enspace }Odpowiedzi skokowe procesu}{3}{}%
 \contentsline {section}{\numberline {2.3\relax .\enspace }Odpowied\'z skokowa w algorytmie DMC}{4}{}%
-\contentsline {section}{\numberline {2.4\relax .\enspace }Algorytm PID}{4}{}%
-\contentsline {chapter}{\numberline {3\relax .\enspace }\'Cwiczenie laboratoryjne}{10}{}%
-\contentsline {section}{\numberline {3.1\relax .\enspace }Przygotowanie do wykonania \'cwiczenia}{10}{}%
-\contentsline {section}{\numberline {3.2\relax .\enspace }Wyznaczenie odpowiedzi skokowych procesu}{10}{}%
-\contentsline {section}{\numberline {3.3\relax .\enspace }Algorytm DMC}{11}{}%
+\contentsline {section}{\numberline {2.4\relax .\enspace }Algorytm PID}{5}{}%
+\contentsline {section}{\numberline {2.5\relax .\enspace }Algorytm DMC}{11}{}%
+\contentsline {chapter}{\numberline {3\relax .\enspace }\'Cwiczenie laboratoryjne}{13}{}%
+\contentsline {section}{\numberline {3.1\relax .\enspace }Przygotowanie do wykonania \'cwiczenia}{13}{}%
+\contentsline {section}{\numberline {3.2\relax .\enspace }Wyznaczenie odpowiedzi skokowych procesu}{13}{}%
+\contentsline {section}{\numberline {3.3\relax .\enspace }Algorytm DMC}{14}{}%

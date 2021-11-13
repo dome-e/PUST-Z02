@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.30)  12 NOV 2021 20:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.2)  13 NOV 2021 18:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1028,112 +1028,145 @@ File: png/pro_zad22.png Graphic file (type png)
 <use png/pro_zad22.png>
 Package pdftex.def Info: png/pro_zad22.png  used on input line 33.
 (pdftex.def)             Requested size: 347.49054pt x 129.78136pt.
-<png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png, id=26, 1124.2pt x 843.15pt>
+<png/pro_zad31.png, id=26, 477.4638pt x 177.3024pt>
+File: png/pro_zad31.png Graphic file (type png)
+<use png/pro_zad31.png>
+Package pdftex.def Info: png/pro_zad31.png  used on input line 53.
+(pdftex.def)             Requested size: 348.54567pt x 129.42966pt.
+<png/pro_zad322.png, id=27, 467.8278pt x 172.9662pt>
+File: png/pro_zad322.png Graphic file (type png)
+<use png/pro_zad322.png>
+Package pdftex.def Info: png/pro_zad322.png  used on input line 62.
+(pdftex.def)             Requested size: 341.51146pt x 126.26427pt.
+ [4 <./png/pro_zad21.png (PNG copy)> <./png/pro_zad22.png (PNG copy)> <./png/pr
+o_zad31.png (PNG copy)>]
+<png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png, id=34, 1124.2pt x 843.15pt>
 File: png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png  used on
- input line 72.
-(pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
- [4 <./png/pro_zad21.png (PNG copy)> <./png/pro_zad22.png (PNG copy)>]
-Overfull \hbox (7.56721pt too wide) in paragraph at lines 80--82
-[]\OT4/cmr/m/n/10.95 Nast¦pnie ob-li-czo-ne zo-sta-ªy na-sta-wy dla re-gu-la-to
--ra PI - zgod-nie z ta-be-l¡ 2.1[]. Za-tem $[]$,
- []
-
-<png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png, id=33, 1124.2pt x 843.15pt>
-File: png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png Graphic file (type png)
-<use png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png>
-Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png  used on inp
-ut line 85.
+ input line 95.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png (PNG copy)>]
-<png/pro_zad4_5_PID/pro1_PID_PI_skoki.png, id=37, 1124.2pt x 843.15pt>
+ [5 <./png/pro_zad322.png (PNG copy)>]
+Overfull \hbox (7.56721pt too wide) in paragraph at lines 103--105
+[]\OT4/cmr/m/n/10.95 Nast¦pnie ob-li-czo-ne zo-sta-ªy na-sta-wy dla re-gu-la-to
+-ra PI - zgod-nie z ta-be-l¡ 2.1[]. Za-tem $[]$,
+ []
+
+<png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png, id=39, 1124.2pt x 843.15pt>
+File: png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png Graphic file (type png)
+<use png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png>
+Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png  used on inp
+ut line 108.
+(pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png (PNG copy)>]
+<png/pro_zad4_5_PID/pro1_PID_PI_skoki.png, id=44, 1124.2pt x 843.15pt>
 File: png/pro_zad4_5_PID/pro1_PID_PI_skoki.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_PI_skoki.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PI_skoki.png  used on inpu
-t line 95.
+t line 118.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
- [6 <./png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png (PNG copy)> <./png/pro_zad4_5_
+ [7 <./png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png (PNG copy)> <./png/pro_zad4_5_
 PID/pro1_PID_PI_skoki.png (PNG copy)>]
-<png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png, id=42, 1124.2pt x 843.15p
+<png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png, id=48, 1124.2pt x 843.15p
 t>
 File: png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png Graphic file (type pn
 g)
 <use png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png  u
-sed on input line 107.
+sed on input line 130.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
-<png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png, id=43, 1124.2pt x 843.15pt
+<png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png, id=49, 1124.2pt x 843.15pt
 >
 File: png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png Graphic file (type png
 )
 <use png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png  us
-ed on input line 114.
+ed on input line 137.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png (PNG copy)>]
-<png/pro_zad4_5_PID/pro1_PID_PID_dostr.png, id=47, 1124.2pt x 843.15pt>
+ [8 <./png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png (PNG copy)>]
+<png/pro_zad4_5_PID/pro1_PID_PID_dostr.png, id=53, 1124.2pt x 843.15pt>
 File: png/pro_zad4_5_PID/pro1_PID_PID_dostr.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_PID_dostr.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PID_dostr.png  used on inp
-ut line 127.
+ut line 150.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png (PNG copy)>]
-<png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png, id=51, 1124.2pt x 843.15pt>
+ [9 <./png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png (PNG copy)>]
+<png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png, id=57, 1124.2pt x 843.15pt>
 File: png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png Graphic file (type png)
 <use png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png>
 Package pdftex.def Info: png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png  used 
-on input line 134.
+on input line 157.
 (pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
-)
-(./laboratorium.tex [9 <./png/pro_zad4_5_PID/pro1_PID_PID_dostr.png (PNG copy)>
- <./png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png (PNG copy)>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./png/pro_zad4_5_PID/pro1_PID_PID_dostr.png (PNG copy)> <./png/pro_zad4_5
+_PID/pro1_PID_PID_dostr_skoki.png (PNG copy)>]
+<png/pro_zad51.png, id=61, 1124.2pt x 843.15pt>
+File: png/pro_zad51.png Graphic file (type png)
+<use png/pro_zad51.png>
+Package pdftex.def Info: png/pro_zad51.png  used on input line 177.
+(pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
+<png/pro_zad52.png, id=62, 1124.2pt x 843.15pt>
+File: png/pro_zad52.png Graphic file (type png)
+<use png/pro_zad52.png>
+Package pdftex.def Info: png/pro_zad52.png  used on input line 193.
+(pdftex.def)             Requested size: 393.47589pt x 295.10692pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <./png/pro_zad51.png (PNG copy)>]) (./laboratorium.tex [12 <./png/pro_zad5
+2.png (PNG copy)>]
 Rozdzia\PlPrIeC {\l } 3.
-[10
+[13
 
 ]
-<png/lab1_zad2.png, id=60, 989.6975pt x 817.0525pt>
+<png/lab1_zad2.png, id=75, 989.6975pt x 817.0525pt>
 File: png/lab1_zad2.png Graphic file (type png)
 <use png/lab1_zad2.png>
 Package pdftex.def Info: png/lab1_zad2.png  used on input line 33.
 (pdftex.def)             Requested size: 346.3993pt x 285.97266pt.
-) [11 <./png/lab1_zad2.png>] (./sprawozdanie_szablon.aux) ) 
+) [14 <./png/lab1_zad2.png>] (./sprawozdanie_szablon.aux) ) 
 Here is how much of TeX's memory you used:
- 29912 strings out of 478994
- 748419 string characters out of 5858183
- 1089368 words of memory out of 5000000
- 46847 multiletter control sequences out of 15000+600000
+ 29940 strings out of 478994
+ 748938 string characters out of 5858184
+ 1088416 words of memory out of 5000000
+ 46871 multiletter control sequences out of 15000+600000
  424274 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,12n,89p,752b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/
 2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2
 021/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/local/texlive/2021/texmf-dist/
-fonts/enc/dvips/pl/plms.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips
-/pl/plmi.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/
-usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr/local/texli
+fonts/enc/dvips/pl/plmi.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips
+/pl/plms.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/
+usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plit.enc}</usr/local/texli
 ve/2021/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/local/texlive/2021/te
 xmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/local/texlive/2021/texmf-dist/f
 onts/type1/public/pl/plmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
 /public/pl/plmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/
 plmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr10.pfb><
-/usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/local
-/texlive/2021/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/texlive/2
-021/texmf-dist/fonts/type1/public/pl/pltt10.pfb></usr/local/texlive/2021/texmf-
-dist/fonts/type1/public/cm-super/sfbx1095.pfb>
-Output written on sprawozdanie_szablon.pdf (12 pages, 364739 bytes).
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/local/t
+exlive/2021/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/local/texlive/202
+1/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/texlive/2021/texmf-di
+st/fonts/type1/public/pl/pltt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
+ype1/public/cm-super/sfbx1095.pfb>
+Output written on sprawozdanie_szablon.pdf (15 pages, 458605 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 123 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

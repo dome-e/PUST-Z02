@@ -1,41 +1,42 @@
-clear;
 Upp = 0.9;
 Ypp = 3;
 Umin = 0.6;
 Umax = 1.2;
 Tp = 0.5;
 imax = 250;
-Us = 1.05;
+Us = 1.2;
 T = 1:imax;
 Y = zeros(1, imax);
-Y(1:12) = Ypp; %Od razu wprowadzenie PP. Bez tego punktu poakzujemy stabilizacjê z Y(0)=0 do Y=Ypp
-U(15:imax)=Us; %zmiana sygna³u z PP
-U(1:15)=Upp;
+Y(1:11) = Ypp;
+U(12:imax) = Us;
+U(1:11) = Upp;
 
-%Opowiedzi skokowe dla DMC
 for k=12:imax
     Y(k)=symulacja_obiektu2Y_p1(U(k-10),U(k-11),Y(k-1),Y(k-2));
 end
 
-%Rysowanie wykresu odpowiedzi skokowej  
 % subplot(2,1,1);
-% stairs(U);
+% stairs(0:length(U)-1,U);
 % xlabel('k');
 % ylabel('U');
-% title('Sterowanie')
 % subplot(2,1,2);
-% stairs(Y);
+% stairs(0:length(Y)-1, Y);
 % xlabel('k');
 % ylabel('Y');
-% title('Odpowiedz skokowa')
 
-%Wyznaczenie zestawu liczb odpowiedzi skokowej dla DMC
-%Dla 25 kroku nastêpowa³a pierwsza zmiana wartoœci, a ostatnia dla 131
-%(dok³adnoœæ 0,001), D= 106
-s=zeros(1,imax-25);
-for k=1:imax-25
-    s(k)=(Y(k+25)-Ypp)/0.15;
+d1 = 21;
+d2 = 135;
+D = 135 - 21;
+dU = 1.2 - Upp;
+
+s = zeros(1,imax-d1);
+for k = 1:imax-d1
+    s(k)=(Y(k+d1)-Ypp)/dU;
 end
-stairs(s);
-xlabel('k');
-ylabel('s');
+
+% figure()
+% subplot(2,1,1);
+% stairs(0:length(s)-1, s);
+% axis([0 imax-d1 0 1.8]);
+% xlabel('k');
+% ylabel('s');

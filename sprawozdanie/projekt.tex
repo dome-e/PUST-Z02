@@ -42,6 +42,29 @@ K_{stat}=1.6966
 
 
 \section{OdpowiedŸ skokowa w algorytmie DMC}
+
+W celu wyznaczenia liczb $s_1, s_2, s_3...$ wykorzystana zosta³a odpowiedŸ skokowa dla pobudzenia $U = 1.2$. Jej przekszta³cenie przebieg³o zgodnie ze wzorem:
+\begin{align*}
+	S_i = \frac{S_i^0  - Y_{pp}}{\Delta U}, i = 1, 2, 3,  ...
+\end{align*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.73]{png/pro_zad31.png}
+	\caption{OdpowiedŸ skokowa przed przekszta³ceniem}
+	\label{rys_zad31}
+\end{figure}
+
+Pierwsza zmiana widoczna jest dla k = 21, natomiast ostatnia dla k = 135 (dok³adnoœæ 0.001), co daje parametr D = 114.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.73]{png/pro_zad322.png}
+	\caption{OdpowiedŸ skokowa po przekszta³ceniu}
+	\label{rys_zad322}
+\end{figure}
+
+
 \section{Algorytm PID}
 
 Do wyznaczenia nastaw regulatora PID wykorzystano metodê Zieglera-Nicholsa. Rozpoczêto od doboru cz³onu proporcjonalnego - cz³ony ca³kuj¹cy ustawiono na Ti = inf, a ró¿niczkuj¹cy Td = 0. Stopniowo zwiêkszano wzmocnienie K, aby znaleŸæ tak¹ jego wartoœæ, która wywo³a niegasn¹ce oscylacje. 
@@ -137,3 +160,39 @@ Ostateczne nastawy regulatora mia³y wartoœci ${K=1,1}$, ${T_i=12}$ i ${T_d=4}$. 
 \end{figure}
 
 
+\section{Algorytm DMC}
+
+Implementacja algorytmu DMC znajduje siê w pliku pro\_dmc.m.
+
+Parametry dobrane eksperymentalnie wynosz¹ $\lambda = 10, N = 40, Nu = 1$.
+
+Przy doborze brana by³a pod uwagê wartoœæ wskaŸnika jakoœci regulacji E oraz przeregulowanie i opóŸnienie widoczne na rysunkach.
+
+\begin{align*}
+	E = 21.007
+\end{align*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{png/pro_zad51.png}
+	\caption{Regulator DMC - parametry dopasowane eksperymentalnie}
+	\label{pro_zad51}
+\end{figure}
+
+W celu zwiêkszenia jakoœci regulacji zosta³a wykorzystana optymalizacja parametrów regulatora. 
+Implementacja znajduje siê w pliku pro\_dmc\_opt.m.
+
+Wykorzystany zosta³ algorytm genetyczny z pakietu Global Optimization Toolbox. Parametry zosta³y dobrane zgodnie z ograniczeniami regulatora DMC. Zwiêkszenie rozmiaru populacji ponad P = 20 nie spowodowa³o zmiany wyniku na lepszy, a jedynie zwiêkszy³o nak³ad obliczeniowy.
+
+\begin{align*}
+	E = 20.889
+\end{align*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.35]{png/pro_zad52.png}
+	\caption{Regulator DMC - parametry optymalizowane}
+	\label{pro_zad52}
+\end{figure}
+
+Wynik optymalizacji dla algorytmu DMC jest nieznacznie lepszy od wersji z parametrami wyznaczonymi eksperymentalnie. Wartoœæ wskaŸnika jakoœci regulacji zmniejszy³a siê o mniej ni¿ 1\%.
