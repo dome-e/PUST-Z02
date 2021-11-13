@@ -29,17 +29,42 @@ Temperatura T1 ustabilizowa³a siê na wartoœci \textbf{32.25\degree C}
 Zarejestrowano przebieg temperatury T1 dla trzech ró¿nych zmian sygna³u steruj¹cego G1 rozpoczynaj¹c z~punktu pracy (27\%) do 10\%, 35\% i~50\%.
 Otrzymane przebiegi zmian przedstawiono na Rys. \ref{rys_przebiegi_T1}. 
 
-\textcolor{red}{
-	Czy w³aœciwoœci statyczne obiektu mo¿na okreœliæ jako (w przybli¿eniu) liniowe? Jeœli tak wyznaczyæ wzmocnienie statyczne procesu?
-}
 
-\newpage
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{png/lab1_zad2.png}
+	\includegraphics[scale=0.75]{png/lab_zad2.png}
 	\caption{Odpowiedzi skokowe procesu}
 	\label{rys_przebiegi_T1}
 \end{figure}
+
+Na podstawie charakterystyki Y(U) mo¿na stwierdziæ, ¿e w³aœciwoœci statyczne obiektu s¹ w przybli¿eniu liniowe.
+
+\begin{align*}
+	K_{stat}= 0.3267
+\end{align*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{png/lab_zad22.png}
+	\caption{Charakterystyka statyczna}
+	\label{lab_zad22}
+\end{figure}
+
+
+\section{Przekszta³cenie odpowiedzi skokowej}
+
+Przekszta³cenie odpowiedzi skokowej umieszczone jest w pliku lab\_zad3.m.
+Wykorzystana metoda jest analogiczna do zadania projektowego.
+Wybrana zosta³a charakterystyka dla skoku z punktu pracy do 50\%.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{png/lab_zad3.png}
+	\caption{OdpowiedŸ skokowa po przekszta³ceniu}
+	\label{lab_zad3}
+\end{figure}
+
 
 \section{Algorytm PID}
 
@@ -87,7 +112,8 @@ Mimo tej zmiany, odpowiedŸ procesu nadal ros³a zbyt wolno. Po ponownej analizie 
 	\label{rys_lab_PID_k20_3}
 \end{figure}
 
-Widoczne s¹ regularne oscylacje, jednak s¹ one oscylacjami gasn¹cymi. Wartoœæ wzmocnienia zosta³a wiêc zwiêkszona do ${K = 24}$. Jak widaæ na wykresie Rys. {\ref{rys_lab_PID_k24}} oscylacje nie gasn¹. Zauwa¿alny jest  nawet lekki wzrost amplitudy oscylacji. Przewidujemy, ¿e niegasn¹ce oscylacje wyst¹pi³yby przy wartoœci wzmocnienia ${K_{kr}=23}$, jednak przez problemy wystêpuj¹ce na pocz¹tku realizacji zadania nie zosta³o to sprawdzone.Z tego powodu nie dobrano równie¿ pozosta³ych parametrów regulatora PID dla zmiennego sygna³u zadanego. 
+Widoczne s¹ regularne oscylacje, jednak s¹ one oscylacjami gasn¹cymi. Wartoœæ wzmocnienia zosta³a wiêc zwiêkszona do ${K = 24}$. Jak widaæ na wykresie Rys. {\ref{rys_lab_PID_k24}} oscylacje nie gasn¹. Zauwa¿alny jest  nawet lekki wzrost amplitudy oscylacji. Przewidujemy, ¿e niegasn¹ce oscylacje wyst¹pi³yby przy wartoœci wzmocnienia ${K_{kr}=23}$, jednak przez problemy wystêpuj¹ce na pocz¹tku realizacji zadania nie zosta³o to sprawdzone.
+Z tego powodu nie dobrano równie¿ pozosta³ych parametrów regulatora PID dla zmiennego sygna³u zadanego. 
 Jeœli zespó³ mia³by wiêcej czasu, nastêpnym krokiem by³oby ustawienie nastaw regulatora wg. regu³ Zieglera-Nicholsa (Rys. {\ref{t_ZN}}). Zatem po wyznaczeniu wzmocnienia krytycznego ${K_{kr}}$, z przebiegu wartoœci sterowania odczytany zosta³by okres krytyczny ${T_{kr}}$, a wstêpne nastawy regulatora PID wynosi³yby: ${K=0.6K_{kr}}$, ${T_i= 0.5T_{kr}}$ i ${T_d=0.125K_{kr}}$. Je¿eli by³oby to konieczne, regulator zosta³by dostrojony metod¹ eksperymentaln¹.
 
 
@@ -97,10 +123,5 @@ Jeœli zespó³ mia³by wiêcej czasu, nastêpnym krokiem by³oby ustawienie nastaw reg
 	\caption{Przebiegi dla ${K=24}$}
 	\label{rys_lab_PID_k24}
 \end{figure}
-
-
-
-\section{Algorytm DMC}
-
 
 

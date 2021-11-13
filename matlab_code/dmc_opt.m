@@ -1,10 +1,36 @@
-odp_skokowa_DMC;
+function E = dmc_opt(P)
+
+% odpowiedzi skokowe, wyzn. s
+
+Upp = 0.9;
+Ypp = 3;
+imax = 250;
+Us = 1.2;
+Y = zeros(1, imax);
+Y(1:11) = Ypp;
+U(12:imax) = Us;
+U(1:11) = Upp;
+
+for k=12:imax
+    Y(k)=symulacja_obiektu2Y_p1(U(k-10),U(k-11),Y(k-1),Y(k-2));
+end
+
+d1 = 21;
+d2 = 135;
+D = 135 - 21;
+dU = 1.2 - Upp;
+
+s = zeros(1,imax-d1);
+for k = 1:imax-d1
+    s(k)=(Y(k+d1)-Ypp)/dU;
+end
+
+% DMC
 
 imax = 1500;
 % param
-% N = 40; Nu = 1; lambda = 10;
-% param opt
-N = 32; Nu = 1; lambda = 0.01;
+N = P(1); Nu = P(2);
+lambda = P(3);
 % pp
 Upp = 0.9; Ypp = 3;
 % ogr
@@ -93,16 +119,5 @@ end
 
 E = (norm(e))^2;
 
-subplot(2,1,1)
-stairs(U);
-xlabel("k");
-ylabel("U");
-subplot(2,1,2)
-stairs(Yzad);
-hold on
-stairs(Y);
-xlabel("k");
-ylabel("Y");
-legend("Yzad", "Y")
-hold off
+end
 
