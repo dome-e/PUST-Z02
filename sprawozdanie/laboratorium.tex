@@ -44,8 +44,6 @@ Napisano  program do regulacji cyfrowego algorytmu PID. Dobór nastaw regulatora 
 Testowano odpowiedŸ uk³adu przy ró¿nych wartoœciach wzmocnienia K. 
 Pocz¹tkowo ustawiono zbyt du¿¹ wartoœæ ${Y_{zad} = 50}$, co uniemo¿liwi³o analizê przebiegu wyjœcia uk³adu – wartoœæ wzrasta³a powoli, przez co pomiar zajmowa³ za du¿o czasu. Problem ten widoczny jest na wykresach Rys. {\ref{rys_lab_PID_k18}} i Rys.  {\ref{rys_lab_PID_k20_1}} . Pomiar z Rys. {\ref{rys_lab_PID_k18}} zosta³ przerwany po zauwa¿eniu nieprzewidywanego zachowania.
 
-%18:  zad5_lab1_pid_k18
-%- niedokoñczone bo by³ chyba Yzad za du¿y + Umax z³y (??)
 
 \begin{figure}[H]
 	\centering
@@ -54,12 +52,10 @@ Pocz¹tkowo ustawiono zbyt du¿¹ wartoœæ ${Y_{zad} = 50}$, co uniemo¿liwi³o analiz
 	\label{rys_lab_PID_k18}
 \end{figure}
 
-%20_1:   pid_proba1_k20
-%- by³ chyba Yzad za du¿y + Umax z³y (??)
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.22]{png/lab2/pid_proba1_k20.png}
+	\includegraphics[scale=0.22]{png/lab2/zad5_lab1_pid_k20_v1.png}
 	\caption{Przebiegi dla ${K = 20}$ i ${Y_{zad} = 50}$}
 	\label{rys_lab_PID_k20_1}
 \end{figure}
@@ -67,24 +63,20 @@ Pocz¹tkowo ustawiono zbyt du¿¹ wartoœæ ${Y_{zad} = 50}$, co uniemo¿liwi³o analiz
 
 Po zaobserwowaniu powy¿szego problemu i jego analizie zmieniono wartoœæ sygna³u zadanego na ${Y_{zad} = 33}$. Wyniki widoczne s¹ na wykresie Rys.  {\ref{rys_lab_PID_k20_2}}.
 
-%20_2:   zad5_lab1_pid_k20_yzad33_a_nie_50
-%- ju¿ Yzad dobre ale nadal Umax z³y (??) wiêc za wolno ros³o
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.22]{png/lab2/zad5_lab1_pid_k20_yzad33_a_nie_50.png}
+	\includegraphics[scale=0.22]{png/lab2/zad5_lab1_pid_k20_v2.png}
 	\caption{Przebiegi dla ${K = 20}$ i ${Y_{zad} = 33}$}
 	\label{rys_lab_PID_k20_2}
 \end{figure}
 
 Mimo tej zmiany, odpowiedŸ procesu nadal ros³a zbyt wolno. Po ponownej analizie algorytmu wywnioskowano, ¿e do niskiej prêdkoœci wzrastania przyczyni³ siê równie¿ niew³aœciwie dobrany parametr ${\Delta U_{max}=2}$ – ogranicza³ on bowiem szybkoœæ zmian sygna³u steruj¹cego. Po zmianie tej wartoœci na ${\Delta U_{max} = 20}$, uk³ad dzia³a³ zgodnie z za³o¿eniami (Rys. {\ref{rys_lab_PID_k20_3}}). 
 
-%20_3:   zad5_lab1_pid_k20_yzad33_a_nie_50_lepsze_bo_inne_deltaUmax
-%- ju¿ ok, ale nadal gasn¹ oscylacje
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.22]{png/lab2/zad5_lab1_pid_k20_yzad33_a_nie_50_lepsze_bo_inne_deltaUmax.png}
+	\includegraphics[scale=0.22]{png/lab2/zad5_lab1_pid_k20_v3.png}
 	\caption{Przebiegi dla ${K = 20}$, ${Y_{zad} = 33}$ i zmienion¹ wartoœci¹ ${\Delta U_{max}}$}
 	\label{rys_lab_PID_k20_3}
 \end{figure}
@@ -92,14 +84,11 @@ Mimo tej zmiany, odpowiedŸ procesu nadal ros³a zbyt wolno. Po ponownej analizie 
 Widoczne s¹ regularne oscylacje, jednak s¹ one oscylacjami gasn¹cymi. Wartoœæ wzmocnienia zosta³a wiêc zwiêkszona do ${K = 24}$. Jak widaæ na wykresie Rys. {\ref{rys_lab_PID_k24}} oscylacje nie gasn¹. Zauwa¿alny jest  nawet lekki wzrost amplitudy oscylacji. Przewidujemy, ¿e niegasn¹ce oscylacje wyst¹pi³yby przy wartoœci wzmocnienia ${K_{kr}=23}$, jednak przez problemy wystêpuj¹ce na pocz¹tku realizacji zadania nie zosta³o to sprawdzone.Z tego powodu nie dobrano równie¿ pozosta³ych parametrów regulatora PID dla zmiennego sygna³u zadanego. 
 Jeœli zespó³ mia³by wiêcej czasu, nastêpnym krokiem by³oby ustawienie nastaw regulatora wg. regu³ Zieglera-Nicholsa (Rys. {\ref{t_ZN}}). Zatem po wyznaczeniu wzmocnienia krytycznego ${K_{kr}}$, z przebiegu wartoœci sterowania odczytany zosta³by okres krytyczny ${T_{kr}}$, a wstêpne nastawy regulatora PID wynosi³yby: ${K=0.6K_{kr}}$, ${T_i= 0.5T_{kr}}$ i ${T_d=0.125K_{kr}}$. Je¿eli by³oby to konieczne, regulator zosta³by dostrojony metod¹ eksperymentaln¹.
 
-%24
-%zad5_lab1_pid_k24_yzad33_a_nie_50_lepsze_bo_inne_deltaUmax_to_20
-%- niegasn¹ce oscylacje
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.22]{png/lab2/zad5_lab1_pid_k24_yzad33_a_nie_50_lepsze_bo_inne_deltaUmax_to_20.png}
-	\caption{Przebiegi dla K=24}
+	\includegraphics[scale=0.22]{png/lab2/zad5_lab1_pid_k24.png}
+	\caption{Przebiegi dla ${K=24}$}
 	\label{rys_lab_PID_k24}
 \end{figure}
 
