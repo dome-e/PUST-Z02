@@ -15,7 +15,7 @@ Symulowane wartoœci s¹ sta³e oraz zgodne z punktem pracy ($U_{pp}$, $V_{pp}$).
 
 \section{Odpowiedzi skokowe procesu}
 
-Obiekt zosta³ pobudzony 4 ró¿nymi sygna³ami mieszcz¹cymi siê w zakresie [$U_{min}$, $U_{max}$]. 
+Obiekt zosta³ pobudzony czterema ró¿nymi sygna³ami mieszcz¹cymi siê w zakresie [$U_{min}$, $U_{max}$]. 
 Zmiana sygna³u z $U_{pp}$ nast¹pi³a w chwili k = 11. 
 
 \begin{figure}[H]
@@ -25,7 +25,7 @@ Zmiana sygna³u z $U_{pp}$ nast¹pi³a w chwili k = 11.
 	\label{rys_zad21}
 \end{figure}
 
-Na Rys. 2.3. naniesione zosta³y punkty (U, Y) dla ka¿dego symulowanego pobudzenia.
+Na Rys. \ref{rys_zad22} naniesione zosta³y punkty (U, Y) dla ka¿dego symulowanego pobudzenia.
 Dopasowana prosta potwierdza w³aœciwoœci liniowe charakterystyki statycznej.
 
 \begin{figure}[H]
@@ -35,22 +35,24 @@ Dopasowana prosta potwierdza w³aœciwoœci liniowe charakterystyki statycznej.
 	\label{rys_zad22}
 \end{figure}
 
-Wzmocnienie statyczne wyznaczone jest jako wspó³czynnik kierunkowy charaktetystyki 2.3.
+Wzmocnienie statyczne wyznaczone jest jako wspó³czynnik kierunkowy charaktetystyki z Rys. \ref{rys_zad22}:
 \begin{align*}
-K_{stat}=1.6966
+K_{stat}=1,6966
 \end{align*}
 
 
 \section{OdpowiedŸ skokowa w algorytmie DMC}
 
-W celu wyznaczenia liczb $s_1, s_2, s_3...$ wykorzystana zosta³a odpowiedŸ skokowa dla pobudzenia $U = 1.2$. Jej przekszta³cenie przebieg³o zgodnie ze wzorem:
-\begin{align*}
+W celu wyznaczenia liczb $s_1, s_2, s_3...$ wykorzystana zosta³a odpowiedŸ skokowa dla pobudzenia $U = 1.2$. Jej przekszta³cenie przebieg³o zgodnie ze wzorem \ref{w_Si}.
+
+\begin{equation}
 	S_i = \frac{S_i^0  - Y_{pp}}{\Delta U}, i = 1, 2, 3,  ...
-\end{align*}
+	\label{w_Si}
+\end{equation}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.73]{png/pro_zad31.png}
+	\includegraphics[scale=0.69]{png/pro_zad31.png}
 	\caption{OdpowiedŸ skokowa przed przekszta³ceniem}
 	\label{rys_zad31}
 \end{figure}
@@ -59,7 +61,7 @@ Pierwsza zmiana widoczna jest dla k = 21, natomiast ostatnia dla k = 135 (dok³ad
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.73]{png/pro_zad322.png}
+	\includegraphics[scale=0.69]{png/pro_zad322.png}
 	\caption{OdpowiedŸ skokowa po przekszta³ceniu}
 	\label{rys_zad322}
 \end{figure}
@@ -68,10 +70,12 @@ Pierwsza zmiana widoczna jest dla k = 21, natomiast ostatnia dla k = 135 (dok³ad
 
 \section{Algorytm PID}
 
+Program do symulacji cyfrowego algorytmu PID znajduje siê w pliku PID\_zad4.m
+
 Do wyznaczenia nastaw regulatora PID wykorzystano metodê Zieglera-Nicholsa. Rozpoczêto od doboru cz³onu proporcjonalnego - cz³ony ca³kuj¹cy ustawiono na Ti = inf, a ró¿niczkuj¹cy Td = 0. Stopniowo zwiêkszano wzmocnienie K, aby znaleŸæ tak¹ jego wartoœæ, która wywo³a niegasn¹ce oscylacje. 
 
-\begin{table}
-	[b] \caption{Regu³y Zieglera-Nicholsa (Z-N) wg cech przebiegu krytycznego (1942 r.)}
+\begin{table}[H]
+	\caption{Regu³y Zieglera-Nicholsa (Z-N) wg cech przebiegu krytycznego (1942 r.)}
 	\label{t_ZN}
 	\centering
 	\sisetup{table-auto-round=true}
@@ -93,7 +97,7 @@ Do wyznaczenia nastaw regulatora PID wykorzystano metodê Zieglera-Nicholsa. Rozp
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png}
+	\includegraphics[scale=0.31]{png/pro_zad4_5_PID/pro1_PID_K_kryt_zoomed.png}
 	\caption{Wyznaczenie K krytycznego}
 	\label{rys_K_kr}
 \end{figure}
@@ -106,17 +110,17 @@ Zatem ${K=0,909}$, ${T_i=43,(3)}$ i ${T_d=0}$.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png}
+	\includegraphics[scale=0.31]{png/pro_zad4_5_PID/pro1_PID_PI_zoomed.png}
 	\caption{Regulator PI}
 	\label{rys_PI}
 \end{figure}
 
 Regulator PI jest stabilny, ale dzia³a zdecydowanie za wolno (Rys. {\ref{rys_PI}}) - osi¹ga zadan¹ wartoœæ dopiero dla ${k = 600
-}$. WskaŸnik jakoœci regulacji przyj¹³ wartoœæ ${E = 16.1925}$ .
+}$. WskaŸnik jakoœci regulacji przyj¹³ wartoœæ ${E = 16,1925}$ .
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PI_skoki.png}
+	\includegraphics[scale=0.31]{png/pro_zad4_5_PID/pro1_PID_PI_skoki.png}
 	\caption{Regulator PI - skoki}
 	\label{rys_PI_skoki}
 \end{figure}
@@ -128,34 +132,34 @@ Nastêpnie wyznaczono nastawy dla regulatora PID, ponownie wg. tabeli \ref{t_ZN}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png}
+	\includegraphics[scale=0.33]{png/pro_zad4_5_PID/pro1_PID_PID_niedostr_zoomed.png}
 	\caption{Niedostrojony regulator PID}
 	\label{rys_PID}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png}
+	\includegraphics[scale=0.33]{png/pro_zad4_5_PID/pro1_PID_PID_niedostr_skoki.png}
 	\caption{Niedostrojony regulator PID - skoki}
 	\label{rys_PID_skoki}
 \end{figure}
 
-Dla nastaw obliczonych na podstawie tabeli {\ref{t_ZN}} podczas regulacji wystêpowa³y oscylacje (Rys. \ref{rys_PID}). Mimo to dzia³a³ on szybciej ni¿ regulator PI (Rys. \ref{rys_PID_skoki}). WskaŸnik jakoœci regulacji zmala³ - dla niedostrojonego regulatora PID jego wartoœæ to ${E = 15.0852}$.
+Dla nastaw obliczonych na podstawie tabeli {\ref{t_ZN}} podczas regulacji wystêpowa³y oscylacje (Rys. \ref{rys_PID}). Mimo to dzia³a³ on szybciej ni¿ regulator PI (Rys. \ref{rys_PID_skoki}). WskaŸnik jakoœci regulacji zmala³ - dla niedostrojonego regulatora PID jego wartoœæ to ${E = 15,0852}$.
 Regulator dostrojono metod¹ eksperymentaln¹.
 
 
-Ostateczne nastawy regulatora mia³y wartoœci ${K=1,1}$, ${T_i=12}$ i ${T_d=4}$. WskaŸnik jakoœci regulacji potwierdza, ¿e s¹ to najbardziej optymalne nastawy-  przyj¹³ najmniejsz¹ dotychczas wartoœæ ${E = 12.6853}$. Przebiegi sygna³u steruj¹cego i wartoœci wyjœciowej przedstawiono na wykresach  {\ref{rys_dostrojonoy_PID}} i  {\ref{rys_dostrojonoy_PID_skoki}}. 
+Ostateczne nastawy regulatora mia³y wartoœci ${K=1,1}$, ${T_i=12}$ i ${T_d=4}$. WskaŸnik jakoœci regulacji potwierdza, ¿e s¹ to najbardziej optymalne nastawy-  przyj¹³ najmniejsz¹ dotychczas wartoœæ ${E = 12,6853}$. Przebiegi sygna³u steruj¹cego i wartoœci wyjœciowej przedstawiono na wykresach  {\ref{rys_dostrojonoy_PID}} i  {\ref{rys_dostrojonoy_PID_skoki}}. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_dostr.png}
+	\includegraphics[scale=0.3]{png/pro_zad4_5_PID/pro1_PID_PID_dostr.png}
 	\caption{Dostrojony regulator PID}
 	\label{rys_dostrojonoy_PID}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.35]{png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png}
+	\includegraphics[scale=0.3]{png/pro_zad4_5_PID/pro1_PID_PID_dostr_skoki.png}
 	\caption{Dostrojony regulator PID - skoki}
 	\label{rys_dostrojonoy_PID_skoki}
 \end{figure}
@@ -170,7 +174,7 @@ Parametry dobrane eksperymentalnie wynosz¹ $\lambda = 10, N = 40, Nu = 1$.
 Przy doborze brana by³a pod uwagê wartoœæ wskaŸnika jakoœci regulacji E oraz przeregulowanie i opóŸnienie widoczne na rysunkach.
 
 \begin{align*}
-	E = 21.007
+	E = 21,007
 \end{align*}
 
 \begin{figure}[H]
@@ -186,7 +190,7 @@ Implementacja znajduje siê w pliku pro\_dmc\_opt.m.
 Wykorzystany zosta³ algorytm genetyczny z pakietu Global Optimization Toolbox. Parametry zosta³y dobrane zgodnie z ograniczeniami regulatora DMC. Zwiêkszenie rozmiaru populacji ponad P = 20 nie spowodowa³o zmiany wyniku na lepszy, a jedynie zwiêkszy³o nak³ad obliczeniowy.
 
 \begin{align*}
-	E = 20.889
+	E = 20,889
 \end{align*}
 
 \begin{figure}[H]
