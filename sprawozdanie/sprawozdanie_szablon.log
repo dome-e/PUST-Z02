@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.30)  13 NOV 2021 23:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.30)  13 NOV 2021 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1129,40 +1129,50 @@ File: png/lab_zad3.png Graphic file (type png)
 <use png/lab_zad3.png>
 Package pdftex.def Info: png/lab_zad3.png  used on input line 65.
 (pdftex.def)             Requested size: 356.65157pt x 132.6151pt.
-<png/lab2/zad5_lab1_pid_k18.png, id=68, 1804.7425pt x 1310.8975pt>
+
+Overfull \hbox (17.95465pt too wide) in paragraph at lines 70--71
+[]\OT4/cmr/m/n/10.95 Aproksymacja od-po-wie-dzi sko-ko-wej za-im-ple-men-to-wa-
+na zo-sta-ªa w pli-kach lab[]opt.m i zab3[]opt.m.
+ []
+
+[11 <./png/lab_zad22.png (PNG copy)> <./png/lab_zad3.png (PNG copy)>]
+<png/lab2/zad5_lab1_pid_k18.png, id=72, 1804.7425pt x 1310.8975pt>
 File: png/lab2/zad5_lab1_pid_k18.png Graphic file (type png)
 <use png/lab2/zad5_lab1_pid_k18.png>
-Package pdftex.def Info: png/lab2/zad5_lab1_pid_k18.png  used on input line 86.
+Package pdftex.def Info: png/lab2/zad5_lab1_pid_k18.png  used on input line 88.
 
 (pdftex.def)             Requested size: 397.04459pt x 288.39835pt.
- [11 <./png/lab_zad22.png (PNG copy)> <./png/lab_zad3.png (PNG copy)>]
 <png/lab2/zad5_lab1_pid_k20_v1.png, id=74, 1779.64874pt x 1308.89pt>
 File: png/lab2/zad5_lab1_pid_k20_v1.png Graphic file (type png)
 <use png/lab2/zad5_lab1_pid_k20_v1.png>
 Package pdftex.def Info: png/lab2/zad5_lab1_pid_k20_v1.png  used on input line 
-94.
+96.
 (pdftex.def)             Requested size: 391.52394pt x 287.9567pt.
-<png/lab2/zad5_lab1_pid_k20_v2.png, id=75, 1792.6975pt x 1310.8975pt>
-File: png/lab2/zad5_lab1_pid_k20_v2.png Graphic file (type png)
-<use png/lab2/zad5_lab1_pid_k20_v2.png>
-Package pdftex.def Info: png/lab2/zad5_lab1_pid_k20_v2.png  used on input line 
-105.
-(pdftex.def)             Requested size: 394.39467pt x 288.39835pt.
- [12 <./png/lab2/zad5_lab1_pid_k18.png> <./png/lab2/zad5_lab1_pid_k20_v1.png>]
-<png/lab2/zad5_lab1_pid_k20_v3.png, id=82, 1812.7725pt x 1310.8975pt>
-File: png/lab2/zad5_lab1_pid_k20_v3.png Graphic file (type png)
-<use png/lab2/zad5_lab1_pid_k20_v3.png>
-Package pdftex.def Info: png/lab2/zad5_lab1_pid_k20_v3.png  used on input line 
-115.
-(pdftex.def)             Requested size: 398.81119pt x 288.39835pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./png/lab2/zad5_lab1_pid_k20_v2.png>]
+ [12 <./png/lab2/zad5_lab1_pid_k18.png>]
+<png/lab2/zad5_lab1_pid_k20_v2.png, id=80, 1792.6975pt x 1310.8975pt>
+File: png/lab2/zad5_lab1_pid_k20_v2.png Graphic file (type png)
+<use png/lab2/zad5_lab1_pid_k20_v2.png>
+Package pdftex.def Info: png/lab2/zad5_lab1_pid_k20_v2.png  used on input line 
+107.
+(pdftex.def)             Requested size: 394.39467pt x 288.39835pt.
+
+Underfull \vbox (badness 7667) has occurred while \output is active []
+
+ [13 <./png/lab2/zad5_lab1_pid_k20_v1.png> <./png/lab2/zad5_lab1_pid_k20_v2.png
+>]
+<png/lab2/zad5_lab1_pid_k20_v3.png, id=86, 1812.7725pt x 1310.8975pt>
+File: png/lab2/zad5_lab1_pid_k20_v3.png Graphic file (type png)
+<use png/lab2/zad5_lab1_pid_k20_v3.png>
+Package pdftex.def Info: png/lab2/zad5_lab1_pid_k20_v3.png  used on input line 
+117.
+(pdftex.def)             Requested size: 398.81119pt x 288.39835pt.
 <png/lab2/zad5_lab1_pid_k24.png, id=87, 1783.66376pt x 1310.8975pt>
 File: png/lab2/zad5_lab1_pid_k24.png Graphic file (type png)
 <use png/lab2/zad5_lab1_pid_k24.png>
-Package pdftex.def Info: png/lab2/zad5_lab1_pid_k24.png  used on input line 127
+Package pdftex.def Info: png/lab2/zad5_lab1_pid_k24.png  used on input line 129
 .
 (pdftex.def)             Requested size: 392.40724pt x 288.39835pt.
 
@@ -1196,7 +1206,7 @@ ic/pl/plti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/pltt
 10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1095
 .pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.p
 fb>
-Output written on sprawozdanie_szablon.pdf (16 pages, 695400 bytes).
+Output written on sprawozdanie_szablon.pdf (16 pages, 695685 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream
