@@ -1,0 +1,9 @@
+\contentsline {chapter}{\numberline {1\relax .\enspace }Projekt}{2}{}%
+\contentsline {section}{\numberline {1.1\relax .\enspace }Sprawdzenie poprawno\'sci warto\'sci punktu pracy}{2}{}%
+\contentsline {section}{\numberline {1.2\relax .\enspace }Odpowiedzi skokowe procesu}{2}{}%
+\contentsline {section}{\numberline {1.3\relax .\enspace }Odpowied\'z skokowa w algorytmie DMC}{2}{}%
+\contentsline {section}{\numberline {1.4\relax .\enspace }Algorytm DMC}{2}{}%
+\contentsline {chapter}{\numberline {2\relax .\enspace }\'Cwiczenie laboratoryjne}{3}{}%
+\contentsline {section}{\numberline {2.1\relax .\enspace }Przygotowanie do wykonania \'cwiczenia}{3}{}%
+\contentsline {section}{\numberline {2.2\relax .\enspace }Wyznaczenie odpowiedzi toru zak\IeC {\l }\'ocenie-wyj\'scie}{3}{}%
+\contentsline {section}{\numberline {2.3\relax .\enspace }Przekszta\IeC {\l }cenie odpowiedzi skokowej}{4}{}%
