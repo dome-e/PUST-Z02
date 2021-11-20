@@ -14,7 +14,7 @@ Przed rozpoczêciem pomiarów sprawdzono mo¿liwoœæ sterowania i~pomiaru w~komunika
 	G1 = 25 + Z\%5\
 \label{w_G1}
 \end{equation}
-gdzie Z~to numer zespo³u, zatem dla naszego zespo³u Z02 punkt pracy wynosi:
+gdzie Z~to numer zespo³u, zatem dla naszego zespo³u (Z02) punkt pracy wynosi:
 \begin{equation}
 	G1 = 25 + 2\%5 = 27
 \end{equation}
@@ -22,7 +22,7 @@ Nastêpnie okreœlono wartoœæ pomiaru temperatury T1 dla obliczonego punktu pracy.
 \texttt{sendControls([1,5], [50,27])}.
 Wartoœæ pomiaru temperatury odczytano korzystaj¹c z~funkcji 
 \texttt{readMeasurements(1)}.
-Temperatura T1 ustabilizowa³a siê na wartoœci \textbf{32.25\degree C}
+Temperatura T1 ustabilizowa³a siê na wartoœci \textbf{32,25\degree C}
 
  
 \section{Wyznaczenie odpowiedzi skokowych procesu}
@@ -40,7 +40,7 @@ Otrzymane przebiegi zmian przedstawiono na Rys. \ref{rys_przebiegi_T1}.
 Na podstawie charakterystyki Y(U) mo¿na stwierdziæ, ¿e w³aœciwoœci statyczne obiektu s¹ w przybli¿eniu liniowe.
 
 \begin{align*}
-	K_{stat}= 0.3267
+	K_{stat}= 0,3267
 \end{align*}
 
 \begin{figure}[H]
@@ -52,6 +52,8 @@ Na podstawie charakterystyki Y(U) mo¿na stwierdziæ, ¿e w³aœciwoœci statyczne obi
 
 
 \section{Przekszta³cenie odpowiedzi skokowej}
+
+Implementacja tego zadania znajduje siê w pliku Zadanie3Lab1.m.
 
 Przekszta³cenie odpowiedzi skokowej umieszczone jest w pliku lab\_zad3.m.
 Wykorzystana metoda jest analogiczna do zadania projektowego.
@@ -65,10 +67,15 @@ Wybrana zosta³a charakterystyka dla skoku z punktu pracy do 50\%.
 	\label{lab_zad3}
 \end{figure}
 
+Aproksymacja odpowiedzi skokowej zaimplementowana zosta³a w plikach lab\_opt.m i zab3\_opt.m. Optymalizacji parametrów dokonano algorytmem genetycznym (plik lab\_opt.m). Zespó³ nie zd¹¿y³ jednak wygenerowaæ rysunku dla wersji aproksymowanej. 
+
 
 \section{Algorytm PID}
 
-Poni¿sze zadanie laboratoryjne realizowane by³o w inny, zimniejszy dzieñ, co spowodowa³o koniecznoœæ wyznaczenia wartoœci pomiaru temperatury w punkcie pracy na nowo. Nowy punkt pracy dla ${G1 = 27}$ to ${ T1 = 29.37 }$ {\degree C}.
+Implementacja symulacji cyfrowego algorytmu PID znajduje siê w pliku Zad4\_PID\_lab1.m
+
+
+Poni¿sze zadanie laboratoryjne realizowane by³o w inny, zimniejszy dzieñ, co spowodowa³o koniecznoœæ wyznaczenia wartoœci pomiaru temperatury w punkcie pracy na nowo. Nowy punkt pracy dla ${G1 = 27}$ to ${ T1 = 29,37 }$ {\degree C}.
 
 Napisano  program do regulacji cyfrowego algorytmu PID. Dobór nastaw regulatora przeprowadzono metod¹ Zieglera-Nicholsa. Rozpoczêto od doboru wartoœci wzmocnienia K, przy parametrze ca³kuj¹cym Ti = inf i ró¿niczkuj¹cym Td = 0. W algorytmie uwzglêdniono ograniczenia wartoœci sterowania G1(k) (zakres od ${U_{min} = 0}$  do ${\Delta U_{max}=100}$).
 
@@ -114,7 +121,7 @@ Mimo tej zmiany, odpowiedŸ procesu nadal ros³a zbyt wolno. Po ponownej analizie 
 
 Widoczne s¹ regularne oscylacje, jednak s¹ one oscylacjami gasn¹cymi. Wartoœæ wzmocnienia zosta³a wiêc zwiêkszona do ${K = 24}$. Jak widaæ na wykresie Rys. {\ref{rys_lab_PID_k24}} oscylacje nie gasn¹. Zauwa¿alny jest  nawet lekki wzrost amplitudy oscylacji. Przewidujemy, ¿e niegasn¹ce oscylacje wyst¹pi³yby przy wartoœci wzmocnienia ${K_{kr}=23}$, jednak przez problemy wystêpuj¹ce na pocz¹tku realizacji zadania nie zosta³o to sprawdzone.
 Z tego powodu nie dobrano równie¿ pozosta³ych parametrów regulatora PID dla zmiennego sygna³u zadanego. 
-Jeœli zespó³ mia³by wiêcej czasu, nastêpnym krokiem by³oby ustawienie nastaw regulatora wg. regu³ Zieglera-Nicholsa (Rys. {\ref{t_ZN}}). Zatem po wyznaczeniu wzmocnienia krytycznego ${K_{kr}}$, z przebiegu wartoœci sterowania odczytany zosta³by okres krytyczny ${T_{kr}}$, a wstêpne nastawy regulatora PID wynosi³yby: ${K=0.6K_{kr}}$, ${T_i= 0.5T_{kr}}$ i ${T_d=0.125K_{kr}}$. Je¿eli by³oby to konieczne, regulator zosta³by dostrojony metod¹ eksperymentaln¹.
+Jeœli zespó³ mia³by wiêcej czasu, nastêpnym krokiem by³oby ustawienie nastaw regulatora wg. regu³ Zieglera-Nicholsa (Rys. {\ref{t_ZN}}). Zatem po wyznaczeniu wzmocnienia krytycznego ${K_{kr}}$, z przebiegu wartoœci sterowania odczytany zosta³by okres krytyczny ${T_{kr}}$, a wstêpne nastawy regulatora PID wynosi³yby: ${K=0,6K_{kr}}$, ${T_i= 0,5T_{kr}}$ i ${T_d=0,125K_{kr}}$. Je¿eli by³oby to konieczne, regulator zosta³by dostrojony metod¹ eksperymentaln¹.
 
 
 \begin{figure}[H]
@@ -124,4 +131,4 @@ Jeœli zespó³ mia³by wiêcej czasu, nastêpnym krokiem by³oby ustawienie nastaw reg
 	\label{rys_lab_PID_k24}
 \end{figure}
 
-
+W wyniku opisanych wy¿ej problemów zespó³ nie zd¹¿y³ zrealizowaæ dalszej czêœci zadañ laboratoryjnych.
