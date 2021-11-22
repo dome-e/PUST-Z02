@@ -1,18 +1,15 @@
-%clear all;
-%pro2_zad3;
-%Punkty pracy
 Upp=0;
 Ypp=0;
 Zskok=1;
 imax = 250;
 
 %Parametry dobrane eksperymentalnie
-D=91; %D z poprzedniego podpunktu
-N=60; 
-Nu=9; 
-lambda=2; 
-Dz=61; %Dz z poprzedniego podpunktu
-dUmax = 0.1;
+D=120; %D z poprzedniego podpunktu
+N=90; 
+Nu=2; 
+lambda=0.6; 
+Dz=21; %zoptymalizowane
+%dUmax = 1;
 
 % init
 Y = zeros(imax, 1);
@@ -30,7 +27,7 @@ I = eye(Nu);
 U(1:11) = Upp;
 Yzad(1:9)=0;
 Yzad(10:imax)=1;
-Z(10:imax)= Zskok;
+Z(10:imax)=  Zskok + 0.1*sin(20*linspace(0,1,imax-9));
 
 
 u = U - Upp;
@@ -68,14 +65,14 @@ for k = 10:imax
     du = dU(1);
     dz = dZ(1);
     
-    %ogr du
-    if du > dUmax
-        du = dUmax;
-    end
-    
-    if du < -dUmax
-        du = -dUmax;
-    end
+%     %ogr du
+%     if du > dUmax
+%         du = dUmax;
+%     end
+%     
+%     if du < -dUmax
+%         du = -dUmax;
+%     end
     
     for n = D-1:-1:2
       dUp(n,1) = dUp(n-1,1);
@@ -106,7 +103,7 @@ end
 
 E = (norm(e))^2
 
-
+f5 = figure;
 subplot(3,1,1);
 stairs(U);
 title('u(k)');
@@ -124,9 +121,3 @@ hold on;
 stairs(Yzad);
 xlabel('k');
 legend('y','y_z_a_d','Location','southeast');
-
-% figure
-% stairs(Zakt);
-% title('Pomiar zak³óceñ');
-% xlabel('k');
-% ylabel('Z');
