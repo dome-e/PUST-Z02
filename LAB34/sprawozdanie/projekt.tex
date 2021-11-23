@@ -2,11 +2,69 @@
 \chapter{Projekt}
 
 \section{Sprawdzenie poprawnoœci wartoœci punktu pracy}
+Implementacja zadañ 1 i 2 znajduje siê w pliku \texttt{pro2\_zad12.mlx} 
+
+
+Symulowane wartoœci s¹ sta³e oraz zgodne z punktem pracy ($Upp = Ypp = Zpp = 0$).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad1.png}
+	\caption{Wartoœæ zadana, wyjœcie i zak³ócenie w punkcie pracy}
+	\label{zad1}
+\end{figure}
+
 
 \section{Odpowiedzi skokowe procesu}
 
+Poprzez pobudzenie obiektu ró¿nymi wartoœciami sygna³u steruj¹cego i zak³ócenia wyznaczone zosta³y odpowiedzi skokowe torów wejœcie-wyjœcie i zak³ócenie-wyjœcie. 
+
+
+Na torze wejœcie-wyjœcie wyznaczono odpowiedzi skokowe dla 4 ró¿nych pobudzeñ (od wartoœci $Upp$ do 0.8, 0.3, -0.3 i -0.8) sygna³u steruj¹cego U wystêpuj¹cych w chwili $k=12$. Wartoœæ zak³ócenia pozostaje niezmienna przez ca³y czas trwania pomiaru i równa jest punktowi pracy $Zpp = 0$. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad2_torU-Y.png}
+	\caption{Odpowiedzi skokowe toru wejœcie-wyjœcie}
+	\label{zad2_UY}
+\end{figure}
+
+Na Rys. \ref{zad2_UY_lin} naniesione zosta³y punkty (U, Y) dla ka¿dego symulowanego pobudzenia. Dopasowana prosta potwierdza w³aœciwoœci liniowe charakterystyki statycznej.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad2_torU-Y_lin.png}
+	\caption{Charakterystyka statyczna dla toru wejœcie-wyjœcie}
+	\label{zad2_UY_lin}
+\end{figure}
+
+Obliczone zosta³o wzmocnienie statyczne dla toru wejœcie-wyjœcie  $K_{stat} = 1.4925$
+
+\smallskip
+
+Analogicznie, na torze zak³ócenie-wyjœcie wyznaczone zosta³y odpowiedzi skokowe dla 4 ró¿nych skoków zak³ócenia Z (od wartoœci $Zpp$ do 0.8, 0.3, -0.3 i -0.8) maj¹cych miejsce w chwili $k=12$. Nie nastêpuje zmiana sygna³u steruj¹cego, zatem przez ca³y czas trwania pomiaru przyjmuje ona wartoœæ $Upp = 0$. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad2_torZ-Y.png}
+	\caption{Odpowiedzi skokowe toru zak³ócenie-wyjœcie}
+	\label{zad2_ZY}
+\end{figure}
+
+Podobnie jak dla toru wejœcie-wyjœcie, charakterystyka przedstawiona na Rys. \ref{zad2_ZY_lin} wskazuje na liniowe w³aœciwoœci procesu.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad2_torZ-Y_lin.png}
+	\caption{Charakterystyka statyczna dla toru zak³ócenie-wyjœcie}
+	\label{zad2_ZY_lin}
+\end{figure}
+
+Wzmocnienie statyczne dla toru zak³ócenie-wyjœcie wynosi  $K_{stat} = 0.8959$
 
 \section{OdpowiedŸ skokowa w algorytmie DMC}
+Implemantacja zadania 3 znajduje siê w pliku \texttt{pro2\_zad3.mlx}.
 
 
 \section{Algorytm DMC}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.2)  20 NOV 2021 12:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.30)  23 NOV 2021 01:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1003,9 +1003,49 @@ LaTeX Font Info:    External font `plex10' loaded for size
 
 ]
 Rozdzia\PlPrIeC {\l } 1.
-) (./laboratorium.tex [2
+<png/projekt/pro2_zad1.png, id=15, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad1.png Graphic file (type png)
+<use png/projekt/pro2_zad1.png>
+Package pdftex.def Info: png/projekt/pro2_zad1.png  used on input line 12.
+(pdftex.def)             Requested size: 449.67204pt x 337.25401pt.
+<png/projekt/pro2_zad2_torU-Y.png, id=16, 1124.2pt x 425.59pt>
+File: png/projekt/pro2_zad2_torU-Y.png Graphic file (type png)
+<use png/projekt/pro2_zad2_torU-Y.png>
+Package pdftex.def Info: png/projekt/pro2_zad2_torU-Y.png  used on input line 2
+8.
+(pdftex.def)             Requested size: 449.67204pt x 170.23297pt.
 
-]
+Underfull \vbox (badness 2582) has occurred while \output is active []
+
+ [2
+
+ <./png/projekt/pro2_zad1.png (PNG copy)>]
+<png/projekt/pro2_zad2_torU-Y_lin.png, id=23, 1124.2pt x 416.55624pt>
+File: png/projekt/pro2_zad2_torU-Y_lin.png Graphic file (type png)
+<use png/projekt/pro2_zad2_torU-Y_lin.png>
+Package pdftex.def Info: png/projekt/pro2_zad2_torU-Y_lin.png  used on input li
+ne 37.
+(pdftex.def)             Requested size: 449.67204pt x 166.61954pt.
+<png/projekt/pro2_zad2_torZ-Y.png, id=24, 1124.2pt x 423.5825pt>
+File: png/projekt/pro2_zad2_torZ-Y.png Graphic file (type png)
+<use png/projekt/pro2_zad2_torZ-Y.png>
+Package pdftex.def Info: png/projekt/pro2_zad2_torZ-Y.png  used on input line 5
+0.
+(pdftex.def)             Requested size: 449.67204pt x 169.43pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./png/projekt/pro2_zad2_torU-Y.png> <./png/projekt/pro2_zad2_torU-Y_lin.pn
+g>]
+<png/projekt/pro2_zad2_torZ-Y_lin.png, id=32, 1124.2pt x 422.57875pt>
+File: png/projekt/pro2_zad2_torZ-Y_lin.png Graphic file (type png)
+<use png/projekt/pro2_zad2_torZ-Y_lin.png>
+Package pdftex.def Info: png/projekt/pro2_zad2_torZ-Y_lin.png  used on input li
+ne 59.
+(pdftex.def)             Requested size: 449.67204pt x 169.0285pt.
+)
+(./laboratorium.tex [4 <./png/projekt/pro2_zad2_torZ-Y.png> <./png/projekt/pro2
+_zad2_torZ-Y_lin.png>]
 Rozdzia\PlPrIeC {\l } 2.
 
 Overfull \hbox (42.52298pt too wide) in paragraph at lines 20--28
@@ -1013,32 +1053,32 @@ Overfull \hbox (42.52298pt too wide) in paragraph at lines 20--28
 o-przez funk-cj¦ \OT4/cmtt/m/n/10.95 sendControlsToG1AndDisturbance(G1,
  []
 
-<png/lab34_zad2.png, id=18, 475.0548pt x 176.8206pt>
+<png/lab34_zad2.png, id=38, 475.0548pt x 176.8206pt>
 File: png/lab34_zad2.png Graphic file (type png)
 <use png/lab34_zad2.png>
 Package pdftex.def Info: png/lab34_zad2.png  used on input line 37.
 (pdftex.def)             Requested size: 356.29022pt x 132.6151pt.
-<png/lab34_zad22.png, id=19, 472.164pt x 177.3024pt>
+<png/lab34_zad22.png, id=39, 472.164pt x 177.3024pt>
 File: png/lab34_zad22.png Graphic file (type png)
 <use png/lab34_zad22.png>
 Package pdftex.def Info: png/lab34_zad22.png  used on input line 50.
 (pdftex.def)             Requested size: 354.12213pt x 132.97646pt.
-[3
+[5
 
- <./png/lab34_zad2.png (PNG copy)>]) [4 <./png/lab34_zad22.png (PNG copy)>]
+ <./png/lab34_zad2.png (PNG copy)>]) [6 <./png/lab34_zad22.png (PNG copy)>]
 (./sprawozdanie_szablon.aux) ) 
 Here is how much of TeX's memory you used:
- 29841 strings out of 478994
- 746118 string characters out of 5858184
- 1087263 words of memory out of 5000000
- 46789 multiletter control sequences out of 15000+600000
+ 29878 strings out of 478994
+ 747199 string characters out of 5858183
+ 1087312 words of memory out of 5000000
+ 46820 multiletter control sequences out of 15000+600000
  424274 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,8n,89p,752b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvi
-ps/pl/plit.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-
-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{
-/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/local/texl
+ps/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvip
+s/pl/plmi.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plit.enc}{
+/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/local/texl
 ive/2021/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr/local/texlive/2021/texmf-
 dist/fonts/type1/public/pl/plbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/public/pl/plbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/pub
@@ -1047,10 +1087,10 @@ i8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr10.pfb></us
 r/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/te
 xlive/2021/texmf-dist/fonts/type1/public/pl/pltt10.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb>
-Output written on sprawozdanie_szablon.pdf (5 pages, 104892 bytes).
+Output written on sprawozdanie_szablon.pdf (7 pages, 168386 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
