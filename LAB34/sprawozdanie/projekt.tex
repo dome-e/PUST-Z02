@@ -65,6 +65,44 @@ Wzmocnienie statyczne dla toru zak≥Ûcenie-wyjúcie wynosi  $K_{stat} = 0.8959$
 
 \section{Odpowiedü skokowa w algorytmie DMC}
 Implemantacja zadania 3 znajduje siÍ w pliku \texttt{pro2\_zad3.mlx}.
+W zadaniu wyznaczone zosta≥y zestawy liczby $s_1, s_2, s_3... $ - dla toru wejúcie-wyjúcie i $s^z_1, s^z_2, s^z_3... $ dla toru zak≥Ûcenie-wyjúcie.
 
+Pierwszy zestaw ($s_1, s_2, s_3... $) wyznaczony zosta≥ poprzez przekszta≥cenie odpowiedzi skokowej przy skoku jednostkowym wartoúci sterowania $U=1$ (Rys. \ref{zad3_UY_Y}) . Przekszta≥cona odpowiedü skokowa przedstawiona zosta≥a na Rys. \ref{zad3_UY_s}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad3_UY_Y.png}
+	\caption{Odpowiedü skokowa dla toru wejúcie-wyjúcie przed przekszta≥ceniem}
+	\label{zad3_UY_Y}
+\end{figure}
+
+Pierwszy skok widoczny jest w momencie $k = 16$, a ostatni dla $k = 107$ (dok≥adnoúÊ 0.001), co daje parametr $D = 101$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad3_UY_s.png}
+	\caption{Odpowiedü skokowa dla toru wejúcie-wyjúcie po przekszta≥ceniu}
+	\label{zad3_UY_s}
+\end{figure}
+
+
+Drugi zestaw ($s^z_1, s^z_2, s^z_3... $) wyznaczony zosta≥ analogicznie. Zasymulowano skok jednostkowy sygna≥u zak≥Ûcenia Z. Odpowiedü skokowa (Rys. \ref{zad3_ZY_Y}) zosta≥a przekszta≥cona tak, by uzyskaÊ øπdany zestaw liczb (Rys. \ref{zad3_ZY_s}).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad3_UY_Y.png}
+	\caption{Odpowiedü skokowa dla toru zak≥Ûcenie-wyjúcie przed przekszta≥ceniem}
+	\label{zad3_ZY_Y}
+\end{figure}
+
+
+Pierwsza zmiana widoczna jest dla $k = 14$, natomiast ostatnia dla $k = 75$ (dok≥adnoúÊ 0.001). Parametr $D_z$ ma zatem wartoúÊ $D_z = 61$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad3_UY_s.png}
+	\caption{Odpowiedü skokowa dla toru zak≥Ûcenie-wyjúcie po przekszta≥ceniu}
+	\label{zad3_ZY_s}
+\end{figure}
 
 \section{Algorytm DMC}
