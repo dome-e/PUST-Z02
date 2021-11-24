@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.30)  23 NOV 2021 02:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.30)  24 NOV 2021 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -827,6 +827,13 @@ Package: translator 2020-08-03 v1.12c Easy translation of strings in LaTeX
 (/usr/local/texlive/2021/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
+(/usr/local/texlive/2021/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip65
+\multirow@cntb=\count342
+\multirow@dima=\skip66
+\bigstrutjot=\dimen310
+)
 
 LaTeX Warning: Unused global option(s):
     [twosides].
@@ -834,22 +841,22 @@ LaTeX Warning: Unused global option(s):
 (./sprawozdanie_szablon.aux)
 \openout1 = `sprawozdanie_szablon.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -887,16 +894,16 @@ LaTeX Font Info:    ... okay on input line 89.
 
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count342
-\scratchdimen=\dimen310
+\scratchcounter=\count343
+\scratchdimen=\dimen311
 \scratchbox=\box79
-\nofMPsegments=\count343
-\nofMParguments=\count344
+\nofMPsegments=\count344
+\nofMParguments=\count345
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count345
-\MPscratchDim=\dimen311
-\MPnumerator=\count346
-\makeMPintoPDFobject=\count347
+\MPscratchCnt=\count346
+\MPscratchDim=\dimen312
+\MPnumerator=\count347
+\makeMPintoPDFobject=\count348
 \everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -911,9 +918,9 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 89.
+ on input line 93.
 
-\c@lstlisting=\count348
+\c@lstlisting=\count349
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
@@ -924,64 +931,64 @@ Dictionary: translator-basic-dictionary, Language: English
 )
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 89.
-Package gensymb Info: Math companion symbols declared on input line 89.
-LaTeX Info: Redefining \degree on input line 89.
-LaTeX Info: Redefining \celsius on input line 89.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 93.
+Package gensymb Info: Math companion symbols declared on input line 93.
+LaTeX Info: Redefining \degree on input line 93.
+LaTeX Info: Redefining \celsius on input line 93.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 89.
-LaTeX Info: Redefining \ohm on input line 89.
-Package gensymb Info: Using \textohm for \ohm on input line 89.
-LaTeX Info: Redefining \micro on input line 89.
-Package gensymb Info: Using \textmu for \micro on input line 89.
+erthousand on input line 93.
+LaTeX Info: Redefining \ohm on input line 93.
+Package gensymb Info: Using \textohm for \ohm on input line 93.
+LaTeX Info: Redefining \micro on input line 93.
+Package gensymb Info: Using \textmu for \micro on input line 93.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/siunitx/siunitx-binary.cfg
 File: siunitx-binary.cfg 2017/11/26 v2.7k siunitx: Binary units
 )
-LaTeX Font Info:    Trying to load font information for OML+plm on input line 8
-9.
+LaTeX Font Info:    Trying to load font information for OML+plm on input line 9
+3.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/polski/omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 
-89.
+93.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/polski/omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Trying to load font information for OMX+plex on input line 
-89.
+93.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/polski/omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10.95> on input line 89.
+(Font)              <10.95> on input line 93.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 89.
+(Font)              <8> on input line 93.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 89.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 89.
+(Font)              <6> on input line 93.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 93.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
 
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT4+cmss on input line 
-89.
+93.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/polski/ot4cmss.fd
 File: ot4cmss.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 
-89.
+93.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/polski/ot4cmtt.fd
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
@@ -1043,40 +1050,129 @@ File: png/projekt/pro2_zad2_torZ-Y_lin.png Graphic file (type png)
 Package pdftex.def Info: png/projekt/pro2_zad2_torZ-Y_lin.png  used on input li
 ne 59.
 (pdftex.def)             Requested size: 449.67204pt x 169.0285pt.
-<png/projekt/pro2_zad3_UY_Y.png, id=33, 1124.2pt x 843.15pt>
-File: png/projekt/pro2_zad3_UY_Y.png Graphic file (type png)
-<use png/projekt/pro2_zad3_UY_Y.png>
-Package pdftex.def Info: png/projekt/pro2_zad3_UY_Y.png  used on input line 74.
-
-(pdftex.def)             Requested size: 449.67204pt x 337.25401pt.
+<png/projekt/pro2_char3D.png, id=33, 1316.92pt x 1053.9375pt>
+File: png/projekt/pro2_char3D.png Graphic file (type png)
+<use png/projekt/pro2_char3D.png>
+Package pdftex.def Info: png/projekt/pro2_char3D.png  used on input line 72.
+(pdftex.def)             Requested size: 395.07906pt x 316.18369pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4 <./png/projekt/pro2_zad2_torZ-Y.png> <./png/projekt/pro2_zad2_torZ-Y_lin.pn
 g>]
-<png/projekt/pro2_zad3_UY_s.png, id=40, 1124.2pt x 417.56pt>
-File: png/projekt/pro2_zad3_UY_s.png Graphic file (type png)
-<use png/projekt/pro2_zad3_UY_s.png>
-Package pdftex.def Info: png/projekt/pro2_zad3_UY_s.png  used on input line 83.
-
-(pdftex.def)             Requested size: 449.67204pt x 167.02103pt.
+<png/projekt/pro2_zad3_UY_Y.png, id=39, 1124.2pt x 843.15pt>
 File: png/projekt/pro2_zad3_UY_Y.png Graphic file (type png)
 <use png/projekt/pro2_zad3_UY_Y.png>
-Package pdftex.def Info: png/projekt/pro2_zad3_UY_Y.png  used on input line 93.
+Package pdftex.def Info: png/projekt/pro2_zad3_UY_Y.png  used on input line 91.
 
 (pdftex.def)             Requested size: 449.67204pt x 337.25401pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./png/projekt/pro2_zad3_UY_Y.png (PNG copy)> <./png/projekt/pro2_zad3_UY_s
-.png>]
+ [5 <./png/projekt/pro2_char3D.png (PNG copy)>]
+<png/projekt/pro2_zad3_UY_s.png, id=45, 1124.2pt x 417.56pt>
 File: png/projekt/pro2_zad3_UY_s.png Graphic file (type png)
 <use png/projekt/pro2_zad3_UY_s.png>
-Package pdftex.def Info: png/projekt/pro2_zad3_UY_s.png  used on input line 103
+Package pdftex.def Info: png/projekt/pro2_zad3_UY_s.png  used on input line 100
 .
 (pdftex.def)             Requested size: 449.67204pt x 167.02103pt.
-)
-(./laboratorium.tex [6]
+<png/projekt/pro2_zad3_ZY_Y.png, id=46, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad3_ZY_Y.png Graphic file (type png)
+<use png/projekt/pro2_zad3_ZY_Y.png>
+Package pdftex.def Info: png/projekt/pro2_zad3_ZY_Y.png  used on input line 110
+.
+(pdftex.def)             Requested size: 449.67204pt x 337.25401pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./png/projekt/pro2_zad3_UY_Y.png (PNG copy)> <./png/projekt/pro2_zad3_UY_s
+.png>]
+<png/projekt/pro2_zad3_ZY_s.png, id=52, 1124.2pt x 428.60126pt>
+File: png/projekt/pro2_zad3_ZY_s.png Graphic file (type png)
+<use png/projekt/pro2_zad3_ZY_s.png>
+Package pdftex.def Info: png/projekt/pro2_zad3_ZY_s.png  used on input line 120
+.
+(pdftex.def)             Requested size: 449.67204pt x 171.43745pt.
+
+[7 <./png/projekt/pro2_zad3_ZY_Y.png (PNG copy)> <./png/projekt/pro2_zad3_ZY_s.
+png>]
+<png/projekt/pro2_zad4_DMC.png, id=57, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad4_DMC.png Graphic file (type png)
+<use png/projekt/pro2_zad4_DMC.png>
+Package pdftex.def Info: png/projekt/pro2_zad4_DMC.png  used on input line 149.
+
+(pdftex.def)             Requested size: 415.9475pt x 311.96062pt.
+<png/projekt/pro2_zad5_DMC_zakl.png, id=58, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad5_DMC_zakl.png Graphic file (type png)
+<use png/projekt/pro2_zad5_DMC_zakl.png>
+Package pdftex.def Info: png/projekt/pro2_zad5_DMC_zakl.png  used on input line
+ 166.
+(pdftex.def)             Requested size: 415.9475pt x 311.96062pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./png/projekt/pro2_zad4_DMC.png (PNG copy)>]
+<png/projekt/pro2_zad5_DMC_bez_zakl.png, id=62, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad5_DMC_bez_zakl.png Graphic file (type png)
+<use png/projekt/pro2_zad5_DMC_bez_zakl.png>
+Package pdftex.def Info: png/projekt/pro2_zad5_DMC_bez_zakl.png  used on input 
+line 181.
+(pdftex.def)             Requested size: 415.9475pt x 311.96062pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./png/projekt/pro2_zad5_DMC_zakl.png (PNG copy)>]
+<png/projekt/pro2_zad6_DMC_zakl.png, id=66, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad6_DMC_zakl.png Graphic file (type png)
+<use png/projekt/pro2_zad6_DMC_zakl.png>
+Package pdftex.def Info: png/projekt/pro2_zad6_DMC_zakl.png  used on input line
+ 197.
+(pdftex.def)             Requested size: 415.9475pt x 311.96062pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./png/projekt/pro2_zad5_DMC_bez_zakl.png (PNG copy)>]
+<png/projekt/pro2_zad6_DMC_bez_zakl.png, id=70, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad6_DMC_bez_zakl.png Graphic file (type png)
+<use png/projekt/pro2_zad6_DMC_bez_zakl.png>
+Package pdftex.def Info: png/projekt/pro2_zad6_DMC_bez_zakl.png  used on input 
+line 207.
+(pdftex.def)             Requested size: 415.9475pt x 311.96062pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <./png/projekt/pro2_zad6_DMC_zakl.png (PNG copy)>]
+<png/projekt/pro2_zad7_DMC_0.1.png, id=74, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad7_DMC_0.1.png Graphic file (type png)
+<use png/projekt/pro2_zad7_DMC_0.1.png>
+Package pdftex.def Info: png/projekt/pro2_zad7_DMC_0.1.png  used on input line 
+233.
+(pdftex.def)             Requested size: 415.9475pt x 311.96062pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./png/projekt/pro2_zad6_DMC_bez_zakl.png (PNG copy)>]
+<png/projekt/pro2_zad7_DMC_0.2.png, id=79, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad7_DMC_0.2.png Graphic file (type png)
+<use png/projekt/pro2_zad7_DMC_0.2.png>
+Package pdftex.def Info: png/projekt/pro2_zad7_DMC_0.2.png  used on input line 
+240.
+(pdftex.def)             Requested size: 415.9475pt x 311.96062pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./png/projekt/pro2_zad7_DMC_0.1.png (PNG copy)>]
+<png/projekt/pro2_zad7_DMC_0.4.png, id=83, 1124.2pt x 843.15pt>
+File: png/projekt/pro2_zad7_DMC_0.4.png Graphic file (type png)
+<use png/projekt/pro2_zad7_DMC_0.4.png>
+Package pdftex.def Info: png/projekt/pro2_zad7_DMC_0.4.png  used on input line 
+247.
+(pdftex.def)             Requested size: 415.9475pt x 311.96062pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./png/projekt/pro2_zad7_DMC_0.2.png (PNG copy)>]) (./laboratorium.tex [15
+ <./png/projekt/pro2_zad7_DMC_0.4.png (PNG copy)>]
 Rozdzia\PlPrIeC {\l } 2.
 
 Overfull \hbox (42.52298pt too wide) in paragraph at lines 20--28
@@ -1084,45 +1180,47 @@ Overfull \hbox (42.52298pt too wide) in paragraph at lines 20--28
 o-przez funk-cj¦ \OT4/cmtt/m/n/10.95 sendControlsToG1AndDisturbance(G1,
  []
 
-<png/lab34_zad2.png, id=49, 475.0548pt x 176.8206pt>
+<png/lab34_zad2.png, id=90, 475.0548pt x 176.8206pt>
 File: png/lab34_zad2.png Graphic file (type png)
 <use png/lab34_zad2.png>
 Package pdftex.def Info: png/lab34_zad2.png  used on input line 37.
 (pdftex.def)             Requested size: 356.29022pt x 132.6151pt.
-<png/lab34_zad22.png, id=50, 472.164pt x 177.3024pt>
+<png/lab34_zad22.png, id=91, 472.164pt x 177.3024pt>
 File: png/lab34_zad22.png Graphic file (type png)
 <use png/lab34_zad22.png>
 Package pdftex.def Info: png/lab34_zad22.png  used on input line 50.
 (pdftex.def)             Requested size: 354.12213pt x 132.97646pt.
-[7
+[16
 
- <./png/lab34_zad2.png (PNG copy)>]) [8 <./png/lab34_zad22.png (PNG copy)>]
-(./sprawozdanie_szablon.aux) ) 
+ <./png/lab34_zad2.png (PNG copy)>]) [17 <./png/lab34_zad22.png (PNG copy)>] (.
+/sprawozdanie_szablon.aux) ) 
 Here is how much of TeX's memory you used:
- 29894 strings out of 478994
- 747617 string characters out of 5858183
- 1087352 words of memory out of 5000000
- 46834 multiletter control sequences out of 15000+600000
+ 30032 strings out of 478994
+ 750925 string characters out of 5858183
+ 1091034 words of memory out of 5000000
+ 46957 multiletter control sequences out of 15000+600000
  424274 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,8n,89p,752b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvi
-ps/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvip
-s/pl/plrm.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{
-/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/local/texl
-ive/2021/texmf-dist/fonts/enc/dvips/pl/pltt.enc}</usr/local/texlive/2021/texmf-
-dist/fonts/type1/public/pl/plbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts
-/type1/public/pl/plbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/pub
-lic/pl/plmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plm
-i8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr10.pfb></us
-r/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/local/texl
-ive/2021/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/pl/pltt10.pfb></usr/local/texlive/2021/texmf-dist/
-fonts/type1/public/cm-super/sfbx1095.pfb>
-Output written on sprawozdanie_szablon.pdf (9 pages, 197516 bytes).
+ 87i,10n,89p,752b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips
+/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/
+pl/plms.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/u
+sr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/local/texliv
+e/2021/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/local/texlive/2021/texmf-di
+st/fonts/enc/dvips/pl/pltt.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/
+public/pl/plbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/
+plbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plmi10.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/loca
+l/texlive/2021/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/local/texlive/2021/texmf-di
+st/fonts/type1/public/pl/plsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
+ype1/public/pl/plti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publi
+c/pl/pltt10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super
+/sfbx1095.pfb>
+Output written on sprawozdanie_szablon.pdf (18 pages, 549368 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

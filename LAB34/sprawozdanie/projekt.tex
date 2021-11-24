@@ -20,7 +20,7 @@ Symulowane wartoœci s¹ sta³e oraz zgodne z punktem pracy ($Upp = Ypp = Zpp = 0$)
 Poprzez pobudzenie obiektu ró¿nymi wartoœciami sygna³u steruj¹cego i zak³ócenia wyznaczone zosta³y odpowiedzi skokowe torów wejœcie-wyjœcie i zak³ócenie-wyjœcie. 
 
 
-Na torze wejœcie-wyjœcie wyznaczono odpowiedzi skokowe dla 4 ró¿nych pobudzeñ (od wartoœci $Upp$ do 0.8, 0.3, -0.3 i -0.8) sygna³u steruj¹cego U wystêpuj¹cych w chwili $k=12$. Wartoœæ zak³ócenia pozostaje niezmienna przez ca³y czas trwania pomiaru i równa jest punktowi pracy $Zpp = 0$. 
+Na torze wejœcie-wyjœcie wyznaczono odpowiedzi skokowe dla 4 ró¿nych pobudzeñ (od wartoœci $Upp = 0$ do 0.8, 0.3, -0.3 i -0.8) sygna³u steruj¹cego U wystêpuj¹cych w chwili $k=12$. Wartoœæ zak³ócenia pozostaje niezmienna przez ca³y czas trwania pomiaru i równa jest punktowi pracy $Zpp = 0$. 
 
 
 \begin{figure}[H]
@@ -39,11 +39,11 @@ Na Rys. \ref{zad2_UY_lin} naniesione zosta³y punkty (U, Y) dla ka¿dego symulowan
 	\label{zad2_UY_lin}
 \end{figure}
 
-Obliczone zosta³o wzmocnienie statyczne dla toru wejœcie-wyjœcie  $K_{stat} = 1.4925$
+Obliczone zosta³o wzmocnienie statyczne dla toru wejœcie-wyjœcie  $K_{stat} = 1,4925$
 
 \smallskip
 
-Analogicznie, na torze zak³ócenie-wyjœcie wyznaczone zosta³y odpowiedzi skokowe dla 4 ró¿nych skoków zak³ócenia Z (od wartoœci $Zpp$ do 0.8, 0.3, -0.3 i -0.8) maj¹cych miejsce w chwili $k=12$. Nie nastêpuje zmiana sygna³u steruj¹cego, zatem przez ca³y czas trwania pomiaru przyjmuje ona wartoœæ $Upp = 0$. 
+Analogicznie, na torze zak³ócenie-wyjœcie wyznaczone zosta³y odpowiedzi skokowe dla 4 ró¿nych skoków zak³ócenia Z (od wartoœci $Zpp=0$ do 0.8, 0.3, -0.3 i -0.8) maj¹cych miejsce w chwili $k=12$. Nie nastêpuje zmiana sygna³u steruj¹cego, zatem przez ca³y czas trwania pomiaru przyjmuje ona wartoœæ $Upp = 0$. 
 
 \begin{figure}[H]
 	\centering
@@ -61,13 +61,30 @@ Podobnie jak dla toru wejœcie-wyjœcie, charakterystyka przedstawiona na Rys. \re
 	\label{zad2_ZY_lin}
 \end{figure}
 
-Wzmocnienie statyczne dla toru zak³ócenie-wyjœcie wynosi  $K_{stat} = 0.8959$
+Wzmocnienie statyczne dla toru zak³ócenie-wyjœcie wynosi  $K_{stat} = 0,8959$
+
+\smallskip
+
+Przy jednoczesnym zadaniu skoków sygna³u steruj¹cego $U$ i zak³ócenia $Z$, otrzymujemy charakterystykê statyczn¹ $y(u,z)$ przedstawion¹ na Rys. \ref{zad2_char3D}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{png/projekt/pro2_char3D.png}
+	\caption{Charakterystyka statyczna procesu $y(u,z)$}
+	\label{zad2_char3D}
+\end{figure}
 
 \section{OdpowiedŸ skokowa w algorytmie DMC}
 Implemantacja zadania 3 znajduje siê w pliku \texttt{pro2\_zad3.mlx}.
-W zadaniu wyznaczone zosta³y zestawy liczby $s_1, s_2, s_3... $ - dla toru wejœcie-wyjœcie i $s^z_1, s^z_2, s^z_3... $ dla toru zak³ócenie-wyjœcie.
 
-Pierwszy zestaw ($s_1, s_2, s_3... $) wyznaczony zosta³ poprzez przekszta³cenie odpowiedzi skokowej przy skoku jednostkowym wartoœci sterowania $U=1$ (Rys. \ref{zad3_UY_Y}) . Przekszta³cona odpowiedŸ skokowa przedstawiona zosta³a na Rys. \ref{zad3_UY_s}
+W zadaniu wyznaczone zosta³y zestawy liczby $s_1, s_2, s_3 ... $ dla toru wejœcie-wyjœcie i $s^z_1, s^z_2, s^z_3 ... $ dla toru zak³ócenie-wyjœcie.
+
+Pierwszy zestaw ($s_1, s_2, s_3... $) wyznaczony zosta³ poprzez przekszta³cenie odpowiedzi skokowej przy skoku jednostkowym wartoœci sterowania $U=1$ (Rys. \ref{zad3_UY_Y}). Przekszta³cona odpowiedŸ skokowa przedstawiona zosta³a na Rys. \ref{zad3_UY_s}. Przekszta³cenie to przebieg³o zgodnie ze wzorem \ref{w_Si}.
+
+\begin{equation}
+	S_i = \frac{S_i^0  - Y_{pp}}{\Delta U}, i = 1, 2, 3,  ...
+	\label{w_Si}
+\end{equation}
 
 \begin{figure}[H]
 	\centering
@@ -76,7 +93,7 @@ Pierwszy zestaw ($s_1, s_2, s_3... $) wyznaczony zosta³ poprzez przekszta³cenie 
 	\label{zad3_UY_Y}
 \end{figure}
 
-Pierwszy skok widoczny jest w momencie $k = 16$, a ostatni dla $k = 107$ (dok³adnoœæ 0.001), co daje parametr $D = 101$.
+Pierwszy skok widoczny jest w momencie $k = 16$, a ostatni dla $k = 106$, co daje parametr $D = 100$.
 
 \begin{figure}[H]
 	\centering
@@ -86,23 +103,186 @@ Pierwszy skok widoczny jest w momencie $k = 16$, a ostatni dla $k = 107$ (dok³ad
 \end{figure}
 
 
-Drugi zestaw ($s^z_1, s^z_2, s^z_3... $) wyznaczony zosta³ analogicznie. Zasymulowano skok jednostkowy sygna³u zak³ócenia Z. OdpowiedŸ skokowa (Rys. \ref{zad3_ZY_Y}) zosta³a przekszta³cona tak, by uzyskaæ ¿¹dany zestaw liczb (Rys. \ref{zad3_ZY_s}).
+Drugi zestaw ($s^z_1, s^z_2, s^z_3... $) wyznaczony zosta³ analogicznie. Zasymulowano skok jednostkowy sygna³u zak³ócenia Z. OdpowiedŸ skokowa (Rys. \ref{zad3_ZY_Y}) zosta³a przekszta³cona tak, by uzyskaæ ¿¹dany zestaw liczb (Rys. \ref{zad3_ZY_s}). Do przekszta³cenia ponownie wykorzystany zosta³ wzór \ref{w_Si}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{png/projekt/pro2_zad3_UY_Y.png}
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad3_ZY_Y.png}
 	\caption{OdpowiedŸ skokowa dla toru zak³ócenie-wyjœcie przed przekszta³ceniem}
 	\label{zad3_ZY_Y}
 \end{figure}
 
 
-Pierwsza zmiana widoczna jest dla $k = 14$, natomiast ostatnia dla $k = 75$ (dok³adnoœæ 0.001). Parametr $D_z$ ma zatem wartoœæ $D_z = 61$.
+Pierwsza zmiana widoczna jest dla $k = 14$, natomiast ostatnia dla $k = 75$. Parametr $D_z$ ma zatem wartoœæ $D_z = 61$.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{png/projekt/pro2_zad3_UY_s.png}
+	\includegraphics[scale=0.4]{png/projekt/pro2_zad3_ZY_s.png}
 	\caption{OdpowiedŸ skokowa dla toru zak³ócenie-wyjœcie po przekszta³ceniu}
 	\label{zad3_ZY_s}
 \end{figure}
 
+
 \section{Algorytm DMC}
+
+Realizacja zadañ 4-7 znajduje siê w pliku \texttt{pro2\_DMC.mlx}.
+
+%4. Napisaæ program w jêzyku MATLAB do symulacji algorytm DMC w najprostszej wersji analitycznej. 
+
+%Dobraæ parametry D, N, Nu, ? algorytmu DMC przy
+	% skokowej zmianie sygna³u wartoœci zadanej z 0 do 1 
+	% i zerowym zak³óceniu. 
+% Jakoœæ regulacji oceniaæ jakoœciowo (na podstawie rysunków przebiegów sygna³ów) oraz iloœciowo, wyznaczaj¹c wskaŸnik jakoœci regulacji, gdzie kkonc oznacza koniec symulacji (zawsze taki sam). 
+% Zamieœciæ wybrane wyniki symulacji 
+	%(przebiegi sygna³ów wejœciowych i wyjœciowych procesu oraz 
+	% wartoœci wskaŸnika E).
+
+Algorytm z zadania 4 symuluje regulator DMC w najprostszej wersji analitycznej przy zerowym zak³óceniu. W chwili k = 10 wystêpuje skokowa zmiana sygna³u wartoœci zadanej z $Y_{zad} = 0$ na $Y_{zad} = 1$. 
+
+Parametr $D$  wyznaczony zosta³y w poprzednim zadaniu, jednak w procesie dostrajania eksperymentalnego zmieniono tolerancjê jego odczytu - finalnie wartoœæ skutkuj¹ca najlepszym dzia³aniem regulatora to $D= 120$. Pozosta³e parametry dobrane zosta³y metod¹ eksperymentaln¹: $N=45$,  $Nu=2$, $\lambda=0,4$.
+
+
+Jakoœæ oceniona zosta³a na podstawie analizy przebiegów sygna³ów, jak i poprzez obserwacjê zmian wskaŸnika jakoœci regulacji $E$. Dla powy¿szych parametrów jego wartoœæ wynosi³a $E~=~7,9233$. Przebiegi przedstawione zosta³y na Rys.~\ref{zad4_DMC}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.37]{png/projekt/pro2_zad4_DMC.png}
+	\caption{Przebiegi sygna³ów wejœciowych i wyjœciowych procesu}
+	\label{zad4_DMC}
+\end{figure}
+
+
+\section{Algorytm DMC z uwzglêdnieniem zak³óceñ}
+
+%5. Za³o¿yæ, ¿e oprócz zmian sygna³u wartoœci zadanej nastêpuje skokowa zmiana sygna³u zak³ócenia z wartoœci 0 do 1 (zmiana ta ma miejsce po osi¹gniêciu przez proces wartoœci zadanej wyjœcia). Dobraæ parametr Dz . Zamieœciæ wybrane wyniki symulacji. 
+% Pokazaæ, ¿e pomiar zak³ócenia i jego uwzglêdnienie prowadzi do lepszej regulacji ni¿ gdy brak jest tego pomiaru.
+
+Algorytm z poprzedniego zadania zmodyfikowano tak, aby regulator uwzglêdnia³ w regulacji wystêpuj¹ce zak³ócenia. Wprowadzony zosta³ skok zak³ócenia z wartoœci $Z=0$ do $Z=1$.
+
+Regulator ponownie dostrojono- parametry $D$ i $D_z$ wyznaczone zosta³y w Zad.~3, jednak podczas dostrajania podjêto decyzjê o zmianie tolerancji ich odczytu- najlepsze efekty przynosi³y wartoœci $D=120$ i $D_z=21$. Metod¹ eksperymentaln¹ dobrano równie¿ pozosta³e parametry: $N=90$,  $Nu=2$, $\lambda=0,6$. Dla tak dostrojonego regulatora wskaŸnik jakoœci regulacji przyj¹³ wartoœæ $E = 5,6305$. Przebiegi przedstawione zosta³y na Rys.~\ref{zad5_DMC}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.37]{png/projekt/pro2_zad5_DMC_zakl.png}
+	\caption{Przebiegi sygna³ów wejœciowych i wyjœciowych procesu z uwzglêdnieniem zak³óceñ}
+	\label{zad5_DMC}
+\end{figure}
+
+
+Nastêpnie porównano powy¿szy algorytm (uwzglêdniaj¹cy pomiar zak³ócenia) z wersj¹ nie bior¹c¹ zak³óceñ pod uwagê. W tym celu stworzono testowy algorytm bazuj¹cy na kodzie z Zad.~4 (implementacja znajduje siê w pliku \texttt{pro2\_DMC\_test.m}). 
+
+Wprowadzono skok zak³ócenia o wartoœci $Z_{skok}=1$ i ponownie dobrano parametry, by zapewniæ mo¿liwie najwy¿sz¹ jakoœæ regulacji przy wystêpuj¹cym zak³óceniu i braku jego pomiaru. Parametry dobrane metod¹ eksperymentaln¹ maj¹ wartoœci: $D=120$, $N=25$, $Nu=1$,  $\lambda=0,18$.
+
+
+Algorytm bez pomiaru zak³óceñ wykazywa³ siê gorsz¹ jakoœci¹ regulacji, ni¿ algorytm z uwzglêdnieniem zak³ócenia. Potwierdza to wskaŸnik jakoœci regulacji o wartoœci $E~=~6,2744$ - jest on znacznie wy¿szy ni¿ w przypadku uwzglêdniania zak³ócenia w procesie regulacji (wskaŸnik mia³ wtedy wartoœæ $E~=~5,6305$). Przebiegi dla tej wersji regulatora widoczne s¹ na Rys.~\ref{zad5_DMC_bez}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.37]{png/projekt/pro2_zad5_DMC_bez_zakl.png}
+	\caption{Przebiegi sygna³ów wejœciowych i wyjœciowych procesu bez uwzglêdnienia zak³óceñ}
+	\label{zad5_DMC_bez}
+\end{figure}
+
+
+
+%6. Sprawdziæ dzia³anie algorytmu przy zak³óceniu zmiennym sinusoidalnie. Zamieœciæ wy- brane wyniki symulacji przy uwzglêdnieniu i nie uwzglêdnieniu mierzonego zak³ócenia w algorytmie.
+
+\section{Algorytm DMC z zak³óceniem zmiennym sinusoidalnie}
+
+
+Do dotychczasowej wartoœci zak³ócenia $Z_{skok}=1$ dodany zosta³ sygna³ sinusoidalny o amplitudzie 0.1. Dla parametrów dobranych w poprzednim zadaniu wskaŸnik jakoœci regulacji przy nowym zak³óceniu przyj¹³ wartoœæ $E~=~5,7320$. Przebiegi przedstawione zosta³y na Rys.~\ref{zad6_DMC_zakl}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.37]{png/projekt/pro2_zad6_DMC_zakl.png}
+	\caption{Przebiegi sygna³ów wejœciowych i wyjœciowych procesu z uwzglêdnieniem zak³óceñ zmiennych sinusoidalnych}
+	\label{zad6_DMC_zakl}
+\end{figure}
+
+Nastêpnie dokonano sprawdzenia efektywnoœci dzia³ania uwzglêdniania zak³óceñ w regulacji, podobnie jak w Zad.~5. Wprowadzono zak³ócenie sinusoidalne do regulatora nie bior¹cego zak³óceñ pod uwagê (plik \texttt{pro2\_DMC\_test.m}). WskaŸnik jakoœci regulacji jest o wiele wiêkszy i wynosi $E~=~6,9802$, co potwierdza, ¿e brak uwzglêdnienia pomiaru zak³ócenia prowadzi do gorszej regulacji. Przebiegi znajduj¹ siê na Rys.~\ref{zad6_DMC_bez}.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.37]{png/projekt/pro2_zad6_DMC_bez_zakl.png}
+	\caption{Przebiegi sygna³ów wejœciowych i wyjœciowych procesu bez uwzglêdnienia zak³óceñ zmiennych sinusoidalnych}
+	\label{zad6_DMC_bez}
+\end{figure}
+
+
+%7. Dla dobranych parametrów algorytmu zbadaæ jego odpornoœæ przy b³êdach pomiaru sygna³u zak³ócenia (szum pomiarowy). Rozwa¿yæ kilka wartoœci b³êdów. Zamieœciæ wybrane wyniki symulacji.
+
+
+\section{Algorytm DMC przy b³êdach pomiaru sygna³u zak³ócenia (szum pomiarowy)}
+
+Podobnie jak w poprzednim zadaniu, oprócz mierzalnego skoku zak³ócenia $Z_{skok}=1$ zaimplementowano dodatkowe zak³ócenie sinusoidalne - w tej wersji algorytmu nie bêdzie ono jednak mierzone i pos³u¿y jako symulacja szumu pomiarowego. 
+
+Zbadano odpornoœæ algorytmu na ró¿ne wartoœci b³êdów pomiarowych, przy parametrach dobranych w Zad.5. Testy przeprowadzono dla ró¿nej wartoœci amplitudy zak³ócenia sinusoidalnego:
+
+\begin{itemize}
+	\item A = 0.1: WskaŸnik jakoœci regulacji przyj¹³ wartoœæ $E = 6,0455$. Przebiegi na Rys.~\ref{zad7_DMC_1}.
+	
+	\item A = 0.2: WskaŸnik jakoœci regulacji przyj¹³ wartoœæ $E = 7,1052$. Przebiegi na Rys.~\ref{zad7_DMC_2}.
+	
+	\item A = 0.4: WskaŸnik jakoœci regulacji przyj¹³ wartoœæ $E = 11,1587$. Przebiegi na Rys.~\ref{zad7_DMC_4}.
+\end{itemize}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.37]{png/projekt/pro2_zad7_DMC_0.1.png}
+	\caption{Przebiegi sygna³ów wejœciowych i wyjœciowych procesu bez uwzglêdnienia zak³óceñ zmiennych sinusoidalnych}
+	\label{zad7_DMC_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.37]{png/projekt/pro2_zad7_DMC_0.2.png}
+	\caption{Przebiegi sygna³ów wejœciowych i wyjœciowych procesu bez uwzglêdnienia zak³óceñ zmiennych sinusoidalnych}
+	\label{zad7_DMC_2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.37]{png/projekt/pro2_zad7_DMC_0.4.png}
+	\caption{Przebiegi sygna³ów wejœciowych i wyjœciowych procesu bez uwzglêdnienia zak³óceñ zmiennych sinusoidalnych}
+	\label{zad7_DMC_4}
+\end{figure}
+
+
+Zgodnie z przewidywaniami, wraz ze wzrostem intensywnoœci szumów pomiarowych pogarsza³a siê jakoœæ regulacji obiektu.
+
+
+
+\section{Wnioski}
+
+W Tab. \ref{proj_tabela} znajduje siê porównanie wartoœci wskaŸnika jakoœci regulacji dla wszystkich algorytmów zaimplementowanych w ramach projektu.
+Zarówno w zad. 5. jak i zad. 6. zauwa¿yæ mo¿na, ¿e mo¿liwoœæ pomiaru i uwzglêdnienia zak³óceñ w regulacji znacz¹co poprawia jej jakoœæ, niezale¿nie od rodzaju zak³óceñ. Potwierdzaj¹ to równie¿ testy z zad. 7, które wskazuj¹, ¿e im wiêkszy poziom zak³óceñ niemo¿liwych do zmierzenia (szum pomiarowy), tym mniej efektywna jest regulacja.
+
+
+\begin{table}[H]
+	\caption{Zestawienie pomiarów jakoœci regulacji dla wszystkich algorytmów}
+	\label{proj_tabela}
+	\centering
+	\sisetup{table-auto-round=true}
+	\begin{small}
+		\begin{tabular}{ |c|c|c|c| } 
+			\hline
+			\multicolumn{1}{|c|}{Nr. zad \rule{0pt}{3.25mm}} & \hspace{0.5cm} Zak³ócenie \hspace{0.5cm} & Uwzgl. zak³. & E  \\ \hline
+			
+			4\rule{0pt}{3.5mm} & brak & nie & $E = 7,9233$ \\ \hline
+			
+			5\rule{0pt}{3.5mm} & skok jednostkowy & tak  & $E=5,6305$  \\ \hline
+			5\rule{0pt}{3.5mm} & skok jednostkowy & nie  & $E=6,2744$  \\ \hline
+			
+			6\rule{0pt}{3.5mm} & skok jednostkowy + sinusoidalny, A=0.1 & tak  & $E=5,7320$  \\ \hline
+			6\rule{0pt}{3.5mm} & skok jednostkowy + sinusoidalny, A=0.1 & nie  & $E=6,9802$  \\ \hline
+			
+			7\rule{0pt}{3.5mm} & skok jednostkowy + szum pomiarowy, A=0.1 & tak  & $E=6,0455$  \\ \hline
+			7\rule{0pt}{3.5mm} & skok jednostkowy + szum pomiarowy, A=0.2 & tak  & $E=7,1052$  \\ \hline
+			7\rule{0pt}{3.5mm} & skok jednostkowy + szum pomiarowy, A=0.4 & tak  & $E=11,1587$  \\ \hline
+			
+		
+		\end{tabular}
+	\end{small}
+\end{table}
