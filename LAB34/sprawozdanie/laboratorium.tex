@@ -55,3 +55,48 @@ Na podstawie charakterystyki Y(U) mo¿na stwierdziæ, ¿e w³aœciwoœci statyczne obi
 
 \section{Przekszta³cenie odpowiedzi skokowej}
 
+Implementacja przekszta³ceñ znajduje siê w plikach aproksymacja.s i aproksymacja.z.
+
+Odpowiedzi skokowe zosta³y odpowiednio przekszta³cone, aby otrzymaæ wartoœci $s_1, s_2, ...$ oraz $s^z_1, s^z_2, ...$.
+Wykorzystany zosta³ wzór:
+
+\begin{align*}
+	s_i = \frac{s^0_i-Y_{pp}}{\Delta U} \
+\end{align*}
+
+Po przekszta³ceniu wykonana zosta³a aproksymacja modelu za pomoc¹ cz³onu inercyjnego z opóŸnieniem.
+
+Do znalezienia parametrów aproksymacji zosta³ wykorzystany algorytm genetyczny. Implementacja umieszczona jest w pliku opt.m.
+
+
+Na wykresie \ref{rys_zad3apr} widoczny jest przebieg odpowiedzi skokowej (niebieski) oraz aproksymacja (pomarañczowy). 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{png/lab34_zad3a.png}
+	\caption{Przekszta³cona odpowiedŸ skokowa U z aproksymacj¹}
+	\label{rys_zad3apr}
+\end{figure}
+
+Wykres \ref{rys_zad32} przedstawia przekszta³con¹ odpowiedŸ skokow¹ przy pobudzeniu zak³óceniem $Z = 15$ oraz uzyskan¹ aproksymacjê.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{png/lab34_zad3az.png}
+	\caption{Przekszta³cona odpowiedŸ skokowa Z z aproksymacj¹}
+	\label{rys_zad32}
+\end{figure}
+
+Aproksymacja pozwala na wyznaczenie przybli¿onych transmitancji modeli wed³ug wzoru:
+
+\begin{align*}
+	G(z) = 
+\end{align*}
+
+
+Dla pobudzenia $G_1$:
+
+
+Dla pobudzenia $Z$:
+
+

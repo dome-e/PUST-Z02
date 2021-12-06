@@ -1,0 +1,8 @@
+\contentsline {chapter}{\numberline {1\relax .\enspace }Projekt}{2}{}%
+\contentsline {chapter}{\numberline {2\relax .\enspace }\'Cwiczenie laboratoryjne}{3}{}%
+\contentsline {section}{\numberline {2.1\relax .\enspace }Przygotowanie do wykonania \'cwiczenia}{3}{}%
+\contentsline {section}{\numberline {2.2\relax .\enspace }Przebiegi sygna\IeC {\l }\'ow wyj\'sciowych}{3}{}%
+\contentsline {section}{\numberline {2.3\relax .\enspace }Regulator PID z laboratorium 1}{4}{}%
+\contentsline {section}{\numberline {2.4\relax .\enspace }Regulator DMC z laboratorium 1}{4}{}%
+\contentsline {section}{\numberline {2.5\relax .\enspace }Rozmyty algorytm PID}{4}{}%
+\contentsline {section}{\numberline {2.6\relax .\enspace }Rozmyty algorytm DMC}{4}{}%

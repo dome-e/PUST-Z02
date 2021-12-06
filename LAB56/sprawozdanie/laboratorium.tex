@@ -1,0 +1,63 @@
+% !TEX encoding = cp1250
+\chapter{Æwiczenie laboratoryjne}
+
+Podczas tego zadania laboratoryjnego wykorzystano:
+\begin{itemize}
+	\item grza³kê G1 (sygna³ steruj¹cy $U$),
+	\item wentylator W1 (wartoœæ zadana $Y_{zad}$),
+	\item czujnik temperatury T1 (sygna³ wyjœciowy $Y$) 
+\end{itemize} 
+
+\section{Przygotowanie do wykonania æwiczenia}
+Przed rozpoczêciem pomiarów sprawdzono mo¿liwoœæ sterowania i~pomiaru w~komunikacji ze stanowiskiem. Punkt pracy grza³ki $G1$ dla zespo³u obliczony zosta³ wg. wzoru \ref{w_G1}:
+\begin{equation}
+	G1 = 25 + Z\%5\
+\label{w_G1}
+\end{equation}
+gdzie Z~to numer zespo³u, zatem dla grupy Z02 punkt pracy wynosi:
+\begin{equation}
+	G1 = 25 + 2\%5 = 27
+\end{equation}
+Nastêpnie okreœlono wartoœæ pomiaru temperatury T1 dla obliczonego punktu pracy. W~tym celu moc wentylatora W1 ustawiono na 50\% za pomoc¹ funkcji
+\texttt{sendControls(1, W1)}.
+Wartoœci mocy grza³ki zadawane s¹ poprzez funkcjê 
+\texttt{sendNonlinearControls(G1)}. Wartoœæ G1 zosta³a ustawiona na 27\%.
+Temperaturê odczytano korzystaj¹c z~funkcji 
+\texttt{readMeasurements(1)}.
+Temperatura T1 ustabilizowa³a siê na wartoœci \textbf{27.75\degree C}
+
+ 
+\section{Przebiegi sygna³ów wyjœciowych}
+Rozwi¹zanie zadania znajduje siê w pliku \texttt{lab2\_zad12.mlx}.
+\newline
+Zarejestrowano przebieg temperatury T1 dla trzech ró¿nych zmian zak³ócenia Z, rozpoczynaj¹c od ~0 do 5, 15 i~30.
+Otrzymane przebiegi zmian przedstawiono na Rys. \ref{rys_przebiegi_T1}. 
+
+TODO
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{png/lab/lab34_zad2.png}
+	\caption{Odpowiedzi skokowe procesu}
+	\label{rys_przebiegi_T1}
+\end{figure}
+
+Punkty charakterystyki statycznej Y(U) nie s¹ po³o¿one na dopasownej prostej. Oznacza to, ¿e w³aœciwoœci statyczne obiektu nie s¹ linowe i nie mo¿e zostaæ wyznaczone wzmocnienie statyczne.
+
+TODO
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75]{png/lab/lab34_zad22.png}
+	\caption{Charakterystyka statyczna obiektu}
+	\label{rys_zad22}
+\end{figure}
+
+
+\section{Regulator PID z laboratorium 1}
+
+\section{Regulator DMC z laboratorium 1}
+
+\section{Rozmyty algorytm PID}
+
+\section{Rozmyty algorytm DMC}
+
+
