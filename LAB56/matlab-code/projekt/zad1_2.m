@@ -59,17 +59,17 @@ Ystat(1:101)=0;
 % legend('U=-0.8','U=-0.3','U=0,2','U=0.6','U=1')
 % 
 % % Wyznaczanie charakterystki statycznej
-%
-% for i=1:101
-%     dU=(i-1)*0.02;
-%     U(10:n)=-1+dU;
-%     for k=7:n
-%         Y(k)=symulacja_obiektu2y_p3(U(k-5),U(k-6),Y(k-1),Y(k-2));
-%     end
-%     Ustat(i)=U(n);
-%     Ystat(i)=Y(n);
-% end
-% plot(Ustat,Ystat);
-% xlabel('U');
-% ylabel('Y');
-% title('Charakterystyka statyczna Y(U)');
+
+for i=1:101
+    dU=(i-1)*0.02;
+    U(10:n)=-1+dU;
+    for k=7:n
+        Y(k)=symulacja_obiektu2y_p3(U(k-5),U(k-6),Y(k-1),Y(k-2));
+    end
+    Ustat(i)=U(n);
+    Ystat(i)=Y(n);
+end
+plot(Ustat,Ystat);
+xlabel('U');
+ylabel('Y');
+title('Charakterystyka statyczna Y(U)');
