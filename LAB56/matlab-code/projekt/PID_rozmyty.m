@@ -11,23 +11,20 @@ u_min=-1;
 %Iloœæ regulatorów lokalnych
 regulator=3;
 typ_regulatora = 'PID';
+y_przedzial = rozklad(regulator, typ_regulatora);
 if regulator==2
-    y_przedzial = rozklad(regulator, typ_regulatora);
     K=[-0.172946 0.191360];
     Ti=[-1.070829 8.028027];
     Td=[-4.981247 0.769607];
 elseif regulator==3
-    y_przedzial = rozklad(regulator, typ_regulatora);
     K=[-0.172946 -0.018484 0.191360];
     Ti=[-2.055129 -10.214840 8.028027];
     Td=[-4.981247 15.489054 0.769607];
 elseif regulator==4
-    y_przedzial = rozklad(regulator, typ_regulatora);
     K=[-0.172946 0.132199 -0.018484 0.191360];
     Ti=[-2.055129 3.637091 -10.214840 8.028027];
     Td=[-4.981247 0.107170 15.489054 0.769607];
 elseif regulator==5
-    y_przedzial = rozklad(regulator, typ_regulatora);
     K=[-0.172946 -0.027008 -0.018484 -0.131081 0.191360];
     Ti=[-2.055129 -3.995364 -10.214840 -4.333814 8.028027];
     Td=[-4.981247 26.380217 15.489054 -6.294312 0.769607];
