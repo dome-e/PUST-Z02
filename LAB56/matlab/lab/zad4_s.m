@@ -37,4 +37,7 @@ for k=1:imax-d2
 end
 stairs(0:length(s3)-1, s3);
 legend("U = 20", "U = 40", "U = 80");
+xlabel('k');
+ylabel('s');
+
 hold off
