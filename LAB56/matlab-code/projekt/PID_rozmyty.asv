@@ -9,7 +9,7 @@ u_max=1;
 u_min=-1;
 
 %Iloœæ regulatorów lokalnych
-regulator=2; %2 slabo; 3 w miare; 4 dziala; 5 slaby
+regulator=2;
 typ_regulatora = 'PID';
 y_przedzial = rozklad(regulator, typ_regulatora);
 if regulator==2
