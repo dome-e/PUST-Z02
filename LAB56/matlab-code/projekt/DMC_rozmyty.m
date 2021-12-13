@@ -1,5 +1,4 @@
-function E=lambda_opt(X)
-    %Punkty pracy
+%Punkty pracy
     Upp=0;
     Ypp=0;
 
@@ -8,24 +7,30 @@ function E=lambda_opt(X)
     u_min=-1;
 
     %Dobor regulatorow
-    regulator = 2;
-    typ_regulatora = 'DMC';
+    regulator = 2; %2 ;3 w miare
+    typ_regulatora = 'PID';
     
     %dobor_lambdy=
     %0 - zadanie 6
     %1 - zadanie 7
     dobor_lambda=0;
-    
+    u_reg=zeros(2,regulator);
     u_przedzial = rozklad(regulator, typ_regulatora);
     if regulator==2
-        D={23, 24};
+        D={40, 30};
+        u_reg=zeros(2,regulator);
+        u_reg(1,:)=[0.22
+            ,0.7];
+        u_reg(2,:)=[0.3,0.8];
         if dobor_lambda==0
             lambda={1 1};
         elseif dobor_lambda==1
             lambda={X(1) X(2)};
         end
     elseif regulator==3
-        D={30, 19, 21};
+        D={30, 20, 35};
+        u_reg(1,:)=[0.2, 0.4, 0.7];
+        u_reg(2,:)=[0.25, 0.48, 0.9];
         if dobor_lambda==0
             lambda={1 1 1};
         elseif dobor_lambda==1
@@ -33,6 +38,8 @@ function E=lambda_opt(X)
         end
     elseif regulator==4
         D={42, 41, 23, 27};
+        u_reg(1,:)=[-0.1, 0.2, 0.5, 0.9];
+        u_reg(2,:)=[0.2, 0.25, 0.7, 1];
         if dobor_lambda==0
             lambda={1 1 1 1};
         elseif dobor_lambda==1
@@ -111,13 +118,22 @@ function E=lambda_opt(X)
        e(k)=y_zad(k)-y(k);
 
        u(k)=u(k-1);
+       
        for i=1:regulator
-            du{i}=Ke{i}*e(k)-Ku{i}*dup{i}'; %regulator
+            du=Ke{i}*e(k)-Ku{i}*dup{i}'; %regulator
             for n=D{i}-1:-1:2
                 dup{i}(n)=dup{i}(n-1);
             end
-            dup{i}(1)=du{i};
-            u(k)=u(k)+u_przedzial(i,floor(dup{i}(1)/0.))*dup{i}(1);
+            dup{i}(1)=du;
+            ind=floor(dup{i}(1)/0.01)+100;
+            if ind<1
+                ind = 1;
+            end
+            if ind>201
+                    ind = 201;
+            end
+            u(k)=u(k)+u_przedzial(i,floor(Y(k)/0.05)+6)*dup{i}(1)/sum(u_przedzial(:,floor(Y(k)/0.05)+6));
+            
        end
 
        if u(k)>u_max
@@ -130,5 +146,17 @@ function E=lambda_opt(X)
        U(k)=u(k)+Upp;   
     end
 
-    E=(norm(e))^2; %Wskaünik jakoúci regulacji
-end
+    E=(norm(e))^2 %Wskaünik jakoúci regulacji
+    
+    subplot(2,1,1);
+stairs(U);
+title('u(k)');
+xlabel('k');
+ylabel('u');
+subplot(2,1,2);
+stairs(Y);
+title('Y(k) i Y_z_a_d');
+hold on;
+stairs(Y_zad);
+xlabel('k');
+legend('y','y_z_a_d','Location','southeast');
