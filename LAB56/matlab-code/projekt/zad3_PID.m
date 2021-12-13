@@ -10,14 +10,15 @@ u_max=1;
 u_min=-1;
 
 %Inicjalizacja macierzy
-n=300; %Okres symulacji
+n=500; %Okres symulacji
 U(1:n)=Upp;
 Y(1:n)=Ypp;
-Y_zad(1:10)=Ypp;
-Y_zad(11:300)=1;
-% Y_zad(251:500)=3.5;
-% Y_zad(501:750)=2;
-% Y_zad(750:1000)=0;
+Y_zad(1:10) = Ypp;
+Y_zad(10:100) = 4;
+Y_zad(101:200) = 2;
+Y_zad(201:300)= 0.5;
+Y_zad(301:400)= 5;
+Y_zad(401:500)= 3;
 u=U-Upp;
 y_zad=Y_zad-Ypp;
 y(1:n)=0;
@@ -57,13 +58,15 @@ E=(norm(e))^2 %Wskaünik jakoúci regulacji
 
 subplot(2,1,1);
 stairs(U);
-title('u(k)');
+% title('u(k)');
 xlabel('k');
-ylabel('u');
+ylabel('U');
 subplot(2,1,2);
 stairs(Y);
-title('Y(k) i Y_z_a_d');
+% title('Y(k) i Y_z_a_d');
 hold on;
 stairs(Y_zad);
 xlabel('k');
+ylabel('Y');
 legend('y','y_z_a_d','Location','southeast');
+hold off
