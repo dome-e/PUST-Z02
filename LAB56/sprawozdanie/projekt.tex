@@ -52,7 +52,7 @@ W³aœciwoœci dynamiczne oraz statyczne nie s¹ liniowe. Do charakterystyki statycz
 
 Obiekt zosta³ poddany regulacji za pomoc¹ algorytmów PID i DMC z Projektu 2.
 
-TODO opis PID, DMC
+Jakoœæ sterowania zale¿y od wartoœci $Y_{zad}$. Ró¿ni siê intensywnoœæ oscylacji oraz wartoœæ przeregulowania. Wynika to z nieliniowoœci charakterystyki statycznej.
 
 \begin{figure}[H]
 	\centering
@@ -68,6 +68,8 @@ TODO opis PID, DMC
 	\label{zad3_pid_y}
 \end{figure}
 
+WskaŸnik jakoœci wyniosi $ E = 388.88 $.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.75]{png/projekt/zad3_dmc_u.png}
@@ -82,7 +84,7 @@ TODO opis PID, DMC
 	\label{zad3_dmc_y}
 \end{figure}
 
-
+WskaŸnik jakoœci wyniosi $ E = 515.34 $. Jego wartoœæ jest wiêksza, ni¿ dla PID. Regulator DMC sprawdzi³ siê gorzej od pierwszego algorytmu. Wstêpuje znacznie wiêksze przeregulowanie oraz oscylacje. Dla $Y_{zad} = 4.5$ sygna³ wyjœciowy nie osi¹ga tej wartoœci. 
 
 \section{Rozmyty algorytm PID}
 

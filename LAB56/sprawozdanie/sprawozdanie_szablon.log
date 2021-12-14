@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.2)  13 DEC 2021 23:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.2)  14 DEC 2021 11:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1047,19 +1047,19 @@ File: png/projekt/zad3_pid_y.png Graphic file (type png)
 Package pdftex.def Info: png/projekt/zad3_pid_y.png  used on input line 66.
 (pdftex.def)             Requested size: 351.95403pt x 132.6151pt.
 
-Underfull \vbox (badness 3590) has occurred while \output is active []
+Underfull \vbox (badness 1472) has occurred while \output is active []
 
  [3 <./png/projekt/zad2_1.png (PNG copy)> <./png/projekt/zad2_2.png (PNG copy)>
  <./png/projekt/zad3_pid_u.png (PNG copy)>]
 <png/projekt/zad3_dmc_u.png, id=32, 473.1276pt x 176.8206pt>
 File: png/projekt/zad3_dmc_u.png Graphic file (type png)
 <use png/projekt/zad3_dmc_u.png>
-Package pdftex.def Info: png/projekt/zad3_dmc_u.png  used on input line 73.
+Package pdftex.def Info: png/projekt/zad3_dmc_u.png  used on input line 75.
 (pdftex.def)             Requested size: 354.84482pt x 132.6151pt.
 <png/projekt/zad3_dmc_y.png, id=33, 469.2732pt x 176.8206pt>
 File: png/projekt/zad3_dmc_y.png Graphic file (type png)
 <use png/projekt/zad3_dmc_y.png>
-Package pdftex.def Info: png/projekt/zad3_dmc_y.png  used on input line 80.
+Package pdftex.def Info: png/projekt/zad3_dmc_y.png  used on input line 82.
 (pdftex.def)             Requested size: 351.95403pt x 132.6151pt.
 ) (./laboratorium.tex [4 <./png/projekt/zad3_pid_y.png (PNG copy)> <./png/proje
 kt/zad3_dmc_u.png (PNG copy)> <./png/projekt/zad3_dmc_y.png (PNG copy)>]
@@ -1092,7 +1092,7 @@ Overfull \hbox (11.69215pt too wide) in paragraph at lines 60--61
  []
 
 
-Underfull \vbox (badness 1661) has occurred while \output is active []
+Underfull \vbox (badness 4995) has occurred while \output is active []
 
  [6 <./png/lab/zad2_pomiary.png (PNG copy)> <./png/lab/zad2_char_stat.png (PNG 
 copy)>]
@@ -1141,7 +1141,7 @@ l/plmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr10.pfb
 021/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/texlive/2021/texmf-
 dist/fonts/type1/public/pl/pltt10.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/public/cm-super/sfbx1095.pfb>
-Output written on sprawozdanie_szablon.pdf (10 pages, 518206 bytes).
+Output written on sprawozdanie_szablon.pdf (10 pages, 519892 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
