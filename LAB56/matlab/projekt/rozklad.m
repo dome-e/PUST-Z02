@@ -17,9 +17,9 @@ if typ_r == 'PID'
     end
     if regulator ==4
         wekt_w1 = gbellmf(Yw, [(Ymax-Ymin)/6 (Ymax-Ymin)/2 Ymin]);
-        wekt_w2 = gbellmf(Yw, [(Ymax - Ymin)/6 (Ymax-Ymin)/2 0.3*Ymax]);
-        wekt_w3 = gbellmf(Yw, [(Ymax - Ymin)/6 (Ymax-Ymin)/2 0.6*Ymax]);
-        wekt_w4 = gbellmf(Yw, [(Ymax - Ymin)/6 (Ymax-Ymin)/2 1*Ymax]);
+        wekt_w2 = gbellmf(Yw, [(Ymax - Ymin)/6 (Ymax-Ymin)/2 0.15*Ymax]);
+        wekt_w3 = gbellmf(Yw, [(Ymax - Ymin)/6 (Ymax-Ymin)/2 0.5*Ymax]);
+        wekt_w4 = gbellmf(Yw, [(Ymax - Ymin)/6 (Ymax-Ymin)/2 0.9*Ymax]);
         wekt = [wekt_w1; wekt_w2; wekt_w3; wekt_w4];
     end
     if regulator ==5

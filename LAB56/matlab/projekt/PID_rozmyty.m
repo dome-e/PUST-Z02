@@ -1,4 +1,4 @@
-clear all;
+clear all;  
 
 %Punkty p racy
 Upp=0;
