@@ -7,14 +7,14 @@
     u_min=-1;
 
     % Dobor regulatorow
-    regulator = 2;
+    regulator = 4;
     % typ_regulatora = 'PID/';
     typ_regulatora = 'PID';
     
     % dobor_lambdy=
     % 0 - zadanie 6
     % 1 - zadanie 7
-    dobor_lambda = 1;
+    dobor_lambda = 0;
 
     u_reg=zeros(2,regulator);
     u_przedzial = rozklad(regulator, typ_regulatora);
