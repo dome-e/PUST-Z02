@@ -6,26 +6,28 @@
     u_max=1;
     u_min=-1;
 
-    %Dobor regulatorow
-    regulator = 2; %2 ;3 w miare
-%     typ_regulatora = 'PID/';
-    typ_regulatora = 'DMC';
-
+    % Dobor regulatorow
+    regulator = 2;
+    % typ_regulatora = 'PID/';
+    typ_regulatora = 'PID';
     
-    dobor_lambda = 0; % zadanie 6
-%     dobor_lambda = 1; % zadanie 7
+    % dobor_lambdy=
+    % 0 - zadanie 6
+    % 1 - zadanie 7
+    dobor_lambda = 1;
 
     u_reg=zeros(2,regulator);
     u_przedzial = rozklad(regulator, typ_regulatora);
     if regulator==2
         D={40, 30};
         u_reg=zeros(2,regulator);
+
         u_reg(1,:)=[0.22,0.7];
         u_reg(2,:)=[0.3,0.8];
         if dobor_lambda==0
             lambda={1 1};
         elseif dobor_lambda==1
-            lambda={X(1) X(2)};
+            lambda={9.3 21.2};
         end
     elseif regulator==3
         D={30, 20, 35};
@@ -34,7 +36,7 @@
         if dobor_lambda==0
             lambda={1 1 1};
         elseif dobor_lambda==1
-            lambda={X(1) X(2) X(3)};
+            lambda={4.1 9.5 17};
         end
     elseif regulator==4
         D={42, 41, 23, 27};
@@ -43,10 +45,12 @@
         if dobor_lambda==0
             lambda={1 1 1 1};
         elseif dobor_lambda==1
-            lambda={X(1) X(2) X(3) X(4)};
+            lambda={2.1 2.2 7.2 1.1};
         end
     elseif regulator==5
         D={42, 41, 22, 23, 26};
+        u_reg(1,:)=[-0.1, 0.2, 0.5, 0.9, 1];
+        u_reg(2,:)=[0.2, 0.25, 0.7, 0.9, 1];
         if dobor_lambda==0
             lambda={1 1 1 1 1};
         elseif dobor_lambda==1
@@ -150,13 +154,15 @@
     
     subplot(2,1,1);
 stairs(U);
-title('u(k)');
+% title('u(k)');
 xlabel('k');
-ylabel('u');
+ylabel('U');
 subplot(2,1,2);
 stairs(Y);
-title('Y(k) i Y_z_a_d');
+% title('Y(k) i Y_z_a_d');
 hold on;
 stairs(Y_zad);
 xlabel('k');
+ylabel('Y');
 legend('y','y_z_a_d','Location','southeast');
+hold off
