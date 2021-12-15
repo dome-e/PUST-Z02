@@ -1,4 +1,4 @@
-clear all;  
+clear all;
 
 %Punkty p racy
 Upp=0;
@@ -9,7 +9,7 @@ u_max=1;
 u_min=-1;
 
 %Iloœæ regulatorów lokalnych
-regulator=4;
+regulator=5;
 typ_regulatora = 'PID';
 y_przedzial = rozklad(regulator, typ_regulatora);
 if regulator==2

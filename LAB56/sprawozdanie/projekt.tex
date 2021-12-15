@@ -90,12 +90,9 @@ WskaŸnik jakoœci wyniosi $ E = 515.34 $. Jego wartoœæ jest wiêksza, ni¿ dla PID.
 
 Zaimplementowany zosta³ rozmyty algorytm PID dla ró¿nej iloœci regulatorów lokalnych (2, 3, 4, 5). Dla ka¿dego z regulatorów nastawy zosta³y dobrane oddzielnie za pomoc¹ optymalizacji znajduj¹cej siê w pliku \texttt{Dobieranie\_PID.m}
 
-W wyniku optymalizacji otrzymano nastêpuj¹ce nastawy i przebiegi:
+W wyniku optymalizacji otrzymano nastêpuj¹ce przebiegi:
 \begin{itemize}
 	\item Dla dwóch regulatorów: \newline
-	$K_1=-0.172946$  $K_2 = 0.191360$ \newline
-	$T_i1=-1.070829$  $T_i2 = 8.028027$ \newline
-	$T_d1 = -4.981247$ $T_d2 = 0.769607$\newline
 	
 	\begin{figure}[H]
 		\centering
@@ -104,12 +101,9 @@ W wyniku optymalizacji otrzymano nastêpuj¹ce nastawy i przebiegi:
 		\label{PID_rozm_reg2}
 	\end{figure}
 
-	WskaŸnik jakoœci regulacji $E = 795,4233$
+	WskaŸnik jakoœci regulacji $E =217,6670$
 	
 	\item Dla trzech regulatorów\newline
-	$K_1=-0.172946$  $K_2 = -0.018484$ $K_3= 0.191360$ \newline
-	$T_i1=-2.055129$  $T_i2 = -10.214840$  $T_i3 = 8.028027$\newline
-	$T_d1 = -4.981247$ $T_d2 =15.489054$ $T_d3 = 0.769607$ \newline
 	
 	\begin{figure}[H]
 		\centering
@@ -118,12 +112,9 @@ W wyniku optymalizacji otrzymano nastêpuj¹ce nastawy i przebiegi:
 		\label{PID_rozm_reg3}
 	\end{figure}
 
-	WskaŸnik jakoœci regulacji $E = 387,9480$
+	WskaŸnik jakoœci regulacji $E = 210,1798$
 
 	\item Dla czterech regulatorów\newline
-	$K_1=-0.172946$  $K_2 = 0.132199 $ $K_3= -0.018484 $ $K_4= 0.191360$\newline
-	$T_i1=-2.055129$  $T_i2 = 3.637091 $  $T_i3 = -10.214840 $ $T_i4 = 8.028027$\newline
-	$T_d1 = -4.981247$ $T_d2 =0.107170$ $T_d3 = 15.489054$ $T_i4 = 0.769607$\newline
 	
 	\begin{figure}[H]
 		\centering
@@ -132,13 +123,10 @@ W wyniku optymalizacji otrzymano nastêpuj¹ce nastawy i przebiegi:
 		\label{PID_rozm_reg4}
 	\end{figure}
 
-	WskaŸnik jakoœci regulacji $E = 246,4657$
+	WskaŸnik jakoœci regulacji $E = 133,1467$
 
 	\item Dla piêciu regulatorów\newline
-	$K_1=-0.172946$  $K_2 = -0.027008$ $K_3= -0.018484 $ $K_4= -0.131081$ $K_5= 0.191360$\newline
-	$T_i1=-2.055129$  $T_i2 = -3.995364$  $T_i3 = -10.214840 $ $T_i4 = -4.333814$ $T_i5 = 8.028027$ \newline
-	$T_d1 = -4.981247$ $T_d2 =26.380217$ $T_d3 = 15.489054$ $T_i4 = -6.294312$ $T_i5 = 0.769607$ \newline
-	
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.25]{png/projekt/PID_rozm_reg5.png}
@@ -223,7 +211,8 @@ Przebiegi dla ró¿nej iloœci regulatorów lokalnych, przy wartoœci parametru $\lam
 	\label{DMC_rozm_lambda1_reg2_y}
 \end{figure}
 
-Dla dwóch regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=221,4943$.
+
+Dla dwóch regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=258,7427$.
 
 \begin{figure}[H]
 	\centering
@@ -239,7 +228,7 @@ Dla dwóch regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=221,4943$.
 	\label{DMC_rozm_lambda1_reg3_y}
 \end{figure}
 
-Dla trzech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=210,3070$.
+Dla trzech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=221,1660$.
 
 \begin{figure}[H]
 	\centering
@@ -255,7 +244,7 @@ Dla trzech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=210,3070$
 	\label{DMC_rozm_lambda1_reg4_y}
 \end{figure}
 
-Dla czterech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E= 191,2044$
+Dla czterech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E= 186,8891$
 
 Nastêpnie dobrano wartoœci parametrów $\lambda$ dla ka¿dego z regulatorów metod¹ eksperymentaln¹. 
 
