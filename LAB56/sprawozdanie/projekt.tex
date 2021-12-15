@@ -88,9 +88,74 @@ WskaŸnik jakoœci wyniosi $ E = 515.34 $. Jego wartoœæ jest wiêksza, ni¿ dla PID.
 
 \section{Rozmyty algorytm PID}
 
+Zaimplementowany zosta³ rozmyty algorytm PID dla ró¿nej iloœci regulatorów lokalnych (2, 3, 4, 5). Dla ka¿dego z regulatorów nastawy zosta³y dobrane oddzielnie za pomoc¹ optymalizacji znajduj¹cej siê w pliku \texttt{Dobieranie\_PID.m}
+
+W wyniku optymalizacji otrzymano nastêpuj¹ce nastawy i przebiegi:
+\begin{itemize}
+	\item Dla dwóch regulatorów: \newline
+	$K_1=-0.172946$  $K_2 = 0.191360$ \newline
+	$T_i1=-1.070829$  $T_i2 = 8.028027$ \newline
+	$T_d1 = -4.981247$ $T_d2 = 0.769607$\newline
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.25]{png/projekt/PID_rozm_reg2.png}
+		\caption{Przebiegi dla rozmytego regulatora PID. Liczba regulatorów = 2 }
+		\label{PID_rozm_reg2}
+	\end{figure}
+
+	WskaŸnik jakoœci regulacji $E = 795,4233$
+	
+	\item Dla trzech regulatorów\newline
+	$K_1=-0.172946$  $K_2 = -0.018484$ $K_3= 0.191360$ \newline
+	$T_i1=-2.055129$  $T_i2 = -10.214840$  $T_i3 = 8.028027$\newline
+	$T_d1 = -4.981247$ $T_d2 =15.489054$ $T_d3 = 0.769607$ \newline
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.25]{png/projekt/PID_rozm_reg3.png}
+		\caption{Przebiegi dla rozmytego regulatora PID. Liczba regulatorów = 3 }
+		\label{PID_rozm_reg3}
+	\end{figure}
+
+	WskaŸnik jakoœci regulacji $E = 387,9480$
+
+	\item Dla czterech regulatorów\newline
+	$K_1=-0.172946$  $K_2 = 0.132199 $ $K_3= -0.018484 $ $K_4= 0.191360$\newline
+	$T_i1=-2.055129$  $T_i2 = 3.637091 $  $T_i3 = -10.214840 $ $T_i4 = 8.028027$\newline
+	$T_d1 = -4.981247$ $T_d2 =0.107170$ $T_d3 = 15.489054$ $T_i4 = 0.769607$\newline
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.25]{png/projekt/PID_rozm_reg4.png}
+		\caption{Przebiegi dla rozmytego regulatora PID. Liczba regulatorów = 4}
+		\label{PID_rozm_reg4}
+	\end{figure}
+
+	WskaŸnik jakoœci regulacji $E = 246,4657$
+
+	\item Dla piêciu regulatorów\newline
+	$K_1=-0.172946$  $K_2 = -0.027008$ $K_3= -0.018484 $ $K_4= -0.131081$ $K_5= 0.191360$\newline
+	$T_i1=-2.055129$  $T_i2 = -3.995364$  $T_i3 = -10.214840 $ $T_i4 = -4.333814$ $T_i5 = 8.028027$ \newline
+	$T_d1 = -4.981247$ $T_d2 =26.380217$ $T_d3 = 15.489054$ $T_i4 = -6.294312$ $T_i5 = 0.769607$ \newline
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.25]{png/projekt/PID_rozm_reg5.png}
+		\caption{Przebiegi dla rozmytego regulatora PID. Liczba regulatorów = 5}
+		\label{PID_rozm_reg5}
+	\end{figure}
+	WskaŸnik jakoœci regulacji $E = 1,6366e+03$
+
+	
+\end{itemize}
+
+Jakoœæ regulacji by³a najlepsza w przypadku regulatora rozmytego z czterema regulatorami lokalnymi. Wraz ze wzrostem iloœci regulatorów lokalnych ros³a jakoœæ regulacji, jednak coraz trudniejsze stawa³o siê równie¿ odpowiednie dobranie parametrów regulatorów, przez co regulator z piêcioma regulatorami lokalnymi charakteryzuje siê najgorsz¹ jakoœci¹ regulacji.
+
+
 \section{Rozmyty algorytm DMC}
 
-Nastêpnie zaimplementowano algorytm rozmytego regulatora DMC dla ró¿nej liczby regulatorów lokalnych (2, 3, 4 lub 5). Dla ka¿dego regulatora z inn¹ liczb¹ regulatorów lokalnych dobrano parametry oddzielnie.
+Nastêpnie zaimplementowano algorytm rozmytego regulatora DMC dla ró¿nej liczby regulatorów lokalnych (2, 3, lub 4). Dla ka¿dego regulatora z inn¹ liczb¹ regulatorów lokalnych dobrano parametry oddzielnie.
 
 Zestaw liczb $s_1, s_2, s_3....$ obliczany jest oddzielnie dla ka¿dego z regulatorów lokalnych poprzez wykorzystanie funkcji \texttt{licz\_s.m}. 
 
@@ -146,27 +211,116 @@ Przebiegi dla ró¿nej iloœci regulatorów lokalnych, przy wartoœci parametru $\lam
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.3]{png/projekt/DMC_rozm_lambda1_reg2.png}
-	\caption{Przebiegi dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 2 }
-	\label{DMC_rozm_lambda1_reg2}
+	\includegraphics[scale=0.7]{png/projekt/DMC_rozm_lambda1_reg2_u.png}
+		\caption{Wartoœæ sterowania $u$ dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 2 }
+	\label{DMC_rozm_lambda1_reg2_u}
 \end{figure}
-
-Dla dwóch regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=227,3882$.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.3]{png/projekt/DMC_rozm_lambda1_reg3.png}
-	\caption{Przebiegi dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 3}
-	\label{DMC_rozm_lambda1_reg3}
+	\includegraphics[scale=0.7]{png/projekt/DMC_rozm_lambda1_reg2_y.png}
+	\caption{Sygna³ wyjœciowy $y$ dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 2 }
+	\label{DMC_rozm_lambda1_reg2_y}
 \end{figure}
 
-Dla trzech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=203,6199$.
+Dla dwóch regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=221,4943$.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.3]{png/projekt/DMC_rozm_lambda1_reg4.png}
-	\caption{Przebiegi dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 4}
-	\label{DMC_rozm_lambda1_reg4}
+	\includegraphics[scale=0.7]{png/projekt/DMC_rozm_lambda1_reg3_u.png}
+	\caption{Wartoœæ sterowania $u$ dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 3 }
+	\label{DMC_rozm_lambda1_reg3_u}
 \end{figure}
 
-Dla czterech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E= 844,2965$
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{png/projekt/DMC_rozm_lambda1_reg3_y.png}
+	\caption{Sygna³ wyjœciowy $y$ dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 3}
+	\label{DMC_rozm_lambda1_reg3_y}
+\end{figure}
+
+Dla trzech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=210,3070$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{png/projekt/DMC_rozm_lambda1_reg4_u.png}
+	\caption{Wartoœæ sterowania $u$ dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 4 }
+	\label{DMC_rozm_lambda1_reg4_u}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{png/projekt/DMC_rozm_lambda1_reg4_y.png}
+	\caption{Sygna³ wyjœciowy $y$ dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 4}
+	\label{DMC_rozm_lambda1_reg4_y}
+\end{figure}
+
+Dla czterech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E= 191,2044$
+
+Nastêpnie dobrano wartoœci parametrów $\lambda$ dla ka¿dego z regulatorów metod¹ eksperymentaln¹. 
+
+Otrzymano nastêpuj¹ce nastawy i przebiegi
+\begin{itemize}
+	\item Dla dwóch regulatorów: \newline
+	$\lambda_1= 9.3$  $\lambda_2= 21.2$ \newline
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{png/projekt/dmc_rozm2_u.png}
+		\caption{Wartoœæ sterowania $u$ dla rozmytego regulatora DMC. Liczba regulatorów = 2 }
+		\label{dmc_rozm2_u}
+	\end{figure}
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{png/projekt/dmc_rozm2_y.png}
+	\caption{Sygna³ wyjœciowy $y$ dla rozmytego regulatora DMC. Liczba regulatorów = 2 }
+	\label{dmc_rozm2_y}
+\end{figure}
+	
+	WskaŸnik jakoœci regulacji $E = 103,9025$
+	
+	\item Dla trzech regulatorów\newline
+	$\lambda_1= 4.1$  $\lambda_2= 9.5$  $\lambda_3 = 17$\newline
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{png/projekt/dmc_rozm3_u.png}
+		\caption{Wartoœæ sterowania $u$ dla rozmytego regulatora DMC. Liczba regulatorów = 3 }
+		\label{dmc_rozm3_u}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{png/projekt/dmc_rozm3_y.png}
+		\caption{Sygna³ wyjœciowy $y$ dla rozmytego regulatora DMC. Liczba regulatorów = 3 }
+		\label{dmc_rozm3_y}
+	\end{figure}
+
+	WskaŸnik jakoœci regulacji $E =  109,2374$
+	
+	\item Dla czterech regulatorów\newline
+	$\lambda_1= 2.1$  $\lambda_2= 2.2$  $\lambda_3 = 7.2 $ $\lambda_4 = 1.1$ \newline
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{png/projekt/dmc_rozm4_u.png}
+		\caption{Wartoœæ sterowania $u$ dla rozmytego regulatora DMC. Liczba regulatorów = 4}
+		\label{dmc_rozm4_u}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{png/projekt/dmc_rozm4_y.png}
+		\caption{Sygna³ wyjœciowy $y$ dla rozmytego regulatora DMC. Liczba regulatorów = 4 }
+		\label{dmc_rozm4_y}
+	\end{figure}
+	
+	WskaŸnik jakoœci regulacji $E =  136,2552$
+	
+
+Wraz ze wzrostem iloœci regulatorów lokalnych w regulatorze rozmytym, ros³a jakoœæ regulacji. WskaŸnik jakoœci regulacji $E$ by³ coraz mniejszy, zauwa¿alne by³y równie¿ coraz mniejsze oscylacje.
+
+
+\end{itemize}
