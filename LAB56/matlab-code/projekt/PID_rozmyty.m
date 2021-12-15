@@ -1,6 +1,6 @@
 clear all;
 
-%Punkty pracy
+%Punkty p racy
 Upp=0;
 Ypp=0;
 
@@ -9,7 +9,7 @@ u_max=1;
 u_min=-1;
 
 %Iloœæ regulatorów lokalnych
-regulator=2; %2 slabo; 3 w miare; 4 dziala; 5 slaby
+regulator=3; %2 slabo; 3 w miare; 4 dziala; 5 slaby
 typ_regulatora = 'PID';
 y_przedzial = rozklad(regulator, typ_regulatora);
 if regulator==2
@@ -63,8 +63,9 @@ for k=7:n
     
     %Suma wa¿ona
     du=0;
+    przedzial_suma = sum(y_przedzial(:,floor((y(k)/0.05)+5)));
     for j=1:regulator
-        du=du+y_przedzial(j,floor((y(k)/0.05)+5))*(r2(j)*e(k-2)+r1(j)*e(k-1)+r0(j)*e(k))/sum(y_przedzial(:,floor((y(k)/0.05)+5)));
+        du=du+y_przedzial(j,floor((y(k)/0.05)+5))*(r2(j)*e(k-2)+r1(j)*e(k-1)+r0(j)*e(k))/przedzial_suma;
     end
        
     u(k)=u(k-1)+du;
