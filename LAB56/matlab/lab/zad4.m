@@ -1,62 +1,50 @@
 zad4_s; % s1, s2, s3, ... 
 
-imax = 1500;
+addpath('D:\SerialCommunication'); % add a path to the functions
+initSerialControl COM3 % initialise com port
+imax = 1200;
 
-N1 = D1; Nu1 = D1;
-N2 = D2; Nu2 = D2;
-N3 = D3; Nu3 = D3;
+D = max([D1, D2, D3]);
+N = D; Nu = D;
 lambda = 1;
 
 % pp
 Upp = 27;
-Ypp = 31.81;
+Ypp = 32.12;
 % ogr
-Umin = 0 - Upp; Umax = 100 - Upp; dUmax = 5;
+Umin = 0 - Upp; Umax = 100 - Upp; dUmax = 20;
 
 % init
 Y = zeros(imax, 1);
-U = zeros(imax, 1);
-Yzad1 = Ypp * ones(N1, 1);
-Yzad2 = Ypp * ones(N2, 1);
-Yzad3 = Ypp * ones(N3, 1);
-M1 = zeros(N1, Nu1);
-M2 = zeros(N2, Nu2);
-M3 = zeros(N3, Nu3);
-Mp1 = zeros(N, D1-1);
-Mp2 = zeros(N, D2-1);
-Mp3 = zeros(N, D3-1);
-dUp1 = zeros(D1-1, 1);
-dUp2 = zeros(D2-1, 1);
-dUp3 = zeros(D3-1, 1);
-dU1 = zeros(Nu1, 1);
-dU2 = zeros(Nu2, 1);
-dU3 = zeros(Nu3, 1);
-Y01 = zeros(N1, 1);
-Y02 = zeros(N2, 1);
-Y03 = zeros(N3, 1);
-I1 = eye(Nu1);
-I2 = eye(Nu2);
-I3 = eye(Nu3);
+% U = zeros(imax, 1);
+U = Upp * ones(imax, 1);
+Yzad = Ypp * ones(N, 1);
+M1 = zeros(N, Nu);
+M2 = zeros(N, Nu);
+M3 = zeros(N, Nu);
+Mp1 = zeros(N, D-1);
+Mp2 = zeros(N, D-1);
+Mp3 = zeros(N, D-1);
+dUp = zeros(D-1, 1);
+dU = zeros(Nu, 1);
+Y01 = zeros(N, 1);
+Y02 = zeros(N, 1);
+Y03 = zeros(N, 1);
+I = eye(Nu);
 % - - -
 
-Yzad(1:11) = Ypp;
-Yzad(12:300) = 29;
-Yzad(301:600) = 30;
-Yzad(601:900) = 29;
-Yzad(901:1200) = 27;
-Yzad(1201:imax) = Ypp;
+Yzad(1:300) = Ypp;
+Yzad(301:600) = Ypp + 5;
+Yzad(601:900) = Ypp + 15;
+Yzad(901:imax) = Ypp;
 
 yzad = Yzad - Ypp;
 u = U - Upp;
 y = zeros(imax, 1);
 e = zeros(imax ,1);
 
-Ydmc1 = zeros(N1,1);
-Ydmc_zad1 = zeros(N1,1);
-Ydmc2 = zeros(N2,1);
-Ydmc_zad2 = zeros(N2,1);
-Ydmc3 = zeros(N3,1);
-Ydmc_zad3 = zeros(N3,1);
+Ydmc = zeros(N,1);
+Ydmc_zad = zeros(N,1);
 
 % M
 
@@ -82,22 +70,24 @@ for i=1:(D-1)
 end
 
 for i=1:(D-1)
-    Mp1(1:N,i)=s(i+1:N+i)-s(i);
+    Mp2(1:N,i)=s2(i+1:N+i)-s2(i);
 end
 
 for i=1:(D-1)
-    Mp1(1:N,i)=s(i+1:N+i)-s(i);
+    Mp3(1:N,i)=s3(i+1:N+i)-s3(i);
 end
 
 % - - -
 
-K1 = (M1'*M1 + lambda*I1)^-1*M1';
-K2 = (M2'*M2 + lambda*I2)^-1*M2';
-K3 = (M3'*M3 + lambda*I3)^-1*M3';
+K1 = (M1'*M1 + lambda*I)^-1*M1';
+K2 = (M2'*M2 + lambda*I)^-1*M2';
+K3 = (M3'*M3 + lambda*I)^-1*M3';
 
 k = 2;
 U(1) = Upp;
+U(2) = Upp;
 Y(1) = Ypp;
+
 
 while(k < imax)
     Y(k) = readMeasurements(1);
@@ -106,37 +96,26 @@ while(k < imax)
     y(k) = Y(k) - Ypp;
     e(k) = Yzad(k) - Y(k);
     
-    % U <0, 40)
-    if u(k) < 40
-        Ydmc_zad1(1:N1) = yzad(k);
-        Ydmc1(1:N1) = y(k);
-        
-        Y01 = Ydmc1 + Mp1*dUp1;
-        dU1 = K1*(Ydmc_zad1 - Y01);
-        du = dU1(1); 
-    end
+    Ydmc_zad(1:N) = yzad(k);
+    Ydmc(1:N) = y(k);
     
-    % U <40, 60)
+    us1 = Umin;
+    us2 = Umax/2;
+    us3 = Umax;
+    w1 = gbellmf(U(k-1), [(Umax - Umin)/3 2 us1]);
+    w2 = gbellmf(U(k-1), [(Umax - Umin)/3 2 us2]);
+    w3 = gbellmf(U(k-1), [(Umax - Umin)/3 2 us3]);
+       
+    w = w1 + w2 + w3;
     
-    if u(k) >= 40 && u(k) < 60
-        Ydmc_zad2(1:N2) = yzad(k);
-        Ydmc2(1:N2) = y(k);
-        
-        Y02 = Ydmc2 + Mp2*dUp2;
-        dU2 = K2*(Ydmc_zad2 - Y02);
-        du = dU2(1);          
-    end
-   
-    % U <60, 100>
-   
-    if u(k) >= 60
-        Ydmc_zad3(1:N3) = yzad(k);
-        Ydmc3(1:N3) = y(k);
- 
-        Y03 = Ydmc3 + Mp3*dUp3;
-        dU3 = K3*(Ydmc_zad3- Y03);
-        du = dU3(1);          
-    end
+    Ydmc(1:N) = y(k);
+    
+    Y01 = Ydmc + Mp1*dUp;
+    Y02 = Ydmc + Mp2*dUp;
+    Y03 = Ydmc + Mp3*dUp;
+    dU = K1*(Ydmc_zad - Y01)*w1 + K2*(Ydmc_zad - Y02)*w2 + K3*(Ydmc_zad - Y03)*w3;
+    du = dU(1)/w;    
+    
     
     % ogr du
     if du > dUmax
@@ -146,32 +125,11 @@ while(k < imax)
     if du < -dUmax
         du = -dUmax;
     end
-    
-    if u(k) < 40
-      for n = D1-1:-1:2
-        dUp1(n,1) = dUp1(n-1,1);
-      end
-      dUp1(1) = du;
-    end
 
-    if u(k) >= 40 && u(k) < 60
-      for n = D2-1:-1:2
-        dUp2(n,1) = dUp2(n-1,1);
-      end
-      dUp2(1) = du;
+    for n = D-1:-1:2
+      dUp(n,1) = dUp(n-1,1);
     end
-        
-    if u(k) >= 60
-      for n = D3-1:-1:2
-        dUp3(n,1) = dUp3(n-1,1);
-      end
-      dUp3(1) = du;
-    end
-
-%     for n = D-1:-1:2
-%       dUp(n,1) = dUp(n-1,1);
-%     end
-%     dUp(1) = du;
+    dUp(1) = du;
     
     u(k) = u(k-1) + du;
     
@@ -179,21 +137,17 @@ while(k < imax)
     
     if u(k) > Umax
         u(k) = Umax;
-        dUp1(1) = u(k) - u(k-1);
-        dUp2(1) = u(k) - u(k-1);
-        dUp3(1) = u(k) - u(k-1);
+        dUp(1) = u(k) - u(k-1);
     end
     if u(k) < Umin
         u(k) = Umin;
-        dUp1(1) = u(k) - u(k-1);
-        dUp2(1) = u(k) - u(k-1);
-        dUp3(1) = u(k) - u(k-1);
+        dUp(1) = u(k) - u(k-1);
     end
     
     U(k) = u(k) + Upp;
     
-  
-    sendControls([ 1, 5],[ 50, U(k)]);
+    sendControls( 1, 50);
+    sendNonlinearControls(U(k));
     
     k = k + 1;
     
@@ -214,5 +168,13 @@ while(k < imax)
     drawnow;
     hold off
 end
-
+% Uw = 0:0.5:100;
+% wekt_w1 = gbellmf(Uw, [(Umax - Umin)/6 2 0]);
+% wekt_w2 = gbellmf(Uw, [(Umax - Umin)/6 2 50]);
+% wekt_w3 = gbellmf(Uw, [(Umax - Umin)/6 2 100]);
+% hold on
+% plot(Uw, wekt_w1)
+% plot(Uw, wekt_w2)
+% plot(Uw, wekt_w3)
+% hold off
 E = (norm(e))^2;
