@@ -90,3 +90,83 @@ WskaŸnik jakoœci wyniosi $ E = 515.34 $. Jego wartoœæ jest wiêksza, ni¿ dla PID.
 
 \section{Rozmyty algorytm DMC}
 
+Nastêpnie zaimplementowano algorytm rozmytego regulatora DMC dla ró¿nej liczby regulatorów lokalnych (2, 3, 4 lub 5). Dla ka¿dego regulatora z inn¹ liczb¹ regulatorów lokalnych dobrano parametry oddzielnie.
+
+Zestaw liczb $s_1, s_2, s_3....$ obliczany jest oddzielnie dla ka¿dego z regulatorów lokalnych poprzez wykorzystanie funkcji \texttt{licz\_s.m}. 
+
+\begin{lstlisting}[style=customlatex,frame=single] 
+function s=licz_s(u1, u2)
+	y_temp = wynik_y(u1);
+	Y=zeros(1,200);
+	U=zeros(1,200);
+	Y(1:15)=y_temp;
+	U(1:10)=u1;
+	U(11:200)=u2;
+	
+	for k=7:1:200
+		Y(k)=symulacja_obiektu2y_p3(U(k-5),U(k-6),Y(k-1),Y(k-2));
+	end
+	for j=1:1:190
+		s(j)=(Y(j+10)-y_temp)/(u2-u1);
+	end
+	
+end
+\end{lstlisting}
+
+
+Przyjmuje ona jako parametry wartoœci $u1$ i $u2$. 
+Parametr $u1$ przekazywany jest nastêpnie funkcji \texttt{wynik\_y}, która przeprowadza symulacjê dla wartoœci sterowania $u = u1$ i zwraca ostatni¹ wartoœæ odpowiedzi skokow¹ $y\_temp$.
+
+\begin{lstlisting}[style=customlatex,frame=single] 
+function y = wynik_y(u)
+	U_sym(1:200)=u;
+	Y_sym(1:200)=0;
+	for k=7:200
+		Y_sym(k)=symulacja_obiektu2y_p3(U_sym(k-5),U_sym(k-6),
+		Y_sym(k-1),Y_sym(k-2));
+	end
+	y=Y_sym(200);
+end
+\end{lstlisting}
+Wartoœæ ta zosta³a nastêpnie wykorzystana do przeprowadzenia kolejnej symulacji, dla skoku wartoœci sterowania z $u1$ do $u2$.
+Otrzymana odpowiedŸ skokowa zosta³a przeskalowana, w celu wyliczenia zestawu liczb $s_1, s_2, s_3....$. Przekszta³cenie to przebieg³o zgodnie ze wzorem \ref{w_Si_pro}, gdzie $Y_{pp}=y\_temp$. Zamiast $Y_i$ u¿yto $Y_{i+10}$, poniewa¿ zmiana wartoœci sterowania z $u1$ na $u2$ wyst¹pi³a w chwili k = 10.
+
+\begin{equation}
+	S_i = \frac{Y_{i+10}  - Y_{pp}}{\Delta U}, i = 1, 2, 3,  ...
+	\label{w_Si_pro}
+\end{equation}
+
+Po otrzymaniu przekszta³conych odpowiedzi skokowych dla ka¿dego z regulatorów lokalnych przyst¹piono do liczenia macierzy $M, M^P i K$ . Wartoœci horyzontów dynamiki $D$ zosta³y dobrane oddzielnie dla ka¿dego z regulatorów. Dla u³atwienia przyjêto, ¿e $N = N_u = D$. $\lambda = 1$ w przypadku ka¿dego regulatora.
+
+Wspó³czynniki przynale¿noœci (wagi) ka¿dego z regulatorów obliczone zosta³y w funkcji \texttt{rozklad}. Wykorzystana zosta³a funkcja przynale¿noœci dzwonowej \texttt{gbellmf}.
+
+Regulator przetestowano dla kilku skoków wartoœci zadanej $y_{zad}$.
+Przebiegi dla ró¿nej iloœci regulatorów lokalnych, przy wartoœci parametru $\lambda = 1$ przedstawiono poni¿ej.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{png/projekt/DMC_rozm_lambda1_reg2.png}
+	\caption{Przebiegi dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 2 }
+	\label{DMC_rozm_lambda1_reg2}
+\end{figure}
+
+Dla dwóch regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=227,3882$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{png/projekt/DMC_rozm_lambda1_reg3.png}
+	\caption{Przebiegi dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 3}
+	\label{DMC_rozm_lambda1_reg3}
+\end{figure}
+
+Dla trzech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E=203,6199$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{png/projekt/DMC_rozm_lambda1_reg4.png}
+	\caption{Przebiegi dla rozmytego regulatora DMC przy $\lambda = 1$. Liczba regulatorów = 4}
+	\label{DMC_rozm_lambda1_reg4}
+\end{figure}
+
+Dla czterech regulatorów lokalnych wskaŸnik jakoœci regulacji wyniós³ $E= 844,2965$

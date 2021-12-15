@@ -8,19 +8,19 @@
 
     %Dobor regulatorow
     regulator = 2; %2 ;3 w miare
-    typ_regulatora = 'PID';
+%     typ_regulatora = 'PID/';
+    typ_regulatora = 'DMC';
+
     
-    %dobor_lambdy=
-    %0 - zadanie 6
-    %1 - zadanie 7
-    dobor_lambda=0;
+    dobor_lambda = 0; % zadanie 6
+%     dobor_lambda = 1; % zadanie 7
+
     u_reg=zeros(2,regulator);
     u_przedzial = rozklad(regulator, typ_regulatora);
     if regulator==2
         D={40, 30};
         u_reg=zeros(2,regulator);
-        u_reg(1,:)=[0.22
-            ,0.7];
+        u_reg(1,:)=[0.22,0.7];
         u_reg(2,:)=[0.3,0.8];
         if dobor_lambda==0
             lambda={1 1};
