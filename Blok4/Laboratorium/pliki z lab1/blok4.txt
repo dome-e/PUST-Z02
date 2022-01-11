@@ -1,0 +1,148 @@
+// zad 1
+
+G1 := 27;
+G2 := 32;
+
+W1 := 50;
+W2 := 50;
+
+// send G1, G2, W1, W2
+
+// read T1, T3
+
+
+
+
+// zad 2
+
+IF (T1 > 250) THEN
+	G1 := 0;
+ELSIF (T3 > 250) THEN
+	G2 := 0;
+END_IF;
+
+
+
+
+// zad 3
+
+
+Y_zad := 40;
+
+
+//PID 1
+
+// init
+
+E2_PID1 := 0; // e(k-2)
+E1_PID1 := 0; // e(k-1)
+U1_PID1 := 0; // u(k-1)
+
+// init end
+
+G1 := 27; 
+T1 := read() ; 
+
+G1_max := 100;
+G1_min := 0;
+
+
+// loop
+
+E2_PID1 = E1_PID1;
+E1_PID1 = E_PID1;
+
+E_PID1 := Y_zad - T1;
+
+// r0_PID1, r1_PID1, r2_PID1 mozemy obliczyc w MATLABIE 
+// dla Tp = 4, K = ?, Td = ?, Ti = ?
+
+delta_U_PID1 := r2_PID1 * E2_PID1 + r1_PID1 * E1_PID1 + r0_PID1 * E_PID1;  
+
+U1_PID1 = delta_U_PID1 + U1_PID1;
+
+
+
+// ograniczenia
+
+IF (T1 > 250.0) THEN
+	G1 := 0.0;
+ELSIF(G1 > 100.0) THEN
+	G1 := 100;
+ELSIF(G1 < 1.0§) THEN
+	G1 := 0.0;
+END_IF;
+
+
+// send U1
+
+
+
+
+//PID 2
+
+// init
+
+E2_PID2 := 0; // e(k-2)
+E1_PID2 := 0; // e(k-1)
+U1_PID2 := 0; // u(k-1)
+
+// init end
+
+G2 := 32; 
+T3 := read() ;
+
+G2_max := 100;
+G2_min := 0;
+
+Y_zad := 40;
+
+
+// loop
+
+E2_PID2 = E1_PID2;
+E1_PID2 = E_PID2;
+
+E_PID2 := Y_zad - T3;
+
+
+// r0_PID2, r1_PID2, r2_PID2 mozemy obliczyc w MATLABIE 
+// dla Tp = 4, K = ?, Td = ?, Ti = ?
+
+
+delta_U_PID2 := r2_PID2 * E2_PID2 + r1_PID2 * E1_PID2 + r0_PID2 * E_PID2;  
+
+U1_PID2 = delta_U_PID2 + U1_PID2;
+
+
+// ograniczenia
+
+IF (T3 > 250.0) THEN
+	G2 := 0.0;
+ELSIF(G2 > 100.0) THEN
+	G2 := 100.0;
+ELSIF(G2 < 1.0) THEN
+	G2 := 0.0;
+END_IF;
+
+
+// send U1
+
+
+
+// sending ?
+
+//Generacja tesktu do wyslania przez socket communication
+temp_string := 'U1_PID1=';
+temp_string := CONCAT(temp_string, REAL_TO_STRING(U1_PID1));
+temp_string := CONCAT(temp_string,';Y_PID1=');
+temp_string := CONCAT(temp_string, REAL_TO_STRING(T1)); 
+temp_string := CONCAT(temp_string,';U1_PID2=');
+temp_string := CONCAT(temp_string, REAL_TO_STRING(U1_PID2)); temp_string := CONCAT(temp_string,';Y_PID2=');
+temp_string := CONCAT(temp_string, REAL_TO_STRING(T3)); temp_string := CONCAT(temp_string,';$L');
+send_string := temp_string;
+//Dlugosc tekstu
+string_len := LEN(send_string);
+SET(TRUE, UDP_Send_TRIG);
+
+
