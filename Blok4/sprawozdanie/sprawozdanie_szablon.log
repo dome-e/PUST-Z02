@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.30)  15 DEC 2021 22:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.2)  21 JAN 2022 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1014,173 +1014,72 @@ Rozdzia\PlPrIeC {\l } 1.
 File: png/projekt/zad1_u.png Graphic file (type png)
 <use png/projekt/zad1_u.png>
 Package pdftex.def Info: png/projekt/zad1_u.png  used on input line 14.
-(pdftex.def)             Requested size: 361.3491pt x 132.6151pt.
+(pdftex.def)             Requested size: 337.25769pt x 123.77356pt.
 <png/projekt/zad1_y.png, id=16, 481.8pt x 177.3024pt>
 File: png/projekt/zad1_y.png Graphic file (type png)
 <use png/projekt/zad1_y.png>
 Package pdftex.def Info: png/projekt/zad1_y.png  used on input line 21.
-(pdftex.def)             Requested size: 361.3491pt x 132.97646pt.
-<png/projekt/zad2_1.png, id=17, 715.473pt x 219.7008pt>
-File: png/projekt/zad2_1.png Graphic file (type png)
-<use png/projekt/zad2_1.png>
-Package pdftex.def Info: png/projekt/zad2_1.png  used on input line 35.
-(pdftex.def)             Requested size: 429.28712pt x 131.82149pt.
+(pdftex.def)             Requested size: 337.25769pt x 124.11081pt.
+<png/projekt/zad2_u1.png, id=17, 472.6458pt x 172.9662pt>
+File: png/projekt/zad2_u1.png Graphic file (type png)
+<use png/projekt/zad2_u1.png>
+Package pdftex.def Info: png/projekt/zad2_u1.png  used on input line 31.
+(pdftex.def)             Requested size: 330.8498pt x 121.0755pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2
 
  <./png/projekt/zad1_u.png (PNG copy)> <./png/projekt/zad1_y.png (PNG copy)>]
-<png/projekt/zad2_2.png, id=25, 465.9006pt x 176.8206pt>
-File: png/projekt/zad2_2.png Graphic file (type png)
-<use png/projekt/zad2_2.png>
-Package pdftex.def Info: png/projekt/zad2_2.png  used on input line 44.
-(pdftex.def)             Requested size: 349.42459pt x 132.6151pt.
-<png/projekt/zad3_pid_u.png, id=26, 477.4638pt x 176.8206pt>
-File: png/projekt/zad3_pid_u.png Graphic file (type png)
-<use png/projekt/zad3_pid_u.png>
-Package pdftex.def Info: png/projekt/zad3_pid_u.png  used on input line 59.
-(pdftex.def)             Requested size: 358.09697pt x 132.6151pt.
-<png/projekt/zad3_pid_y.png, id=27, 469.2732pt x 176.8206pt>
-File: png/projekt/zad3_pid_y.png Graphic file (type png)
-<use png/projekt/zad3_pid_y.png>
-Package pdftex.def Info: png/projekt/zad3_pid_y.png  used on input line 66.
-(pdftex.def)             Requested size: 351.95403pt x 132.6151pt.
+<png/projekt/zad2_u2.png, id=24, 472.6458pt x 172.9662pt>
+File: png/projekt/zad2_u2.png Graphic file (type png)
+<use png/projekt/zad2_u2.png>
+Package pdftex.def Info: png/projekt/zad2_u2.png  used on input line 38.
+(pdftex.def)             Requested size: 330.8498pt x 121.0755pt.
+<png/projekt/zad2_u3.png, id=25, 472.6458pt x 172.9662pt>
+File: png/projekt/zad2_u3.png Graphic file (type png)
+<use png/projekt/zad2_u3.png>
+Package pdftex.def Info: png/projekt/zad2_u3.png  used on input line 45.
+(pdftex.def)             Requested size: 330.8498pt x 121.0755pt.
+<png/projekt/zad2_u4.png, id=26, 472.6458pt x 172.9662pt>
+File: png/projekt/zad2_u4.png Graphic file (type png)
+<use png/projekt/zad2_u4.png>
+Package pdftex.def Info: png/projekt/zad2_u4.png  used on input line 52.
+(pdftex.def)             Requested size: 330.8498pt x 121.0755pt.
+)
+(./laboratorium.tex
+Underfull \vbox (badness 2134) has occurred while \output is active []
 
-Underfull \vbox (badness 1472) has occurred while \output is active []
-
- [3 <./png/projekt/zad2_1.png (PNG copy)> <./png/projekt/zad2_2.png (PNG copy)>
- <./png/projekt/zad3_pid_u.png (PNG copy)>]
-<png/projekt/zad3_dmc_u.png, id=32, 473.1276pt x 176.8206pt>
-File: png/projekt/zad3_dmc_u.png Graphic file (type png)
-<use png/projekt/zad3_dmc_u.png>
-Package pdftex.def Info: png/projekt/zad3_dmc_u.png  used on input line 75.
-(pdftex.def)             Requested size: 354.84482pt x 132.6151pt.
-<png/projekt/zad3_dmc_y.png, id=33, 469.2732pt x 176.8206pt>
-File: png/projekt/zad3_dmc_y.png Graphic file (type png)
-<use png/projekt/zad3_dmc_y.png>
-Package pdftex.def Info: png/projekt/zad3_dmc_y.png  used on input line 82.
-(pdftex.def)             Requested size: 351.95403pt x 132.6151pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./png/projekt/zad3_pid_y.png (PNG copy)> <./png/projekt/zad3_dmc_u.png (PN
-G copy)> <./png/projekt/zad3_dmc_y.png (PNG copy)>]
-<png/projekt/DMC_rozm_lambda1_reg2.png, id=37, 1124.2pt x 843.15pt>
-File: png/projekt/DMC_rozm_lambda1_reg2.png Graphic file (type png)
-<use png/projekt/DMC_rozm_lambda1_reg2.png>
-Package pdftex.def Info: png/projekt/DMC_rozm_lambda1_reg2.png  used on input l
-ine 149.
-(pdftex.def)             Requested size: 337.2626pt x 252.94695pt.
- [5]
-<png/projekt/DMC_rozm_lambda1_reg3.png, id=43, 1124.2pt x 843.15pt>
-File: png/projekt/DMC_rozm_lambda1_reg3.png Graphic file (type png)
-<use png/projekt/DMC_rozm_lambda1_reg3.png>
-Package pdftex.def Info: png/projekt/DMC_rozm_lambda1_reg3.png  used on input l
-ine 158.
-(pdftex.def)             Requested size: 337.2626pt x 252.94695pt.
-<png/projekt/DMC_rozm_lambda1_reg4.png, id=44, 1124.2pt x 843.15pt>
-File: png/projekt/DMC_rozm_lambda1_reg4.png Graphic file (type png)
-<use png/projekt/DMC_rozm_lambda1_reg4.png>
-Package pdftex.def Info: png/projekt/DMC_rozm_lambda1_reg4.png  used on input l
-ine 167.
-(pdftex.def)             Requested size: 337.2626pt x 252.94695pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./png/projekt/DMC_rozm_lambda1_reg2.png (PNG copy)> <./png/projekt/DMC_roz
-m_lambda1_reg3.png (PNG copy)>]) (./laboratorium.tex [7 <./png/projekt/DMC_rozm
-_lambda1_reg4.png (PNG copy)>]
+ [3 <./png/projekt/zad2_u1.png (PNG copy)> <./png/projekt/zad2_u2.png (PNG copy
+)> <./png/projekt/zad2_u3.png (PNG copy)> <./png/projekt/zad2_u4.png (PNG copy)
+>] [4]
 Rozdzia\PlPrIeC {\l } 2.
-<png/lab/zad2_pomiary.png, id=52, 1599.9775pt x 792.9625pt>
-File: png/lab/zad2_pomiary.png Graphic file (type png)
-<use png/lab/zad2_pomiary.png>
-Package pdftex.def Info: png/lab/zad2_pomiary.png  used on input line 39.
-(pdftex.def)             Requested size: 431.9997pt x 214.10274pt.
+) [5
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8
-
-]
-<png/lab/zad2_char_stat.png, id=57, 1650.165pt x 760.8425pt>
-File: png/lab/zad2_char_stat.png Graphic file (type png)
-<use png/lab/zad2_char_stat.png>
-Package pdftex.def Info: png/lab/zad2_char_stat.png  used on input line 48.
-(pdftex.def)             Requested size: 445.5505pt x 205.43022pt.
-<png/lab/zad3_PID_test_wlasciwy_zoomed.png, id=58, 2334.7225pt x 1302.8675pt>
-File: png/lab/zad3_PID_test_wlasciwy_zoomed.png Graphic file (type png)
-<use png/lab/zad3_PID_test_wlasciwy_zoomed.png>
-Package pdftex.def Info: png/lab/zad3_PID_test_wlasciwy_zoomed.png  used on inp
-ut line 60.
-(pdftex.def)             Requested size: 466.93623pt x 260.56888pt.
-
-Overfull \hbox (11.69215pt too wide) in paragraph at lines 60--61
- [][] 
- []
-
-
-Underfull \vbox (badness 4995) has occurred while \output is active []
-
- [9 <./png/lab/zad2_pomiary.png (PNG copy)> <./png/lab/zad2_char_stat.png (PNG 
-copy)>]
-<png/lab/zad3_DMC_test.png, id=62, 2240.37pt x 1302.8675pt>
-File: png/lab/zad3_DMC_test.png Graphic file (type png)
-<use png/lab/zad3_DMC_test.png>
-Package pdftex.def Info: png/lab/zad3_DMC_test.png  used on input line 72.
-(pdftex.def)             Requested size: 448.06607pt x 260.56888pt.
-
-[10 <./png/lab/zad3_PID_test_wlasciwy_zoomed.png (PNG copy)> <./png/lab/zad3_DM
-C_test.png (PNG copy)>]
-<png/lab/gbell.png, id=66, 1385.175pt x 943.525pt>
-File: png/lab/gbell.png Graphic file (type png)
-<use png/lab/gbell.png>
-Package pdftex.def Info: png/lab/gbell.png  used on input line 106.
-(pdftex.def)             Requested size: 346.29291pt x 235.88066pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
-<png/lab/DMC_rozmyty.png, id=70, 1945.2675pt x 1304.875pt>
-File: png/lab/DMC_rozmyty.png Graphic file (type png)
-<use png/lab/DMC_rozmyty.png>
-Package pdftex.def Info: png/lab/DMC_rozmyty.png  used on input line 138.
-(pdftex.def)             Requested size: 447.40211pt x 300.11494pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12 <./png/lab/gbell.png (PNG copy)>]) [13 <./png/lab/DMC_rozmyty.png (PNG cop
-y)>]
-(./sprawozdanie_szablon.aux) ) 
+] (./sprawozdanie_szablon.aux) ) 
 Here is how much of TeX's memory you used:
- 30272 strings out of 478994
- 751918 string characters out of 5858183
- 1205014 words of memory out of 5000000
- 47198 multiletter control sequences out of 15000+600000
- 425065 words of font info for 88 fonts, out of 8000000 for 9000
+ 29922 strings out of 478994
+ 747601 string characters out of 5858184
+ 1084843 words of memory out of 5000000
+ 46863 multiletter control sequences out of 15000+600000
+ 423929 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,9n,89p,752b,1072s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvi
-ps/pl/plme.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-
-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{
-/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/local/texl
-ive/2021/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/local/texlive/2021/texmf-
-dist/fonts/enc/dvips/pl/plms.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
-dvips/pl/plmi.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plb
-x10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plbx12.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/local/
-texlive/2021/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/local/texlive/20
-21/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/local/texlive/2021/texmf-di
-st/fonts/type1/public/pl/plr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
-pe1/public/pl/plr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/p
-l/plsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plti10.p
-fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/pltt10.pfb></usr/l
-ocal/texlive/2021/texmf-dist/fonts/type1/public/pl/pltt9.pfb></usr/local/texliv
-e/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb>
-Output written on sprawozdanie_szablon.pdf (14 pages, 627355 bytes).
+ 87i,8n,89p,752b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/d
+vips/pl/plrm.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plit.en
+c}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/local/t
+exlive/2021/texmf-dist/fonts/enc/dvips/pl/pltt.enc}</usr/local/texlive/2021/tex
+mf-dist/fonts/type1/public/pl/plbx10.pfb></usr/local/texlive/2021/texmf-dist/fo
+nts/type1/public/pl/plbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/
+public/pl/plmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/
+plmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr10.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/local/t
+exlive/2021/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/texlive/202
+1/texmf-dist/fonts/type1/public/pl/pltt10.pfb>
+Output written on sprawozdanie_szablon.pdf (6 pages, 137683 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
