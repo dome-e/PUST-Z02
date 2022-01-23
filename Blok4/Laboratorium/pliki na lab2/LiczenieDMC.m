@@ -87,10 +87,10 @@ DMC_K12=0;
 DMC_K21=0;
 DMC_K22=0;
 
-DMC_K11=DMC_K11+K(1,1:2:D);
-DMC_K12=DMC_K12+K(1,2:2:D) ;
-DMC_K21=DMC_K21+K(2,1:2:D) ;
-DMC_K22=DMC_K22+K(2,2:2:D); 
+DMC_K11=sum(K(1,1:2:D));
+DMC_K12=sum(K(1,2:2:D)) ;
+DMC_K21=sum(K(2,1:2:D)) ;
+DMC_K22=sum(K(2,2:2:D)); 
 Kj1_1=zeros(1,D-1);
 Kj1_2=zeros(1,D-1);
 Kj2_1=zeros(1,D-1);
