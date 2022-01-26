@@ -1,0 +1,666 @@
+////symulacja procesu
+//
+//// G1 = D114 (x10)
+//// G2 = D115
+//
+//// T1 = D100 (x100)
+//// T2 = D101
+//// T3 = D102
+//
+//// W1 = D110 (x10)
+//// W2 = D111 
+//
+//
+//
+//
+//
+//
+////PID 1
+//
+//Y_zad1 := 3000; // 25*C
+////G1 := 27; 
+//T_1 := D100; // (x100)
+//G_1 := D114; // (x10)
+// 
+////G1_max := 100.0;
+////G1_min := 0.0;
+//
+//
+//// loop
+//
+//E2_PID1 := E1_PID1; 
+//E1_PID1 := E_PID1; 
+//
+//E_PID1 := (Y_zad1 - T_1)/100;
+//
+//// r0_PID1, r1_PID1, r2_PID1 mozemy obliczyc w MATLABIE 
+//// dla Tp = 4, K = ?, Td = ?, Ti = ?
+//
+//r0_PID1:= 15.9769734;
+//r1_PID1 := -14.58552;
+//r2_PID1 := 0.1875;
+//
+//
+//
+//delta_U_PID1 := r2_PID1 * E2_PID1 + r1_PID1 * E1_PID1 + r0_PID1 * E_PID1;  
+//
+//U1_PID1 := delta_U_PID1 + U1_PID1;
+//
+//
+//
+//// ograniczenia
+//
+//IF (T_1 > 25000.0) THEN
+//	U1_PID1 := 0;
+//	ELSIF(U1_PID1 > 1000) THEN
+//	U1_PID1 := 1000;
+//	ELSIF(U1_PID1 < 1) THEN
+//	U1_PID1 := 0;
+//END_IF;
+//
+//
+//// send U1 
+//
+//
+//D114 := REAL_TO_INT(U1_PID1); // G1;
+//// do wyznaczenia PUNKTU PRACY odkomentowac te linijke:
+////D114 := 27;
+//u_k := D114; // do wysylania wykresow G1 w SocketComm
+//
+//D110 := 500; // W1
+//D111 := 500; // W2
+//
+//
+//
+//y_k := D100;  // do wysylania wykresow T1 w SocketComm
+//y_k2 := D102;
+//
+//
+//////////////////////////////////////////////////////////////////////////
+//
+////PID 2
+//
+//Y_zad2 := 3000; // 25*C
+////G1 := 27; 
+//T_3 := D102; // (x100)
+//G_2 := D115; // (x10)
+// 
+////G1_max := 100.0;
+////G1_min := 0.0;
+//
+//
+//// loop
+//
+//E2_PID2 := E1_PID2; 
+//E1_PID2 := E_PID2; 
+//
+//E_PID2 := (Y_zad2 - T_3)/100;
+//
+//// r0_PID1, r1_PID1, r2_PID1 mozemy obliczyc w MATLABIE 
+//// dla Tp = 4, K = ?, Td = ?, Ti = ?
+//
+//r0_PID2 := 15.9769734;
+//r1_PID2 := -14.58552;
+//r2_PID2 := 0.1875;
+//
+//
+//
+//delta_U_PID2 := r2_PID2 * E2_PID2 + r1_PID2 * E1_PID2 + r0_PID2 * E_PID2;  
+//
+//U1_PID2 := delta_U_PID2 + U1_PID2;
+//
+//
+//
+//// ograniczenia
+//
+//IF (T_3 > 25000.0) THEN
+//	U1_PID2 := 0;
+//	ELSIF(U1_PID2 > 1000) THEN
+//	U1_PID2 := 1000;
+//	ELSIF(U1_PID2 < 1) THEN
+//	U1_PID2 := 0;
+//END_IF;
+//
+//
+//// send U1 
+//
+//
+//
+//D115 := REAL_TO_INT(U1_PID2); // g1;
+//// do wyznaczenia PUNKTU PRACY odkomentowac te linijke:
+////D114 := 270;
+////D115 := 320;
+////u_k := D114;
+//u_k2 := D115;
+//
+//D110 := 500; // W1
+//D111 := 500; // W2
+//
+//D117 := REAL_TO_INT(Y_zad1);
+//D118 := REAL_TO_INT(Y_zad2);
+//
+//
+//y_k := D100; 
+//y_k2 := D102;
+//
+//// TODO automat stanow
+//
+//IF (T_1 < 3000) THEN
+//	D121 := 1;
+//	ELSIF (T_1 = 2500) THEN
+//	D121 := 2;
+//	ELSIF (T_1 > 2500) THEN
+//	D121 := 3;
+//END_IF;
+//
+//IF (T_3 < 3000) THEN
+//	D122 := 1;
+//	ELSIF (T_3 = 2500) THEN
+//	D122 := 2;
+//	ELSIF (T_3 > 2500) THEN
+//	D122 := 3;
+//END_IF;
+
+////////////
+
+
+
+
+// DMC
+
+
+
+//DMC
+
+// wklejac z matlaba
+DMC_K11 := 0.022222455189458;
+DMC_K12 := -0.011579958781821;
+DMC_K21 := -0.009526811406201;
+DMC_K22 := 0.016400655679400;
+
+//
+// wklejac z matlaba
+tablica[0,0]:=0.1180;
+tablica[0,1]:=0.0136;
+tablica[0,2]:=0.1213;
+tablica[0,3]:=0.0152;
+tablica[0,4]:=0.1228;
+tablica[0,5]:=0.0167;
+tablica[0,6]:=0.1228;
+tablica[0,7]:=0.0180;
+tablica[0,8]:=0.1218;
+tablica[0,9]:=0.0191;
+tablica[0,10]:=0.1197;
+tablica[0,11]:=0.0202;
+tablica[0,12]:=0.1170;
+tablica[0,13]:=0.0210;
+tablica[0,14]:=0.1137;
+tablica[0,15]:=0.0217;
+tablica[0,16]:=0.1101;
+tablica[0,17]:=0.0224;
+tablica[0,18]:=0.1061;
+tablica[0,19]:=0.0229;
+tablica[0,20]:=0.1020;
+tablica[0,21]:=0.0233;
+tablica[0,22]:=0.0977;
+tablica[0,23]:=0.0236;
+tablica[0,24]:=0.0933;
+tablica[0,25]:=0.0239;
+tablica[0,26]:=0.0891;
+tablica[0,27]:=0.0240;
+tablica[0,28]:=0.0848;
+tablica[0,29]:=0.0241;
+tablica[0,30]:=0.0806;
+tablica[0,31]:=0.0241;
+tablica[0,32]:=0.0764;
+tablica[0,33]:=0.0241;
+tablica[0,34]:=0.0725;
+tablica[0,35]:=0.0240;
+tablica[0,36]:=0.0686;
+tablica[0,37]:=0.0238;
+tablica[0,38]:=0.0649;
+tablica[0,39]:=0.0237;
+tablica[0,40]:=0.0614;
+tablica[0,41]:=0.0235;
+tablica[0,42]:=0.0579;
+tablica[0,43]:=0.0233;
+tablica[0,44]:=0.0547;
+tablica[0,45]:=0.0229;
+tablica[0,46]:=0.0515;
+tablica[0,47]:=0.0226;
+tablica[0,48]:=0.0485;
+tablica[0,49]:=0.0223;
+tablica[0,50]:=0.0457;
+tablica[0,51]:=0.0219;
+tablica[0,52]:=0.0430;
+tablica[0,53]:=0.0215;
+tablica[0,54]:=0.0405;
+tablica[0,55]:=0.0211;
+tablica[0,56]:=0.0380;
+tablica[0,57]:=0.0208;
+tablica[0,58]:=0.0358;
+tablica[0,59]:=0.0203;
+tablica[0,60]:=0.0336;
+tablica[0,61]:=0.0199;
+tablica[0,62]:=0.0317;
+tablica[0,63]:=0.0195;
+tablica[0,64]:=0.0297;
+tablica[0,65]:=0.0191;
+tablica[0,66]:=0.0279;
+tablica[0,67]:=0.0186;
+tablica[0,68]:=0.0262;
+tablica[0,69]:=0.0182;
+tablica[0,70]:=0.0245;
+tablica[0,71]:=0.0177;
+tablica[0,72]:=0.0231;
+tablica[0,73]:=0.0172;
+tablica[0,74]:=0.0217;
+tablica[0,75]:=0.0168;
+tablica[0,76]:=0.0203;
+tablica[0,77]:=0.0164;
+tablica[0,78]:=0.0191;
+tablica[0,79]:=0.0160;
+tablica[0,80]:=0.0178;
+tablica[0,81]:=0.0155;
+tablica[0,82]:=0.0168;
+tablica[0,83]:=0.0151;
+tablica[0,84]:=0.0157;
+tablica[0,85]:=0.0147;
+tablica[0,86]:=0.0147;
+tablica[0,87]:=0.0142;
+tablica[0,88]:=0.0138;
+tablica[0,89]:=0.0138;
+tablica[0,90]:=0.0129;
+tablica[0,91]:=0.0135;
+tablica[0,92]:=0.0121;
+tablica[0,93]:=0.0131;
+tablica[0,94]:=0.0114;
+tablica[0,95]:=0.0127;
+tablica[0,96]:=0.0107;
+tablica[0,97]:=0.0123;
+tablica[0,98]:=0.0100;
+tablica[0,99]:=0.0119;
+tablica[0,100]:=0.0093;
+tablica[0,101]:=0.0115;
+tablica[0,102]:=0.0088;
+tablica[0,103]:=0.0112;
+tablica[0,104]:=0.0083;
+tablica[0,105]:=0.0108;
+tablica[0,106]:=0.0077;
+tablica[0,107]:=0.0105;
+tablica[0,108]:=0.0072;
+tablica[0,109]:=0.0101;
+tablica[0,110]:=0.0067;
+tablica[0,111]:=0.0099;
+tablica[0,112]:=0.0063;
+tablica[0,113]:=0.0095;
+tablica[0,114]:=0.0059;
+tablica[0,115]:=0.0092;
+tablica[0,116]:=0.0056;
+tablica[0,117]:=0.0089;
+tablica[0,118]:=0.0052;
+tablica[0,119]:=0.0086;
+tablica[0,120]:=0.0049;
+tablica[0,121]:=0.0083;
+tablica[0,122]:=0.0046;
+tablica[0,123]:=0.0080;
+tablica[0,124]:=0.0043;
+tablica[0,125]:=0.0077;
+tablica[0,126]:=0.0041;
+tablica[0,127]:=0.0075;
+tablica[0,128]:=0.0038;
+tablica[0,129]:=0.0072;
+tablica[0,130]:=0.0035;
+tablica[0,131]:=0.0070;
+tablica[0,132]:=0.0033;
+tablica[0,133]:=0.0067;
+tablica[0,134]:=0.0031;
+tablica[0,135]:=0.0065;
+tablica[0,136]:=0.0029;
+tablica[0,137]:=0.0063;
+tablica[0,138]:=0.0028;
+tablica[0,139]:=0.0060;
+tablica[0,140]:=0.0026;
+tablica[0,141]:=0.0058;
+tablica[0,142]:=0.0024;
+tablica[0,143]:=0.0056;
+tablica[0,144]:=0.0022;
+tablica[0,145]:=0.0054;
+tablica[0,146]:=0.0021;
+tablica[0,147]:=0.0051;
+tablica[0,148]:=0.0020;
+tablica[0,149]:=0.0050;
+tablica[0,150]:=0.0018;
+tablica[0,151]:=0.0047;
+tablica[0,152]:=0.0017;
+tablica[0,153]:=0.0045;
+tablica[0,154]:=0.0016;
+tablica[0,155]:=0.0043;
+tablica[0,156]:=0.0015;
+tablica[0,157]:=0.0041;
+tablica[0,158]:=0.0014;
+tablica[0,159]:=0.0039;
+tablica[0,160]:=0.0013;
+tablica[0,161]:=0.0037;
+tablica[0,162]:=0.0012;
+tablica[0,163]:=0.0035;
+tablica[0,164]:=0.0011;
+tablica[0,165]:=0.0033;
+tablica[0,166]:=0.0010;
+tablica[0,167]:=0.0031;
+tablica[0,168]:=0.0010;
+tablica[0,169]:=0.0029;
+tablica[0,170]:=0.0009;
+tablica[0,171]:=0.0027;
+tablica[0,172]:=0.0008;
+tablica[0,173]:=0.0025;
+tablica[0,174]:=0.0008;
+tablica[0,175]:=0.0023;
+tablica[0,176]:=0.0007;
+tablica[0,177]:=0.0020;
+tablica[0,178]:=0.0006;
+tablica[0,179]:=0.0019;
+tablica[0,180]:=0.0005;
+
+tablica[1,0]:=0.0136;
+tablica[1,1]:=0.1180;
+tablica[1,2]:=0.0152;
+tablica[1,3]:=0.1213;
+tablica[1,4]:=0.0167;
+tablica[1,5]:=0.1228;
+tablica[1,6]:=0.0180;
+tablica[1,7]:=0.1228;
+tablica[1,8]:=0.0191;
+tablica[1,9]:=0.1218;
+tablica[1,10]:=0.0202;
+tablica[1,11]:=0.1197;
+tablica[1,12]:=0.0210;
+tablica[1,13]:=0.1170;
+tablica[1,14]:=0.0217;
+tablica[1,15]:=0.1137;
+tablica[1,16]:=0.0224;
+tablica[1,17]:=0.1101;
+tablica[1,18]:=0.0229;
+tablica[1,19]:=0.1061;
+tablica[1,20]:=0.0233;
+tablica[1,21]:=0.1020;
+tablica[1,22]:=0.0236;
+tablica[1,23]:=0.0977;
+tablica[1,24]:=0.0239;
+tablica[1,25]:=0.0933;
+tablica[1,26]:=0.0240;
+tablica[1,27]:=0.0891;
+tablica[1,28]:=0.0241;
+tablica[1,29]:=0.0848;
+tablica[1,30]:=0.0241;
+tablica[1,31]:=0.0806;
+tablica[1,32]:=0.0241;
+tablica[1,33]:=0.0764;
+tablica[1,34]:=0.0240;
+tablica[1,35]:=0.0725;
+tablica[1,36]:=0.0238;
+tablica[1,37]:=0.0686;
+tablica[1,38]:=0.0237;
+tablica[1,39]:=0.0649;
+tablica[1,40]:=0.0235;
+tablica[1,41]:=0.0614;
+tablica[1,42]:=0.0233;
+tablica[1,43]:=0.0579;
+tablica[1,44]:=0.0229;
+tablica[1,45]:=0.0547;
+tablica[1,46]:=0.0226;
+tablica[1,47]:=0.0515;
+tablica[1,48]:=0.0223;
+tablica[1,49]:=0.0485;
+tablica[1,50]:=0.0219;
+tablica[1,51]:=0.0457;
+tablica[1,52]:=0.0215;
+tablica[1,53]:=0.0430;
+tablica[1,54]:=0.0211;
+tablica[1,55]:=0.0405;
+tablica[1,56]:=0.0208;
+tablica[1,57]:=0.0380;
+tablica[1,58]:=0.0203;
+tablica[1,59]:=0.0358;
+tablica[1,60]:=0.0199;
+tablica[1,61]:=0.0336;
+tablica[1,62]:=0.0195;
+tablica[1,63]:=0.0317;
+tablica[1,64]:=0.0191;
+tablica[1,65]:=0.0297;
+tablica[1,66]:=0.0186;
+tablica[1,67]:=0.0279;
+tablica[1,68]:=0.0182;
+tablica[1,69]:=0.0262;
+tablica[1,70]:=0.0177;
+tablica[1,71]:=0.0245;
+tablica[1,72]:=0.0172;
+tablica[1,73]:=0.0231;
+tablica[1,74]:=0.0168;
+tablica[1,75]:=0.0217;
+tablica[1,76]:=0.0164;
+tablica[1,77]:=0.0203;
+tablica[1,78]:=0.0160;
+tablica[1,79]:=0.0191;
+tablica[1,80]:=0.0155;
+tablica[1,81]:=0.0178;
+tablica[1,82]:=0.0151;
+tablica[1,83]:=0.0168;
+tablica[1,84]:=0.0147;
+tablica[1,85]:=0.0157;
+tablica[1,86]:=0.0142;
+tablica[1,87]:=0.0147;
+tablica[1,88]:=0.0138;
+tablica[1,89]:=0.0138;
+tablica[1,90]:=0.0135;
+tablica[1,91]:=0.0129;
+tablica[1,92]:=0.0131;
+tablica[1,93]:=0.0121;
+tablica[1,94]:=0.0127;
+tablica[1,95]:=0.0114;
+tablica[1,96]:=0.0123;
+tablica[1,97]:=0.0107;
+tablica[1,98]:=0.0119;
+tablica[1,99]:=0.0100;
+tablica[1,100]:=0.0115;
+tablica[1,101]:=0.0093;
+tablica[1,102]:=0.0112;
+tablica[1,103]:=0.0088;
+tablica[1,104]:=0.0108;
+tablica[1,105]:=0.0083;
+tablica[1,106]:=0.0105;
+tablica[1,107]:=0.0077;
+tablica[1,108]:=0.0101;
+tablica[1,109]:=0.0072;
+tablica[1,110]:=0.0099;
+tablica[1,111]:=0.0067;
+tablica[1,112]:=0.0095;
+tablica[1,113]:=0.0063;
+tablica[1,114]:=0.0092;
+tablica[1,115]:=0.0059;
+tablica[1,116]:=0.0089;
+tablica[1,117]:=0.0056;
+tablica[1,118]:=0.0086;
+tablica[1,119]:=0.0052;
+tablica[1,120]:=0.0083;
+tablica[1,121]:=0.0049;
+tablica[1,122]:=0.0080;
+tablica[1,123]:=0.0046;
+tablica[1,124]:=0.0077;
+tablica[1,125]:=0.0043;
+tablica[1,126]:=0.0075;
+tablica[1,127]:=0.0041;
+tablica[1,128]:=0.0072;
+tablica[1,129]:=0.0038;
+tablica[1,130]:=0.0070;
+tablica[1,131]:=0.0035;
+tablica[1,132]:=0.0067;
+tablica[1,133]:=0.0033;
+tablica[1,134]:=0.0065;
+tablica[1,135]:=0.0031;
+tablica[1,136]:=0.0063;
+tablica[1,137]:=0.0029;
+tablica[1,138]:=0.0060;
+tablica[1,139]:=0.0028;
+tablica[1,140]:=0.0058;
+tablica[1,141]:=0.0026;
+tablica[1,142]:=0.0056;
+tablica[1,143]:=0.0024;
+tablica[1,144]:=0.0054;
+tablica[1,145]:=0.0022;
+tablica[1,146]:=0.0051;
+tablica[1,147]:=0.0021;
+tablica[1,148]:=0.0050;
+tablica[1,149]:=0.0020;
+tablica[1,150]:=0.0047;
+tablica[1,151]:=0.0018;
+tablica[1,152]:=0.0045;
+tablica[1,153]:=0.0017;
+tablica[1,154]:=0.0043;
+tablica[1,155]:=0.0016;
+tablica[1,156]:=0.0041;
+tablica[1,157]:=0.0015;
+tablica[1,158]:=0.0039;
+tablica[1,159]:=0.0014;
+tablica[1,160]:=0.0037;
+tablica[1,161]:=0.0013;
+tablica[1,162]:=0.0035;
+tablica[1,163]:=0.0012;
+tablica[1,164]:=0.0033;
+tablica[1,165]:=0.0011;
+tablica[1,166]:=0.0031;
+tablica[1,167]:=0.0010;
+tablica[1,168]:=0.0029;
+tablica[1,169]:=0.0010;
+tablica[1,170]:=0.0027;
+tablica[1,171]:=0.0009;
+tablica[1,172]:=0.0025;
+tablica[1,173]:=0.0008;
+tablica[1,174]:=0.0023;
+tablica[1,175]:=0.0008;
+tablica[1,176]:=0.0020;
+tablica[1,177]:=0.0007;
+tablica[1,178]:=0.0019;
+tablica[1,179]:=0.0006;
+tablica[1,180]:=0.0016;
+
+
+
+
+////////////////////////////////////////////
+
+/////////
+// DMC //
+/////////
+
+
+// czujniki tetablica
+T_1 := D100; // (x100) 
+T_3 := D102; // (x100) 
+
+// grzalki
+G_1 := D114; // (x10)
+G_2 := D115; // (x10)
+
+// wiatraki
+// W1 to D110 
+// W2 to D111 
+
+
+Y_zad1 := 3000; // 25*C
+Y_zad2 := 3000; // 25*C
+
+
+dU1:= DMC_K11*(Y_zad1 - T_1) + DMC_K12*(Y_zad2 - T_3);
+dU2:= DMC_K21*(Y_zad1 - T_1) + DMC_K22*(Y_zad2 - T_3);
+
+dU1:=dU1/100.0;
+dU2:=dU2/100.0;
+
+iteracja :=REAL_TO_INT(iteracja);
+
+FOR iteracja := 0 TO 180 BY 1 DO
+	tablica[2,iteracja] := 0.0; // nizej uzupelniana wartosciami
+END_FOR;
+
+FOR iteracja := 0 TO 180 BY 1 DO
+	dU1:=dU1-tablica[0,iteracja]*tablica[2,iteracja];
+	dU2:=dU2-tablica[1,iteracja]*tablica[2,iteracja];
+END_FOR;
+
+FOR iteracja := 180 TO 2 BY -1 DO
+	tablica[2,iteracja]:=tablica[2,iteracja-2];
+END_FOR;
+
+
+tablica[2,0]:=dU1;
+tablica[2,1]:=dU2;
+
+U_1 := (U1_A / 10 + dU1) * 10;
+U_2 := (U2_A / 10 + dU2) * 10;
+
+
+U1_A := U_1;
+U2_A := U_2;
+
+
+G_1 := REAL_TO_INT(U1_A);
+G_2 := REAL_TO_INT(U2_A);
+
+IF(T_1 > 15000) THEN
+	G_1 := 0;
+	ELSIF(G_1 > 1000) THEN
+	G_1 := 1000;
+	ELSIF(G_1 < 1) THEN
+	G_1 := 0;
+END_IF;
+
+
+IF(T_3 > 15000) THEN
+	G_2 := 0;
+	ELSIF(D115 > 1000) THEN
+	G_2 := 1000;
+	ELSIF(D115 < 1) THEN
+	G_2 := 0;
+END_IF;
+
+// odkomentowac to ponizej zeby wyznaczyc punkt pracy 
+// G_1 := 27;
+// G_2 := 32;
+//
+
+D114 := REAL_TO_INT(G_1);
+D115 := REAL_TO_INT(G_2);
+
+D110 := 500; // W1
+D111 := 500; // W2
+
+
+
+
+
+// wizualizacja
+D117 := REAL_TO_INT(Y_zad1);
+D118 := REAL_TO_INT(Y_zad2);
+
+y_k := D100; 
+y_k2 := D102;
+
+// TODO automat stanow
+
+IF (T_1 < 3000) THEN
+	D121 := 1;
+	ELSIF (T_1 = 2500) THEN
+	D121 := 2;
+	ELSIF (T_1 > 2500) THEN
+	D121 := 3;
+END_IF;
+
+IF (T_3 < 3000) THEN
+	D122 := 1;
+	ELSIF (T_3 = 2500) THEN
+	D122 := 2;
+	ELSIF (T_3 > 2500) THEN
+	D122 := 3;
+END_IF;
+
