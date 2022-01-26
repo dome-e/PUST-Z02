@@ -3,22 +3,24 @@
 
 Podczas tego zadania laboratoryjnego wykorzystano:
 \begin{itemize}
-	\item grza³kê G1 (sygna³ steruj¹cy $U$),
-	\item wentylator W1 (wartoœæ zadana $Y_{zad}$),
-	\item czujnik temperatury T1 (sygna³ wyjœciowy $Y$) 
+	\item grza³ki G1 i G2 (sygna³ steruj¹cy $U$),
+	\item wentylatory W1 i W2 (wartoœæ zadana $Y_{zad}$),
+	\item czujniki temperatury T1 i T3 (sygna³ wyjœciowy $Y$) 
 \end{itemize} 
 
 \section{Przygotowanie do wykonania æwiczenia}
-Przed rozpoczêciem pomiarów sprawdzono mo¿liwoœæ sterowania i~pomiaru w~komunikacji ze stanowiskiem. Punkt pracy grza³ki $G1$ dla zespo³u obliczony zosta³ wg. wzoru \ref{w_G1}:
+Przed rozpoczêciem pomiarów sprawdzono mo¿liwoœæ sterowania i~pomiaru w~komunikacji ze stanowiskiem. Punkty pracy grza³ek $G1$ i $G2$ dla zespo³u obliczone zosta³y wg. wzoru \ref{w_G1}:
 \begin{equation}
 	G1 = 25 + Z\
+	G2 = 30 + Z\
 \label{w_G1}
 \end{equation}
-gdzie Z~to numer zespo³u, zatem dla grupy Z02 punkt pracy wynosi:
+gdzie Z~to numer zespo³u \%5, zatem dla grupy Z02 punkt pracy wynosi:
 \begin{equation}
-	G1 = 25 + 2 = 27
+	G1 = 25 + 2\%5 = 25 + 2 = 27\
+	G2 = 30 + 2\%5 = 30 + 2 = 32\
 \end{equation}
-Nastêpnie okreœlono wartoœæ pomiaru temperatury T1 dla obliczonego punktu pracy. W~tym celu moc wentylatora W1 ustawiono na 50\% za pomoc¹ funkcji
+Nastêpnie okreœlono wartoœci pomiarów temperatur T1  i T3 dla obliczonych punktów pracy. W~tym celu moc wentylatorów W1 i W2 ustawiono na 50\% za pomoc¹ funkcji
 \texttt{sendControls(1, W1)}.
 Wartoœci mocy grza³ki zadawane s¹ poprzez funkcjê 
 \texttt{sendNonlinearControls(G1)}. Wartoœæ G1 zosta³a ustawiona na 27\%.
@@ -34,45 +36,45 @@ Zarejestrowano przebieg temperatury T1 dla trzech ró¿nych zmian wartoœci sterowa
 Otrzymane przebiegi zmian przedstawiono na Rys. \ref{rys_zad2pomiary}. 
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.27]{png/lab/zad2_pomiary.png}
-	\caption{OdpowiedŸ uk³adu na wartoœci sterowania: 20, 40, 60 i 80}
-	\label{rys_zad2pomiary}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.27]{png/lab/zad2_pomiary.png}
+%	\caption{OdpowiedŸ uk³adu na wartoœci sterowania: 20, 40, 60 i 80}
+%	\label{rys_zad2pomiary}
+%\end{figure}
 
 Punkty charakterystyki statycznej Y(U) odbiegaj¹ lekko od dopasowanej prostej (Rys. \ref{rys_zad2_char}. Oznacza to, ¿e w³aœciwoœci statyczne obiektu s¹ minimalnie nieliniowe.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.27]{png/lab/zad2_char_stat.png}
-	\caption{Charakterystyka statyczna obiektu}
-	\label{rys_zad2_char}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.27]{png/lab/zad2_char_stat.png}
+%	\caption{Charakterystyka statyczna obiektu}
+%	\label{rys_zad2_char}
+%\end{figure}
 
 
 \section{Regulator PID z laboratorium 1}
 Nastêpnie przetestowano regulatory z laboratorium 1, w celu porównania ich zaimplementowanymi póŸniej regulatorami rozmytymi. Testy przeprowadzone zosta³y dla trajektorii zmian sygna³u zadanego $y_{zad}$: $T_{pp}, T_{pp} + 5, T_{pp} + 15, T_{pp}$. Dla wartoœci punktu pracy $T_{pp}~=~T1~=~31,81$ zmiany te wynosi³y kolejno: $y_{zad}=31,81, y_{zad}=36,81, y_{zad}=46,81,y_{zad}= 31,81$.
 Przebiegi przedstawione zosta³y na Rys.~\ref{rys_PID_lab1}. Implementacja algorytmu dla regulatora PID znajduje siê w pliku \texttt{zad3\_PID.mat}.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.2]{png/lab/zad3_PID_test_wlasciwy_zoomed.png}
-	\caption{OdpowiedŸ uk³adu przy regulacji regulatorem PID z laboratorium 1}
-	\label{rys_PID_lab1}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.2]{png/lab/zad3_PID_test_wlasciwy_zoomed.png}
+%	\caption{OdpowiedŸ uk³adu przy regulacji regulatorem PID z laboratorium 1}
+%	\label{rys_PID_lab1}
+%\end{figure}
 
 WskaŸnik jakoœci wyniós³ $E= 24241$
 
 \section{Regulator DMC z laboratorium 1}
 Analogicznie przetestowany zosta³ regulator DMC z laboratorium 1. Testy przeprowadzono dla tej samej trajektorii zmian sygna³u zadanego. Przebiegi widoczne sa na Rys.~\ref{rys_DMC_lab1}. Implementacja algorytmu dla regulatora DMC znajduje siê w pliku \texttt{zad3\_DMC.mat}.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.2]{png/lab/zad3_DMC_test.png}
-	\caption{OdpowiedŸ uk³adu przy regulacji regulatorem DMC z laboratorium 1}
-	\label{rys_DMC_lab1}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.2]{png/lab/zad3_DMC_test.png}
+%	\caption{OdpowiedŸ uk³adu przy regulacji regulatorem DMC z laboratorium 1}
+%	\label{rys_DMC_lab1}
+%\end{figure}
 
 Wartoœæ wskaŸnika jakoœci regulacji wynios³a $E=19511$
 
@@ -101,12 +103,12 @@ Otrzymano zatem trzy zestawy liczb $s_1, s_2, s_3, ...$, oraz trzy wartoœci hory
 Wartoœci te wykorzystane zosta³y do obliczeñ w algorytmie DMC. Macierze $M$, $M^P$ i $K$ obliczone zosta³y oddzielnie dla ka¿dego z regulatorów. 
 Nastêpnie wyliczono wagi (wspó³czynniki przynale¿noœci) dla ka¿dego z regulatorów, korzystaj¹c z funkcji przynale¿noœci dzwonowej \texttt{gbellmf} w programie MATLAB. U¿yte w naszym algorytmie funkcje przynale¿noœci przedstawione zosta³y na Rys. \ref{rys_dzwony}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.25]{png/lab/gbell.png}
-	\caption{Funkcje przynale¿noœci}
-	\label{rys_dzwony}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.25]{png/lab/gbell.png}
+%	\caption{Funkcje przynale¿noœci}
+%	\label{rys_dzwony}
+%\end{figure}
 
 Wartoœæ sygna³u sterowania zosta³a wyliczona oddzielnie dla ka¿dego z regulatorów zgodnie ze wzorem \ref{w_uR}.
 
@@ -133,11 +135,11 @@ Horyzont sterowania $D$ dla regulatora DMC zosta³ dobrany poprzez wybranie najwi
 
 Regulator przetestowano dla tej samej trajektorii co regulatory z laboratorium 1: $y_{zad}$: $T_{pp}, T_{pp} + 5, T_{pp} + 15, T_{pp}$. Wyniki przedstawione zosta³y na Rys. \ref{rys_DMC_rozmyty}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.23]{png/lab/DMC_rozmyty.png}
-	\caption{Przebiegi dla regulatora rozmytego DMC}
-	\label{rys_DMC_rozmyty}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.23]{png/lab/DMC_rozmyty.png}
+%	\caption{Przebiegi dla regulatora rozmytego DMC}
+%	\label{rys_DMC_rozmyty}
+%\end{figure}
 
 Wartoœæ wskaŸnika jakoœci regulacji wynios³a $E=15709$. Regulator rozmyty wykazuje siê zatem lepsz¹ jakoœci¹ regulacji ni¿ regulator DMC w najprostszej wersji analitycznej z laboratorium 1.
