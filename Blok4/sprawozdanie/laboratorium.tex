@@ -23,24 +23,24 @@ gdzie Z~to numer zespo³u \%5, zatem dla grupy Z02 punkt pracy  wynosi:
 Nastêpnie okreœlono wartoœci pomiarów temperatur T1 i T3 dla obliczonych punktów pracy. W~tym celu moc wentylatorów W1 i W2 ustawiono na 50\% za pomoc¹ rejestrów:
 
 \begin{lstlisting}[style=customlatex,frame=single] 
-	D110 := 500;  // W1
-	D111 := 500;  // W2
+D110 := 500;  // W1
+D111 := 500;  // W2
 \end{lstlisting}
 
-Moc wentylatorów, zarówno jak i grza³ek przesy³ana jest w postaci wartoœci 10 razy wiêkszych ni¿ oczekiwane (np. 50\% reprezentowane jest przez wartoœæ 500). Odczytywana temperatura jest za to pomno¿ona razy 100 (np. 25$\degreeC reprezentowane jest przez wartoœæ 2500)
+Moc wentylatorów, zarówno jak i grza³ek przesy³ana jest w postaci wartoœci 10 razy wiêkszych ni¿ oczekiwane (np. 50\% reprezentowane jest przez wartoœæ 500). Odczytywana temperatura jest za to pomno¿ona razy 100 (np. 25\degree C reprezentowane jest przez wartoœæ 2500)
 
 Wartoœci mocy grza³ki zadawane s¹ poprzez rejestry: 
 \begin{lstlisting}[style=customlatex,frame=single] 
-	D114 := 270;  // G1
-	D115 := 320;  // G2
+D114 := 270;  // G1
+D115 := 320;  // G2
 \end{lstlisting}
 
 Wartoœæ G1 zosta³a ustawiona na 27\%, a G2 na wartoœæ 32\%.
 
 Temperatury T1 i T3 odczytano korzystaj¹c odpowiednio z~rejestrów 
 \begin{lstlisting}[style=customlatex,frame=single] 
-	T_1 := D100;
-	T_3 := D102;
+T_1 := D100;
+T_3 := D102;
 \end{lstlisting}
 
 Przy $G1 = 27$ i $G2 = 32$ temperatura T1 ustabilizowa³a siê na wartoœci \textbf{20,37\degree C}, a temperatura T3 na wartoœci \textbf{21,00 \degree C}
@@ -71,99 +71,218 @@ END_IF;
 \section{Regulator dwupêtlowy PID}
 Do realizacji zadania wykorzystano podstawowy plik do komunikacji ze stanowiskiem grzej¹co - ch³odz¹cym \texttt{PUST\_PLC.gx3}.
 \newline
-Zarejestrowano przebieg temperatury T1 dla trzech ró¿nych zmian wartoœci sterowania G1, rozpoczynaj¹c z punktu pracy 27 do kolejno 20, 40, 60 i~80.
-Otrzymane przebiegi zmian przedstawiono na Rys. \ref{rys_zad2pomiary}. 
+Zaimplementowany zosta³ algorytm dwupêtlowego regulatora PID. 
+
+\begin{lstlisting}[style=customlatex,frame=single] 
+//PID 1
+
+Y_zad1 := 3000; // 25*C
+T_1 := D100; // (x100)
+G_1 := D114; // (x10)
+
+E2_PID1 := E1_PID1; 
+E1_PID1 := E_PID1; 
+
+E_PID1 := (Y_zad1 - T_1)/100;
+
+r0_PID1:= 15.9769734;
+r1_PID1 := -14.58552;
+r2_PID1 := 0.1875;
+
+delta_U_PID1 := r2_PID1 * E2_PID1 + r1_PID1 * E1_PID1 + r0_PID1 * E_PID1;  
+
+U1_PID1 := delta_U_PID1 + U1_PID1;
+
+// ograniczenia
+
+F (T_1 > 25000.0) THEN
+	U1_PID1 := 0;
+	ELSIF(U1_PID1 > 1000) THEN
+	U1_PID1 := 1000;
+	ELSIF(U1_PID1 < 1) THEN
+	U1_PID1 := 0;
+END_IF;
+
+// send U1 
+
+D114 := REAL_TO_INT(U1_PID1); // G1;
+
+u_k := D114; // do wysylania wykresow G1 w SocketComm
+
+D110 := 500; // W1
+D111 := 500; // W2
+
+y_k := D100;  // do wysylania wykresow T1 w SocketComm
+y_k2 := D102; // do wysylania wykresow T3 w SocketComm
+
+//////////////////////////////////////////////////////////////////////////
+
+//PID 2
+Y_zad2 := 3000; // 30*C
+
+T_3 := D102; // (x100)
+G_2 := D115; // (x10)
+
+E2_PID2 := E1_PID2; 
+E1_PID2 := E_PID2; 
+
+E_PID2 := (Y_zad2 - T_3)/100;
+
+// r0_PID2, r1_PID2, r2_PID2 mozemy obliczyc w MATLABIE 
+
+r0_PID2 := 15.9769734;
+r1_PID2 := -14.58552;
+r2_PID2 := 0.1875;
+
+delta_U_PID2 := r2_PID2 * E2_PID2 + r1_PID2 * E1_PID2 + r0_PID2 * E_PID2;  
+
+U1_PID2 := delta_U_PID2 + U1_PID2;
+
+// ograniczenia
+
+IF (T_3 > 25000.0) THEN
+	U1_PID2 := 0;
+	ELSIF(U1_PID2 > 1000) THEN
+	U1_PID2 := 1000;
+	ELSIF(U1_PID2 < 1) THEN
+	U1_PID2 := 0;
+END_IF;
+
+D115 := REAL_TO_INT(U1_PID2); // do wysylania wykresow G2 w SocketComm
+
+u_k2 := D115;
+
+D110 := 500; // W1
+D111 := 500; // W2
+
+D117 := REAL_TO_INT(Y_zad1);
+D118 := REAL_TO_INT(Y_zad2);
+
+y_k := D100;  // do wysylania wykresow T1 w SocketComm
+y_k2 := D102;  // do wysylania wykresow T3 w SocketComm
 
 
+// wizualizacja
+D117 := REAL_TO_INT(Y_zad1);
+D118 := REAL_TO_INT(Y_zad2);
+
+y_k := D100; 
+y_k2 := D102;
+
+// automat stanow
+
+IF (T_1 < 3000) THEN
+	D121 := 1;
+	ELSIF (T_1 = 2500) THEN
+	D121 := 2;
+	ELSIF (T_1 > 2500) THEN
+	D121 := 3;
+END_IF;
+
+IF (T_3 < 3000) THEN
+	D122 := 1;
+	ELSIF (T_3 = 2500) THEN
+	D122 := 2;
+	ELSIF (T_3 > 2500) THEN
+	D122 := 3;
+END_IF;
+\end{lstlisting}
 
 
-\section{Regulator PID z laboratorium 1}
-Nastêpnie przetestowano regulatory z laboratorium 1, w celu porównania ich zaimplementowanymi póŸniej regulatorami rozmytymi. Testy przeprowadzone zosta³y dla trajektorii zmian sygna³u zadanego $y_{zad}$: $T_{pp}, T_{pp} + 5, T_{pp} + 15, T_{pp}$. Dla wartoœci punktu pracy $T_{pp}~=~T1~=~31,81$ zmiany te wynosi³y kolejno: $y_{zad}=31,81, y_{zad}=36,81, y_{zad}=46,81,y_{zad}= 31,81$.
-Przebiegi przedstawione zosta³y na Rys.~\ref{rys_PID_lab1}. Implementacja algorytmu dla regulatora PID znajduje siê w pliku \texttt{zad3\_PID.mat}.
+\section{Dobór parametrów  PID}
+Parametry regulatorów obliczane by³y w MatLabie, w pliku  \texttt{PID\_wyliczanie\_parametrow.m}. W obu regulatorach stosowano te same nastawy.
+\newline
+Zespó³ zdecydowa³ rozpoczêcie dobierania parametrów od przetestowania parametrów regulatora PID z bloku 3 ($K=0,132199, T_i=3,637091; T_d=0,107170$ ). Wyniki przedstawione zosta³y na Rys.\ref{rys_PID_jak_w_bloku3}.
+
 
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[scale=0.2]{png/lab/zad3_PID_test_wlasciwy_zoomed.png}
 %	\caption{OdpowiedŸ uk³adu przy regulacji regulatorem PID z laboratorium 1}
-%	\label{rys_PID_lab1}
+%	\label{rys_PID_jak_w_bloku3}
 %\end{figure}
 
-WskaŸnik jakoœci wyniós³ $E= 24241$
+Jak widaæ na Rys.\ref{rys_PID_jak_w_bloku3}, nastawy te powodowa³y znacz¹ce oscylacje, powoduj¹ce amplitudê zmian temperatury T1 o wartoœci oko³o 9,18 \degree C, oraz 1,33 \degree C w przypadku temperatury T3. Nale¿y zaznaczyæ, ¿e wartoœæ zadana dla obydwu temperatur wynosi³a wówczas 25 \degree C. Przy tych nastawach temperatura T3 nie dosiêga³a nawet tej wartoœci, a w przypadku temperatury T1 wystêpowa³o znacz¹ce przesterowanie.
+Na wykresie widoczne s¹ równie¿ chwilowe zaniki sterowania, reprezentowane jego spadkiem do wartoœci oko³o 0. Nie wynika³y one ze sposobu implementacji regulatora - zak³adamy, ¿e Ÿród³em by³y chwilowe problemy komunikacyjne miêdzy sterownikiem a stanowiskiem grzej¹co-ch³odz¹cym.
 
-\section{Regulator DMC z laboratorium 1}
-Analogicznie przetestowany zosta³ regulator DMC z laboratorium 1. Testy przeprowadzono dla tej samej trajektorii zmian sygna³u zadanego. Przebiegi widoczne sa na Rys.~\ref{rys_DMC_lab1}. Implementacja algorytmu dla regulatora DMC znajduje siê w pliku \texttt{zad3\_DMC.mat}.
+
+Jako, ¿e powy¿szy wynik by³ tak niezadowalaj¹cy, a ograniczenie czasowe laboratoriów i d³ugi czas przeprowadzania symulacji ogranicza³ zespo³owi mo¿liwoœæ zrealizowania prawid³owego strojenia metod¹ in¿yniersk¹, zdecydowano wypróbowaæ skrajnie inne nastawy o wartoœciach $K=15, T_i=38; T_d=0,05$. Znacznie zwiêkszono wzmocnienie $K$, jak i cz³on ca³kuj¹cy $T_i$, aby umo¿liwiæ temperaturze T3 dosiêgniêcie wartoœci zadanej. Przebiegi dla tych nastaw przedstawione zosta³y na Rys.\ref{rys_PIDjeszcze_gorsze}.
+Nale¿y zaznaczyæ, ¿e poni¿sze testy przeprowadzane by³y innego dnia i wartoœæ zadana dla obu temperatur zosta³a zmieniona na 30 \degree C, przy kolejnych testach powrócono jednak do wartoœci 25 \degree C.
 
 %\begin{figure}[H]
 %	\centering
-%	\includegraphics[scale=0.2]{png/lab/zad3_DMC_test.png}
-%	\caption{OdpowiedŸ uk³adu przy regulacji regulatorem DMC z laboratorium 1}
-%	\label{rys_DMC_lab1}
+%	\includegraphics[scale=0.2]{png/lab/zad3_PID_test_wlasciwy_zoomed.png}
+%	\caption{OdpowiedŸ uk³adu przy regulacji regulatorem PID z laboratorium 1}
+%	\label{rys_PIDjeszcze_gorsze}
 %\end{figure}
 
-Wartoœæ wskaŸnika jakoœci regulacji wynios³a $E=19511$
 
-\section{Rozmyty algorytm PID}
-
-Zespó³ nie zd¹¿y³ zaimplementowaæ algorytmu realizuj¹cego regulacjê PID w czasie trwania laboratorium. 
-
-Jeœli dostêpne by³oby wiêcej czasu, algorytm rozmytego regulatora PID zaimplementowany zosta³by analogicznie do rozmytego regulatora PID z czêœci projektowej.
-Dla ka¿dego z trzech regulatorów lokalnych zosta³yby dobrane oddzielne nastawy metod¹ eksperymentaln¹, tak by zapewniæ najlepsz¹ jakoœæ regulacji. Do wyliczenia wspó³czynników przynale¿noœci ka¿dego z regulatorów u¿yta zosta³aby funkcja przynale¿noœci dzwonowej \texttt{gbellmf}.
-
-\section{Rozmyty algorytm DMC}
-
-Zaimplementowany zosta³ algorytm rozmytego regulatora DMC.
-
-Rozpoczêto od wyznaczenia zestawów liczb $s_1, s_2, s_3, ...$ dla ka¿dego z trzech regulatorów. Zestawy te wyznaczone zosta³y poprzez przekszta³cenie odpowiedzi skokowych dla wartoœci sterowania $u = 20$, $u = 40$ i $u = 80$ przedstawionych na Rys. \ref{rys_zad2pomiary}. Przekszta³cenie to przebieg³o zgodnie ze wzorem \ref{w_Si}.
-
-\begin{equation}
-	S_i = \frac{S_i^0  - Y_{pp}}{\Delta U}, i = 1, 2, 3,  ...
-	\label{w_Si}
-\end{equation}
-
-Z przebiegów nieprzekszta³conej odpowiedzi skokowej odczytano pierwsze i ostatnie skoki sygna³u wyjœciowego, które wykorzystano do obliczenia horyzontu dynamiki $D$. Wszelkie obliczenia wykonane zosta³y w programie MATLAB w pliku \texttt{zad4\_s.m}.
-
-Otrzymano zatem trzy zestawy liczb $s_1, s_2, s_3, ...$, oraz trzy wartoœci horyzontów dynamiki $D$ - po jednym na ka¿dy z regulatorów: $D_1 = 252$, $D_2 = 289$, $D_3 = 276$ .
-
-Wartoœci te wykorzystane zosta³y do obliczeñ w algorytmie DMC. Macierze $M$, $M^P$ i $K$ obliczone zosta³y oddzielnie dla ka¿dego z regulatorów. 
-Nastêpnie wyliczono wagi (wspó³czynniki przynale¿noœci) dla ka¿dego z regulatorów, korzystaj¹c z funkcji przynale¿noœci dzwonowej \texttt{gbellmf} w programie MATLAB. U¿yte w naszym algorytmie funkcje przynale¿noœci przedstawione zosta³y na Rys. \ref{rys_dzwony}
+Taki dobór nastaw spowodowa³, ¿e obie temperatury zaczê³y oscylowaæ wokó³ wartoœci zadanej, jednak amplitudy ich zmian wzros³y.
+\newline
+Aby zmniejszyæ oscylacje, zmniejszono wartoœci wzmocnienia $K$ i cz³onu ca³kuj¹cego $T_i$, przy jednoczesnym zwiêkszeniu wartoœci cz³onu ró¿niczkuj¹cego $T_d$, który mia³ za zadanie wyp³aszczyæ oscylacje. Nastêpnie przetestowane nastawy to zatem: $K=13,8, T_i=35; T_d=8,75$. Przebiegi przedstawiono na Rys. \ref{rys_PID_nastawy_Kkr23_Tkr_70} .
 
 %\begin{figure}[H]
 %	\centering
-%	\includegraphics[scale=0.25]{png/lab/gbell.png}
-%	\caption{Funkcje przynale¿noœci}
-%	\label{rys_dzwony}
+%	\includegraphics[scale=0.2]{png/lab/zad3_PID_test_wlasciwy_zoomed.png}
+%	\caption{OdpowiedŸ uk³adu przy regulacji regulatorem PID z laboratorium 1}
+%	\label{rys_PID_nastawy_Kkr23_Tkr_70}
 %\end{figure}
 
-Wartoœæ sygna³u sterowania zosta³a wyliczona oddzielnie dla ka¿dego z regulatorów zgodnie ze wzorem \ref{w_uR}.
+Oscylacje znacz¹co siê zmniejszy³y - dla obu temperatur wynosi³y oko³o 4 \degree C.
+By³y to najlepsze wyniki, jakie uda³o siê osi¹gn¹æ zespo³owi w czasie trwania laboratorium. 
+\newline
+Jeœli zespó³ mia³by wiêcej czasu na dostrajanie regulatora, najprawdopodobniej jeszcze bardziej zosta³aby zmniejszona wartoœæ wzmocnienia $K$ i cz³onu ca³kuj¹cego $T_i$, które powodowa³y widoczne na wykresach przesterowania i oscylacje. Zwiêkszona zosta³by za to wartoœæ cz³onu ró¿niczkuj¹cego $T_d$, który widocznie przyczyni³ siê do spadku poziomu oscylacji. 
 
-\begin{equation}
-	u^R(k)=K^R(Y^{zad}(k) -Y(k)-M^{P,r} \Delta u^P(k))
-	\label{w_uR}
-\end{equation}
+Najbardziej optymalnym podejœciem by³oby zastosowanie metody in¿ynierskiej - znalezienie wzmocnienia krytycznego i obliczanie parametrów na jego podstawie, a nastêpne ich dostrajanie, jednak ograniczenia czasowe wobec iloœci zadañ do wykonania nie pozwoli³yby zespo³owi na przeprowadzenie jej w ca³oœci.
 
-je¿eli $u(k-1) \in U_2$, 
+\section{Dwuwymiarowy regulator DMC}
 
-i gdzie R to numer regulatora
+%TODO
 
-Poszczególne wartoœci sygna³u sterowania $u^R(k)$ dla ka¿dego z regulatorów wykorzystane zosta³y do obliczenia ca³oœciowej wartoœci $u(k)$ wed³ug wzoru \ref{w_uk}.
+\section{Wyœwietlanie danych na panelu operatora}
 
-\begin{equation}
-	u(k)=\frac{\sum w^i(k)u^i(k)}{\sum w^i(k)}
-	\label{w_uk}
-\end{equation}
+Stworzony zosta³ interfejs graficzny na podstawie przyk³adowego pliku  \texttt{sample\_GOT.GTX}.  Implementacja interfejsu, jak i automatu stanów opisanego w nastêpnej sekcji znajduje siê w pliku \texttt{wizualizacja.GTX}.
+Interfejs zaprojektowany zosta³ w programie GT Designer3 (Rys. \ref{rys_wiz}). W projekcie uwzglêdniono wartoœci mierzone, zadane oraz sterowania. W celu zaimplementowania logiki wyœwietlania siê wartoœci na panelu stworzono dwa nowe rejestry (D117 i D118) przetrzymuj¹ce wartoœci zadane. Nastêpnie podpiêto odpowiednie rejestry do odpowiednich s³upków w wizualizacji ($G1$ - D114, $G2$ - D115, $T1_{zad}$ - D117, $T3_{zad}$ - D118, oraz $T1$ - D100 i $T3$ - D102).
 
-Implementacja algorytmu znajduje siê w pliku \texttt{zad4\_1.m}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{png/lab/wizualizacja.png}
+	\caption{Projekt wizualizacji w programie GT Designer3}
+	\label{rys_wiz}
+\end{figure}
 
 
-Horyzont sterowania $D$ dla regulatora DMC zosta³ dobrany poprzez wybranie najwiêkszego z obliczonych wy¿ej horyzontów dynamiki dla ka¿dego z regulatorów. W tym przypadku jego wartoœæ wynosi $D=289$. Zgodnie z treœci¹ zadania laboratoryjnego pozosta³e parametrom regulatora przypisano wartoœci $N_u = N = D = 289$ i $\lambda=1$. 
+\begin{lstlisting}[style=customlatex,frame=single] 
+	// wizualizacja
+	D117 := REAL_TO_INT(Y_zad1);
+	D118 := REAL_TO_INT(Y_zad2);
+	
+	y_k := D100; 
+	y_k2 := D102;
+	
+	// automat stanow
+	
+	IF (T_1 < 3000) THEN
+	D121 := 1;
+	ELSIF (T_1 = 2500) THEN
+	D121 := 2;
+	ELSIF (T_1 > 2500) THEN
+	D121 := 3;
+	END_IF;
+	
+	IF (T_3 < 3000) THEN
+	D122 := 1;
+	ELSIF (T_3 = 2500) THEN
+	D122 := 2;
+	ELSIF (T_3 > 2500) THEN
+	D122 := 3;
+	END_IF;
+\end{lstlisting}
 
-Regulator przetestowano dla tej samej trajektorii co regulatory z laboratorium 1: $y_{zad}$: $T_{pp}, T_{pp} + 5, T_{pp} + 15, T_{pp}$. Wyniki przedstawione zosta³y na Rys. \ref{rys_DMC_rozmyty}
 
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.23]{png/lab/DMC_rozmyty.png}
-%	\caption{Przebiegi dla regulatora rozmytego DMC}
-%	\label{rys_DMC_rozmyty}
-%\end{figure}
-
-Wartoœæ wskaŸnika jakoœci regulacji wynios³a $E=15709$. Regulator rozmyty wykazuje siê zatem lepsz¹ jakoœci¹ regulacji ni¿ regulator DMC w najprostszej wersji analitycznej z laboratorium 1.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{png/lab/wizualizacja_zdj.jpeg}
+	\caption{Wizualizacja na panelu operatora}
+	\label{rys_wiz_zdj}
+\end{figure}

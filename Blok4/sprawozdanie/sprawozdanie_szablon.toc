@@ -6,8 +6,8 @@
 \contentsline {section}{\numberline {1.5\relax .\enspace }Rozmyty algorytm DMC}{3}{}%
 \contentsline {chapter}{\numberline {2\relax .\enspace }\'Cwiczenie laboratoryjne}{5}{}%
 \contentsline {section}{\numberline {2.1\relax .\enspace }Przygotowanie do wykonania \'cwiczenia}{5}{}%
-\contentsline {section}{\numberline {2.2\relax .\enspace }Przebiegi sygna\IeC {\l }\'ow wyj\'sciowych}{5}{}%
-\contentsline {section}{\numberline {2.3\relax .\enspace }Regulator PID z laboratorium 1}{5}{}%
-\contentsline {section}{\numberline {2.4\relax .\enspace }Regulator DMC z laboratorium 1}{6}{}%
-\contentsline {section}{\numberline {2.5\relax .\enspace }Rozmyty algorytm PID}{6}{}%
-\contentsline {section}{\numberline {2.6\relax .\enspace }Rozmyty algorytm DMC}{6}{}%
+\contentsline {section}{\numberline {2.2\relax .\enspace } Mechanizm zabezpieczaj\k acy przed uszkodzeniem}{5}{}%
+\contentsline {section}{\numberline {2.3\relax .\enspace }Regulator dwup\k etlowy PID}{6}{}%
+\contentsline {section}{\numberline {2.4\relax .\enspace }Dob\'or parametr\'ow PID}{8}{}%
+\contentsline {section}{\numberline {2.5\relax .\enspace }Dwuwymiarowy regulator DMC}{9}{}%
+\contentsline {section}{\numberline {2.6\relax .\enspace }Wy\'swietlanie danych na panelu operatora}{9}{}%
