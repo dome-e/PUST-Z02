@@ -15,42 +15,66 @@ Przed rozpoczêciem pomiarów sprawdzono mo¿liwoœæ sterowania i~pomiaru w~komunika
 	G2 = 30 + Z\
 \label{w_G1}
 \end{equation}
-gdzie Z~to numer zespo³u \%5, zatem dla grupy Z02 punkt pracy wynosi:
+gdzie Z~to numer zespo³u \%5, zatem dla grupy Z02 punkt pracy  wynosi:
 \begin{equation}
 	G1 = 25 + 2\%5 = 25 + 2 = 27\
 	G2 = 30 + 2\%5 = 30 + 2 = 32\
 \end{equation}
-Nastêpnie okreœlono wartoœci pomiarów temperatur T1  i T3 dla obliczonych punktów pracy. W~tym celu moc wentylatorów W1 i W2 ustawiono na 50\% za pomoc¹ funkcji
-\texttt{sendControls(1, W1)}.
-Wartoœci mocy grza³ki zadawane s¹ poprzez funkcjê 
-\texttt{sendNonlinearControls(G1)}. Wartoœæ G1 zosta³a ustawiona na 27\%.
-Temperaturê odczytano korzystaj¹c z~funkcji 
-\texttt{readMeasurements(1)}.
-Temperatura T1 ustabilizowa³a siê na wartoœci \textbf{31,81\degree C}
+Nastêpnie okreœlono wartoœci pomiarów temperatur T1 i T3 dla obliczonych punktów pracy. W~tym celu moc wentylatorów W1 i W2 ustawiono na 50\% za pomoc¹ rejestrów:
 
+\begin{lstlisting}[style=customlatex,frame=single] 
+	D110 := 500;  // W1
+	D111 := 500;  // W2
+\end{lstlisting}
+
+Moc wentylatorów, zarówno jak i grza³ek przesy³ana jest w postaci wartoœci 10 razy wiêkszych ni¿ oczekiwane (np. 50\% reprezentowane jest przez wartoœæ 500). Odczytywana temperatura jest za to pomno¿ona razy 100 (np. 25$\degreeC reprezentowane jest przez wartoœæ 2500)
+
+Wartoœci mocy grza³ki zadawane s¹ poprzez rejestry: 
+\begin{lstlisting}[style=customlatex,frame=single] 
+	D114 := 270;  // G1
+	D115 := 320;  // G2
+\end{lstlisting}
+
+Wartoœæ G1 zosta³a ustawiona na 27\%, a G2 na wartoœæ 32\%.
+
+Temperatury T1 i T3 odczytano korzystaj¹c odpowiednio z~rejestrów 
+\begin{lstlisting}[style=customlatex,frame=single] 
+	T_1 := D100;
+	T_3 := D102;
+\end{lstlisting}
+
+Przy $G1 = 27$ i $G2 = 32$ temperatura T1 ustabilizowa³a siê na wartoœci \textbf{20,37\degree C}, a temperatura T3 na wartoœci \textbf{21,00 \degree C}
+
+\section{ Mechanizm zabezpieczaj¹cy przed uszkodzeniem}
+ Zaimplementowane zosta³o zabezpieczenie przed uszkodzeniem stanowiska w przypadku uszkodzenia czujnika temperatury. Sytuacja taka mo¿e doprowadziæ do wzrostu temperatury stanowiska do niebezpiecznego stopnia, zatem, gdy czujnik wska¿e temperaturê przekraczaj¹c¹ 250 \degree C, grza³ka znajduj¹ca siê przy tym czujniku zostaje wy³¹czona. Implementacja zabezpieczenia znajduje siê poni¿ej. Uwzglêdnia ona równie¿ ograniczenia sterowania grza³kami (minimalnie 0\% i maksymalnie 100\% mocy).
  
-\section{Przebiegi sygna³ów wyjœciowych}
-Do realizacji zadania wykorzystano podstawowy plik do komunikacji ze stanowiskiem grzej¹co - ch³odz¹cym \texttt{MinimalWorkingExample.m}.
+\begin{lstlisting}[style=customlatex,frame=single] 
+IF (T_1 > 25000.0) THEN
+	U1_PID1 := 0;
+	ELSIF(U1_PID1 > 1000) THEN
+	U1_PID1 := 1000;
+	ELSIF(U1_PID1 < 1) THEN
+	U1_PID1 := 0;
+END_IF;
+\end{lstlisting}
+
+\begin{lstlisting}[style=customlatex,frame=single] 
+F (T_3 > 25000.0) THEN
+	U1_PID2 := 0;
+	ELSIF(U1_PID2 > 1000) THEN
+	U1_PID2 := 1000;
+	ELSIF(U1_PID2 < 1) THEN
+	U1_PID2 := 0;
+END_IF;
+\end{lstlisting}
+
+\section{Regulator dwupêtlowy PID}
+Do realizacji zadania wykorzystano podstawowy plik do komunikacji ze stanowiskiem grzej¹co - ch³odz¹cym \texttt{PUST\_PLC.gx3}.
 \newline
 Zarejestrowano przebieg temperatury T1 dla trzech ró¿nych zmian wartoœci sterowania G1, rozpoczynaj¹c z punktu pracy 27 do kolejno 20, 40, 60 i~80.
 Otrzymane przebiegi zmian przedstawiono na Rys. \ref{rys_zad2pomiary}. 
 
 
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.27]{png/lab/zad2_pomiary.png}
-%	\caption{OdpowiedŸ uk³adu na wartoœci sterowania: 20, 40, 60 i 80}
-%	\label{rys_zad2pomiary}
-%\end{figure}
-
-Punkty charakterystyki statycznej Y(U) odbiegaj¹ lekko od dopasowanej prostej (Rys. \ref{rys_zad2_char}. Oznacza to, ¿e w³aœciwoœci statyczne obiektu s¹ minimalnie nieliniowe.
-
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.27]{png/lab/zad2_char_stat.png}
-%	\caption{Charakterystyka statyczna obiektu}
-%	\label{rys_zad2_char}
-%\end{figure}
 
 
 \section{Regulator PID z laboratorium 1}
