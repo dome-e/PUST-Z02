@@ -1,3 +1,4 @@
+clear all;
 n=300;
 Upp=0;
 Ypp=0;
